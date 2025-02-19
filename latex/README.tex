@@ -68,20 +68,93 @@
 \urlstyle{same}
 
 \title{README}
+  \author{Ida}
   \date{\today}  % Default to today if no date is provided
 
 \begin{document}
 \maketitle
 
-\section{PDFs}\label{pdfs}
+\section{Notes}\label{notes}
 
-This folder contains PDF files create from the corresponding markdown
-file in the root of the repository.
+A collection of unfinished notes on various topics related to
+nucleonics.
 
-The PDF files have been automatically generated using
-\href{https://pandoc.org/}{Pandoc} using Github Actions (see the
-\href{/.github/workflows/convert-from-markdown.yml}{workflow file} for
-more details).
+You write notes in markdown format, including things like equations,
+references etc, and then behind the scenes there is a Github Action that
+will convert these markdown files into both PDF and Latex (see folders
+with those names). The advantage is that:
+
+\begin{itemize}
+\tightlist
+\item
+  Markdown is web friendly
+\item
+  Latex is journal friendly
+\item
+  PDF is email friendly
+\end{itemize}
+
+We'll always have formats for every use case.
+
+Below is a little demo of some of the essential markdown features. Check
+out the source code to see how human readable it all is.
+
+\section{Section}\label{section}
+
+\subsection{Subsection}\label{subsection}
+
+\subsubsection{Subsubsection}\label{subsubsection}
+
+Hyperlinks are a piece of cake, e.g.~here is a
+\href{https://www.markdownguide.org/basic-syntax/}{link} showing all the
+wonderful things you can do in markdown.
+
+This is some \textbf{bold text}.
+
+This is a list:
+
+\begin{itemize}
+\tightlist
+\item
+  Markdown
+\item
+  is
+\item
+  awesome
+\end{itemize}
+
+A numbered list:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  It's
+\item
+  so
+\item
+  Easy
+\end{enumerate}
+
+This is an inline equation \(E=mc^2\).
+
+This is a display equation:
+
+\[
+E = mc^2
+\label{eq:emc2}
+\]
+
+This equation has a label that can be referenced like this Eq.
+\(\ref{eq:emc2}\). In Github, the equation numbers don't show when
+rendering markdown and so the Eq. reference will look broken. However,
+the Latex and PDF versions do have numbers and equation references work
+as you'd expect.
+
+We can write a bibliographic reference like this
+\autocite{einstein1905}. It doesn't render here in markdown but will in
+the PDF and Latex versions. The linking is done via \texttt{refs.bib}
+that's founds in the \texttt{pandoc} folder.
 
 \printbibliography
 
