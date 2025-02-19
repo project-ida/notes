@@ -6,7 +6,7 @@ author: "Ida"
 
 A collection of unfinished notes on various topics related to nucleonics.
 
-You write notes in [markdown format](https://www.markdownguide.org/basic-syntax/), including things like equations, references etc, and then behind the scenes there is a Github Action that will convert these markdown files into both PDF and Latex (see folders with those names). The advantage is that:
+You write notes in markdown format, including things like equations, references etc, and then behind the scenes there is a Github Action that will convert these markdown files into both PDF and Latex (see folders with those names). The advantage is that:
 
 - Markdown is web friendly
 - Latex is journal friendly
@@ -21,6 +21,8 @@ Below is a little demo of some of the essential markdown features. Check out the
 ## Subsection
 
 ### Subsubsection
+
+Hyperlinks are a piece of cake, e.g. here is a [link](https://www.markdownguide.org/basic-syntax/) showing all the wonderful things you can do in markdown.
 
 This is some **bold text**.
 
@@ -49,4 +51,3 @@ This equation has a label that can be referenced like this Eq. $\ref{eq:emc2}$. 
 
 We can write a bibliographic reference like this [@einstein1905]. It doesn't render here in markdown but will in the PDF and Latex versions. The linking is done via `refs.bib` that's founds in the `pandoc` folder.
 
-Hyperlinks are a piece of cake, e.g. here are more [examples of what you can do in markdown](https://www.markdownguide.org/basic-syntax/).
