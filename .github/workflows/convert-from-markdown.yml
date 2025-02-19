@@ -1,0 +1,125 @@
+name: Markdown conversion
+
+on:
+  push:
+    paths:
+      - "**/*.md"
+    branches:
+      - "*"
+
+jobs:
+  process-markdown:
+    runs-on: ubuntu-latest
+    container:
+      image: pandoc/latex:3.6.3-ubuntu # Using the Pandoc LaTeX Docker image
+      options: --entrypoint=sh  # Use `sh` as the entrypoint
+
+    steps:
+
+      - name: Install Git inside the container
+        run: |
+          apt-get update
+          apt-get install -y git  # Install git
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+ 
+      - name: Configure Git Safe Directory
+        run: |
+          # Get the current working directory and set it as a safe directory for git
+          current_directory=$(pwd)
+          echo "Current directory: $current_directory"
+          git config --global --add safe.directory "$current_directory"
+
+      - name: Identify Modified Markdown Files
+        run: |
+          # Get a list of modified markdown files, including README.md
+          if [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+            echo "First push to this branch. Listing all markdown files in the commit."
+            git show --name-status --pretty="" ${{ github.sha }} | grep '\.md$' > markdown_changes.txt
+          else
+            if git cat-file -e ${{ github.event.before }}^{commit} 2>/dev/null; then
+              git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep '\.md$' > markdown_changes.txt
+            else
+              git fetch origin ${{ github.event.before }} --depth=1
+              git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep '\.md$' > markdown_changes.txt
+            fi
+          fi
+          cat markdown_changes.txt
+        
+
+      - name: Convert Modified and Handle Deleted Markdown Files
+        run: |
+          # Create the pdf and latex directories if they don't exist
+          mkdir -p pdf latex
+          
+          # Loop through the list of modified markdown files and convert each one individually
+          while IFS= read -r line; do
+            # Use awk to split the line by the tab character
+            status=$(echo "$line" | awk -F'\t' '{print $1}')
+            file=$(echo "$line" | awk -F'\t' '{print $2}')
+
+            # Trim spaces (in case any leading/trailing spaces exist)
+            status=$(echo "$status" | xargs)
+            file=$(echo "$file" | xargs)
+
+            # Debugging: print the status and file
+            echo "Status: '$status', File: '$file'"
+
+            # Get the base filename without the extension
+            currentFileName="$(basename "$file" .md)"
+            currentFilePath="$file"
+
+            if [ "$status" = "A" ] || [ "$status" = "M" ]; then
+              # Convert markdown to PDF
+              echo "Converting $currentFilePath to PDF..."
+              pandoc -f markdown -s "$currentFilePath" -o "pdf/$currentFileName.pdf" \
+                --template="pandoc/default.latex" \
+                --bibliography="pandoc/refs.bib" \
+                --citeproc \
+                --csl="pandoc/ieee.csl" \
+                --variable numbersections=true \
+                --variable title="$currentFileName" \
+                -M reference-section-title=References \
+                -M link-citations=true \
+                --pdf-engine=pdflatex
+
+              # Convert markdown to LaTeX and store in latex directory
+              echo "Converting $currentFilePath to LaTeX..."
+              pandoc -f markdown -s "$currentFilePath" -o "latex/$currentFileName.tex" \
+                --template="pandoc/default.latex" \
+                --bibliography="refs.bib" \
+                --biblatex \
+                --variable numbersections=true \
+                --variable title="$currentFileName" \
+                -M reference-section-title=References \
+                -M link-citations=true
+            fi
+
+            # Handle deletion of markdown file
+            if [ "$status" = "D" ]; then
+              # Delete the corresponding PDF and LaTeX files if they exist
+              if [ -f "pdf/$currentFileName.pdf" ]; then
+                echo "Deleting PDF: pdf/$currentFileName.pdf"
+                git rm -f "pdf/$currentFileName.pdf"
+              fi
+
+              if [ -f "latex/$currentFileName.tex" ]; then
+                echo "Deleting LaTeX: latex/$currentFileName.tex"
+                git rm -f "latex/$currentFileName.tex"
+              fi
+            fi
+            
+          done < markdown_changes.txt
+
+      - name: Commit PDF Changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          git add "pdf/*.pdf" "latex/*.tex"  # Include both new and deleted files
+          git commit -m "Added/Updated PDFs and LaTeX for modified markdown files, removed deleted files" || echo "No changes to commit"
+
+
+      - name: Push All Changes
+        run: |
+          git push
