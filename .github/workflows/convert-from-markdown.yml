@@ -31,22 +31,21 @@ jobs:
           echo "Current directory: $current_directory"
           git config --global --add safe.directory "$current_directory"
 
-      - name: Identify Modified Markdown Files
+      - name: Identify Modified Markdown Files in the Root Directory
         run: |
-          # Get a list of modified markdown files, including README.md
+          # Get a list of modified markdown files only in the root directory
           if [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
-            echo "First push to this branch. Listing all markdown files in the commit."
-            git show --name-status --pretty="" ${{ github.sha }} | grep '\.md$' > markdown_changes.txt
+            echo "First push to this branch. Listing all markdown files in the root directory."
+            git show --name-status --pretty="" ${{ github.sha }} | grep -E '^([A-Za-z0-9_-]+\.md)$' > markdown_changes.txt
           else
             if git cat-file -e ${{ github.event.before }}^{commit} 2>/dev/null; then
-              git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep '\.md$' > markdown_changes.txt
+              git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep -E '^([A-Za-z0-9_-]+\.md)$' > markdown_changes.txt
             else
               git fetch origin ${{ github.event.before }} --depth=1
-              git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep '\.md$' > markdown_changes.txt
+              git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep -E '^([A-Za-z0-9_-]+\.md)$' > markdown_changes.txt
             fi
           fi
           cat markdown_changes.txt
-        
 
       - name: Convert Modified and Handle Deleted Markdown Files
         run: |
