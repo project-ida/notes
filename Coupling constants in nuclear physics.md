@@ -131,10 +131,8 @@ $$
 $$
 
 $$
-\approx 10^{-6}
+\approx 10^{-6}).
 $$
-
-Based on this, we are far away from the deep strong coupling regime (where $U/\hbar \omega_A > 1$).
 
 ## Dicke enhancement
 
@@ -144,7 +142,7 @@ $$
 \frac{U}{\hbar \omega_A} \sim 10^{3}
 $$
 
-which places the system into the deep strong coupling regime.
+Based on this, we can be far into the "deep strong coupling" regime where $U/\hbar \omega_A > 1$.
 
 # Electric dipole coupling (E1 transitions)
 
