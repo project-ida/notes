@@ -92,7 +92,7 @@ The final value of $a$ depends on both the nuclear transition type and the speci
 If we use this simple Hamiltonian in which a single TLS interacts with a single phonon mode:
 
 $$
-H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(a^{\dagger}a +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
+H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(b^{\dagger}b +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
 $$
 
 then an $a \cdot cp$ coupling constant $U$ can be defined by combining Eq. $\ref{eq:p}$ (without the $\sqrt{n}$) with Eq. $\ref{eq:a}$:
