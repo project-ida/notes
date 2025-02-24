@@ -63,3 +63,10 @@ When the coupling is "ultra strong" in the sense that $\gamma_{\rm diss} \ll \om
 ## Deep strong coupling
 
 When $\gamma_{\rm diss} \ll \omega_1,\omega_2 \ll \omega_{\rm coupling}$ , the coupling dominates over everything else and we enter into a regime called "Deep strong coupling".  Energy transfer between the two pendulums is so fast that it's almost instantaneous and so it's not possible to move one pendulum without the other - they act as a single rigid body.
+
+# Two level systems
+
+$$
+H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(a^{\dagger}a +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
+$$
+
