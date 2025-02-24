@@ -1,0 +1,111 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{hyperref}
+\usepackage{ulem}  % For underlining links
+
+\hypersetup{
+    colorlinks=false,         % Disable colored links (boxes will appear)
+    citebordercolor=red,      % Border color for citation links
+    linkbordercolor=red,      % Border color for internal links
+    urlbordercolor=blue,      % Border color for external links (URLs)
+    pdfborder={0 0 2}         % Specifies the border thickness: {horizontal vertical thickness}
+}
+
+
+% Only underline external links (URLs)
+\let\oldhref\href
+\renewcommand{\href}[2]{\ifx#1\urlprefix\oldhref{#1}{#2}\else\uline{\oldhref{#1}{#2}}\fi}
+
+
+\renewcommand{\[}{\begin{equation}}
+\renewcommand{\]}{\end{equation}}
+
+
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[]{biblatex}
+\addbibresource{refs.bib}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\title{Tracks in CR-39}
+  \author{Matt Lilley}
+  \date{\today}  % Default to today if no date is provided
+
+\begin{document}
+\maketitle
+
+\section{What is CR-39}\label{what-is-cr-39}
+
+CR-39 (Columbia Resin \#39) is a lightweight, impact-resistant plastic
+polymer. It is a thermosetting plastic derived from allyl diglycol
+carbonate (ADC) monomers.
+
+When the ADC monomer (\(\rm C_{12} H_{18} O_7\)) is polymerised, the
+CR-39 structure contains allyl groups (\(\rm-CH_2-CH=CH_2\)) and
+carbonate (\(\rm -COO-\)) functional groups.
+
+\section{Radiation detection}\label{radiation-detection}
+
+\subsection{Charged particles}\label{charged-particles}
+
+When high-energy charged particles (e.g., alpha particles, protons, or
+heavy ions) pass through CR-39, they break chemical bonds along their
+path, creating latent damage tracks in the polymer. These tracks are
+invisible initially but weaken the polymer structure at those points.
+The tracks can be made visible through an etching process.
+
+When the exposed CR-39 is submerged in a chemical etchant (usually 6M
+NaOH or KOH at 60--70°C), the etching solution dissolves the damaged
+regions faster than the undamaged areas, making the tracks visible under
+a microscope. The resulting track diameter and shape provide information
+about the energy and type of radiation.
+
+\subsection{Neutrons}\label{neutrons}
+
+Although not charged, neutrons can be detected by CR-39 through an
+indirect mechanism.
+
+\printbibliography
+
+
+\end{document}
