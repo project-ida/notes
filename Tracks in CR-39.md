@@ -6,7 +6,7 @@ author: "Matt Lilley"
 
 CR-39 (Columbia Resin #39) is a lightweight, impact-resistant plastic polymer. It is a thermosetting plastic derived from allyl diglycol carbonate (ADC) monomers. 
 
-When the ADC monomer ($\rm C_{12} H_{18} O_7$) is polymerised, the CR-39 structure contains allyl groups ($\rm-CH₂-CH=CH_2$) and carbonate ($\rm -COO-$) functional groups.
+When the ADC monomer ($\rm C_{12} H_{18} O_7$) is polymerised, the CR-39 structure contains allyl groups ($\rm-CH_2-CH=CH_2$) and carbonate ($\rm -COO-$) functional groups.
 
 # Radiation detection
 
