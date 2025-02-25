@@ -99,8 +99,14 @@ literature}, the use the terms:
   Deep strong
 \end{itemize}
 
-To describe the different regimes. We'll begin with a classical example
-and use the quantum optics language
+to describe the different regimes.
+
+We'll begin with a classical example and use the quantum optics language
+above. We choose the example of coupled pendulums because it turns out
+each quantum state with a well defined energy behaves like it's own
+pendulum (see
+e.g.~\href{https://journals.aps.org/pra/abstract/10.1103/PhysRevA.85.052111}{Briggs
+et.al}).
 
 \section{A Classical example}\label{a-classical-example}
 
@@ -165,7 +171,9 @@ dissipation is small enough to allow energy to be slowly
 between the two pendulums}. The motion is characterised by individual
 swings happening with a frequency \(\approx \sqrt{g/l}\) where the
 amplitude of those swings gradually undulates on a timescale
-characterised by \(\omega_{\rm exchange} = k/2m\omega_p\).
+characterised by \(\omega_{\rm exchange} = k/2m\omega_p\). This exchange
+happens most effectively when the pendulums have the same length, so
+that their natural frequencies are the same .
 
 Strong coupling allows us to still conceptually consider the pendulums
 as having well defined identities in the sense that they have their own
@@ -175,7 +183,7 @@ the case.
 \subsection{Ultra strong coupling}\label{ultra-strong-coupling}
 
 When the coupling is ``ultra strong'' in the sense that
-\(\gamma_{\rm diss} \ll \omega_{\rm coupling} \sim \omega_1,\omega_2\),
+\(\gamma_{\rm diss} \ll \omega_{\rm coupling} \sim 0.1\times  \omega_1,\omega_2\),
 energy exchange happens on the time scale of a single swing of one of
 the pendulums. The two natural natural frequencies can be noticeably
 discerned, \(\omega_+ = \sqrt{g/l}\) when both pendulums move ``in
@@ -183,21 +191,151 @@ phase'' (the spring is not stretched) with one another and
 \(\omega_- = \sqrt{g/l + 2k/m}\) when the pendulums move ``out of
 phase''.
 
+The coupling is getting strong enough so that more energy can be
+exchanged between pendulums of different lengths.
+
+This exact boundary for this regime is somewhat artificial - there is
+nothing particularly special about the value
+\(0.1 \omega_{\rm 1}, \omega_2\). This value was first used as part of
+the quantum optics literature.
+
 \subsection{Deep strong coupling}\label{deep-strong-coupling}
 
-When
-\(\gamma_{\rm diss} \ll \omega_1,\omega_2 \ll \omega_{\rm coupling}\) ,
-the coupling dominates over everything else and we enter into a regime
-called ``Deep strong coupling''. Energy transfer between the two
-pendulums is so fast that it's almost instantaneous and so it's not
+When \(\gamma_{\rm diss} \ll \omega_1,\omega_2 < \omega_{\rm coupling}\)
+, the coupling begins to dominate over everything else and we enter into
+a regime called ``Deep strong coupling''. Energy transfer between the
+two pendulums is so fast that it's almost instantaneous and so it's not
 possible to move one pendulum without the other - they act as a single
 rigid body.
 
-\section{Two level systems}\label{two-level-systems}
+\section{A quantum example}\label{a-quantum-example}
+
+A canonical quantum example is a single two level system (TLS)
+interacting with a quantised field. The Hamiltonian can be written as:
+\[
+H = \frac{\Delta E}{2} \sigma_z + \hbar\omega\left(b^{\dagger}b +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
+\label{eq:H}
+\]
+
+where \(\Delta E\) is the transition energy between the 2 levels of the
+TLS, \(\hbar\omega\) is the energy of each quantum of the field, and
+\(U\) is the coupling constant between the TLS and the field. The
+\(\sigma\) operators are the Pauli matrices and \(b^{\dagger}\), \(b\)
+are the field creation and annihilation operators respectively.
+
+Although a TLS has just 2 states (denoted \(|\pm\rangle\)), the
+quantised field has infinitely many states (denoted by the number of
+quanta \(|n\rangle\)). The combined state of the system (denoted
+\(|n, \pm\rangle\)) therefore has infinitely many states and so
+conceptually the system behaves like infinitely many pendulums coupled
+together. The frequency of these conceptual pendulums is determined by
+the energy of the states.
+
+Much like the classical example, the dynamics depend on the relative
+sizes of the different terms in the Hamiltonian. For the quantum case
+however, it's not enough just to compare the various constants
+\(U, \hbar \omega, \Delta E\), we must also consider how many field
+quanta \(n\) we have. This is because of how the field operators work:
+\[
+b^{\dagger} |n,\pm\rangle = \sqrt{n+1}|n+1,\pm\rangle \\
+\]
 
 \[
-H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(a^{\dagger}a +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
+b^{} |n,\pm\rangle = \sqrt{n}|n-1,\pm\rangle \\
 \]
+
+\[
+b^{\dagger}b |n,\pm\rangle = n|n,\pm\rangle
+\]
+
+The more field quanta we have, the larger the field and coupling terms
+will be compared to the TLS term.
+
+\subsection{Weak coupling}\label{weak-coupling-1}
+
+Much like the classical pendulums, the quantum states can suffer various
+forms of ``dissipation''. As the quantum systems interacts with outside
+systems, it can cause:
+
+\begin{itemize}
+\tightlist
+\item
+  Dephasing - where the phase relationship between each of the quantum
+  states starts to change over time
+\item
+  Decoherence - the system is forced out of a superposition state and
+  into a well defined state aka ``collapse of the wavefunciton''
+\end{itemize}
+
+If we define \(\hbar\gamma_{\rm diss}\) as a characteristic energy
+associated with the above processes, then
+\(U \ll \hbar \gamma_{\rm diss} \ll \Delta E , \hbar \omega\) defines
+the weak coupling regime. Spontaneous emission is the most
+characteristic feature of weak coupling where an excited TLS with less
+field quanta (e.g.~\(|0,+\rangle\)) is coupled to a ground state TLS
+with more field quanta (e.g.~\(|1,-\rangle\) ). The coupling is however
+not so strong that the field quanta can get reabsorbed.
+
+\begin{quote}
+Note that truly irreversible spontaneous emission also relies on there
+being a continuum of states instead of discrete ones.
+\end{quote}
+
+\subsection{Strong coupling}\label{strong-coupling-1}
+
+As in the classical case, when the coupling is strong in the sense that
+\(\hbar\gamma_{\rm diss} \ll U \ll \Delta E , \hbar \omega\), there is
+time for slow exchange between the different quantum states (remember
+each state is like it's own pendulum). Unlike the classical case, where
+it's energy that's exchanged, in the quantum case it's state occupation
+probability \(|\psi|^2\) that's exchanged.
+
+In order for exchange to occur effectively, the quantum states have to
+have the same energy. This is equivalent to the conceptual pendulums
+having the same length. Two such states are often described as
+``resonant'' with one another. Whether or not the system has any
+resonances depends on the relationship between \(\hbar \omega\) and
+\(\Delta E\).
+
+\subsubsection{Matched field and TLS}\label{matched-field-and-tls}
+
+When the field is matched to the TLS, \(\Delta E = \hbar\omega\). This
+is the most widely discussed regime in which a transition of the TLS
+(often an atomic transition) results in the emission of a single field
+quanta (often a photon). In a cavity where discrete states can be
+arranged and field quanta can be confined, this results in occupation
+probability oscillating between states like \(|0,+\rangle\) and
+\(|1,-\rangle\). These oscillations are called
+\href{https://en.wikipedia.org/wiki/Jaynes\%E2\%80\%93Cummings_model\#Vacuum_Rabi_oscillations}{Rabi
+oscillations} which have a frequency \(\Omega \sim U/\hbar\omega\)
+
+\subsubsection{Mismatched field and TLS}\label{mismatched-field-and-tls}
+
+When the field is mismatched to the TLS, \(\Delta E \neq \hbar\omega\) .
+If the mismatch is arbitrary, e.g.~\(\Delta E/ \hbar\omega = 3.23677\)
+then Rabi oscillations won't occur and, in a cavity, a system
+initialised in state \(|0,+\rangle\) will stay there forever.
+
+However, if \(\Delta E = m \hbar\omega\) where \(m=3, 5, 7 ...\) then
+\(|0,+\rangle\) is resonant with \(|3,-\rangle\), \(|5,-\rangle\),
+\(|7,-\rangle ...\) and so Rabi oscillations can once again occur. The
+frequency is slower \(\Omega \sim (U/\hbar\omega)^m\) for larger \(m\)
+and so the emission of multiple quanta becomes less and less likely.
+
+\subsection{Ultra strong coupling}\label{ultra-strong-coupling-1}
+
+When the coupling becomes a sizeable fraction of the TLS and field
+energies,
+\(\hbar\gamma_{\rm diss} \ll U \sim 0.1 \times \Delta E , \hbar \omega\),
+non-resonant states begin to gain significant occupancy. For example, a
+system can start out in state \(|0,+\rangle\) with 100\% probability and
+overtime a state \(|1,+\rangle\) can gain a non-trivial amount of
+occupation probability. Although this superficially appears to violate
+energy conservation, the energy in the coupling is no longer small and
+so all terms in the Hamiltonian need to be considered when thinking
+about energy conservation.
+
+\subsection{Deep strong coupling}\label{deep-strong-coupling-1}
 
 \printbibliography
 
