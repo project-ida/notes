@@ -24,6 +24,7 @@ For example, consider two identical pendulums of length $l$ and mass $m$ connect
 $$
 H = \frac{m l^2}{2} \dot{\theta}_1^2 + \frac{m g l}{2} \theta_1^2 + \frac{m l^2}{2} \dot{\theta}_2^2 + \frac{m g l}{2} \theta_2^2 + \frac{1}{2} k l^2(\theta_1 - \theta_2)^2
 $$
+
 The first four terms are the simple sum of each individual pendulum. The third term arrises due to the coupling.
 
 More abstractly, we can write:
@@ -73,6 +74,7 @@ When $\gamma_{\rm diss} \ll \omega_1,\omega_2 \lesssim \omega_{\rm coupling}$ , 
 # A quantum example
 
 A canonical quantum example is a single two level system (TLS) interacting with a quantised field. The Hamiltonian can be written as:
+
 $$
 H = \frac{\Delta E}{2} \sigma_z + \hbar\omega\left(b^{\dagger}b +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
 \label{eq:H}
@@ -83,6 +85,7 @@ where $\Delta E$ is the transition energy between the 2 levels of the TLS, $\hba
 Although a TLS has just 2 states (denoted $|\pm\rangle$), the quantised field has infinitely many states (denoted by the number of quanta $|n\rangle$). The combined state of the system (denoted $|n, \pm\rangle$) therefore has infinitely many states and so conceptually the system behaves like infinitely many pendulums coupled together. The frequency of these conceptual pendulums is determined by the energy of the states.
 
 Much like the classical example, the dynamics depend on the relative sizes of the different terms in the Hamiltonian. For the quantum case however, it's not enough just to compare the various constants $U, \hbar \omega, \Delta E$, we must also consider how many field quanta $n$ we have. This is because of how the field operators work:
+
 $$
 b^{\dagger} |n,\pm\rangle = \sqrt{n+1}|n+1,\pm\rangle \\
 $$
@@ -131,3 +134,4 @@ When the coupling becomes a sizeable fraction of the TLS and field energies, $\h
 ## Deep strong coupling
 
 This regime was first theoretically explored in [2010 by Casanova at.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.263603). It's defined by $\hbar\gamma_{\rm diss} \ll \Delta E , \hbar \omega \lesssim U$ where the coupling is now plays an equal role as the TLS and the oscillator. In this regime, the TLS and the oscillator can't conceptually be separated - they don't have well defined identities anymore. Energy can move between the oscillator and TLS freely in the sense that we're no longer bound by strict resonance requirements between the TLS and the oscillator.
+
