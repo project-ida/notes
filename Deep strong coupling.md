@@ -68,7 +68,7 @@ This exact boundary for this regime is somewhat artificial - there is nothing pa
 
 ## Deep strong coupling
 
-When $\gamma_{\rm diss} \ll \omega_1,\omega_2 < \omega_{\rm coupling}$ , the coupling begins to dominate over everything else and we enter into a regime called "Deep strong coupling".  Energy transfer between the two pendulums is so fast that it's almost instantaneous and so it's not possible to move one pendulum without the other - they act as a single rigid body.
+When $\gamma_{\rm diss} \ll \omega_1,\omega_2 \lesssim \omega_{\rm coupling}$ , the coupling begins to dominate over everything else and we enter into a regime called "Deep strong coupling".  Energy transfer between the two pendulums is so fast that it's almost instantaneous and so it's not possible to move one pendulum without the other - they act as a single rigid body.
 
 # A quantum example
 
@@ -104,25 +104,25 @@ Much like the classical pendulums, the quantum states can suffer various forms o
 - Dephasing - where the phase relationship between each of the quantum states starts to change over time
 - Decoherence - the system is forced out of a superposition state and into a well defined state aka "collapse of the wavefunciton"
 
-If we define $\hbar\gamma_{\rm diss}$  as a characteristic energy associated with the above processes, then $U \ll \hbar \gamma_{\rm diss} \ll \Delta E , \hbar \omega$ defines the weak coupling regime. Spontaneous emission is the most characteristic feature of weak coupling where an excited TLS with less field quanta (e.g. $|0,+\rangle$) is coupled to a ground state TLS with more field quanta (e.g. $|1,-\rangle$ ). The coupling is however not so strong that the field quanta can get reabsorbed.
+If we define $\hbar\gamma_{\rm diss}$  as a characteristic energy associated with the above processes, then $\sqrt{n}U \ll \hbar \gamma_{\rm diss} \ll \Delta E , n\hbar \omega$ defines the weak coupling regime. Spontaneous emission is the most characteristic feature of weak coupling where an excited TLS with less field quanta (e.g. $|n,+\rangle$) is coupled to a ground state TLS with more field quanta (e.g. $|n+1,-\rangle$ ). The coupling is however not so strong that the field quanta can get reabsorbed.
 
 > Note that truly irreversible spontaneous emission also relies on there being a continuum of states instead of discrete ones.
 
 ## Strong coupling
 
-As in the classical case, when the coupling is strong in the sense that $\hbar\gamma_{\rm diss} \ll U \ll \Delta E , \hbar \omega$, there is time for slow exchange between the different quantum states (remember each state is like it's own pendulum).  Unlike the classical case, where it's energy that's exchanged, in the quantum case it's state occupation probability $|\psi|^2$ that's exchanged. 
+As in the classical case, when the coupling is strong in the sense that $\hbar\gamma_{\rm diss} \ll \sqrt{n}U \ll \Delta E , n\hbar \omega$, there is time for slow exchange between the different quantum states (remember each state is like it's own pendulum).  Unlike the classical case, where it's energy that's exchanged, in the quantum case it's state occupation probability $|\psi|^2$ that's exchanged. 
 
 In order for exchange to occur effectively, the quantum states have to have the same energy. This is equivalent to the conceptual pendulums having the same length. Two such states are often described as "resonant" with one another. Whether or not the system has any resonances depends on the relationship between $\hbar \omega$ and $\Delta E$.
 
 ### Matched field and TLS
 
-When the field is matched to the TLS, $\Delta E = \hbar\omega$. This is the most widely discussed regime in which a transition of the TLS (often an atomic transition) results in the emission of a single field quanta (often a photon). In a cavity where discrete states can be arranged and field quanta can be confined, this results in occupation probability oscillating between states like $|0,+\rangle$ and  $|1,-\rangle$. These oscillations are called [Rabi oscillations](https://en.wikipedia.org/wiki/Jaynes%E2%80%93Cummings_model#Vacuum_Rabi_oscillations) which have a frequency $\Omega \sim U/\hbar\omega$
+When the field is matched to the TLS, $\Delta E = \hbar\omega$. This is the most widely discussed regime in which a transition of the TLS (often an atomic transition) results in the emission of a single field quanta (often a photon). In a cavity where discrete states can be arranged and field quanta can be confined, this results in occupation probability oscillating between states like $|n,+\rangle$ and  $|n+1,-\rangle$. These oscillations are called [Rabi oscillations](https://en.wikipedia.org/wiki/Jaynes%E2%80%93Cummings_model#Vacuum_Rabi_oscillations) which have a frequency $\Omega/\hbar\omega \sim \sqrt{n}U/\hbar\omega$
 
 ### Mismatched field and TLS
 
-When the field is mismatched to the TLS, $\Delta E \neq \hbar\omega$ . If the mismatch is arbitrary, e.g. $\Delta E/ \hbar\omega = 3.23677$ then Rabi oscillations won't occur and, in a cavity, a system initialised in state $|0,+\rangle$ will stay there forever.
+When the field is mismatched to the TLS, $\Delta E \neq \hbar\omega$ . If the mismatch is arbitrary, e.g. $\Delta E/ \hbar\omega = 3.23677$ then Rabi oscillations won't occur and, in a cavity, a system initialised in state $|n,+\rangle$ will stay there forever.
 
-However, if $\Delta E = m \hbar\omega$ where $m=3, 5, 7 ...$ then $|0,+\rangle$ is resonant with $|3,-\rangle$, $|5,-\rangle$, $|7,-\rangle ...$  and so Rabi oscillations can once again occur. The frequency is slower $\Omega \sim (U/\hbar\omega)^m$ for larger $m$ and so the emission of multiple quanta becomes less and less likely.
+However, if $\Delta E = m \hbar\omega$ where $m=3, 5, 7 ...$ then $|n,+\rangle$ is resonant with $|n+3,-\rangle$, $|n+5,-\rangle$, $|n+7,-\rangle ...$  and so Rabi oscillations can once again occur. The frequency is slower $\Omega/\hbar\omega \sim (\sqrt{n}U/\hbar\omega)^m$ and so for larger $m$ and so the emission of multiple quanta becomes less and less likely.
 
 ## Ultra strong coupling
 
@@ -130,5 +130,4 @@ When the coupling becomes a sizeable fraction of the TLS and field energies, $\h
 
 ## Deep strong coupling
 
-
-
+This regime was first theoretically explored in [2010 by Casanova at.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.263603). It's defined by $\hbar\gamma_{\rm diss} \ll \Delta E , \hbar \omega \lesssim U$ where the coupling is now plays an equal role as the TLS and the oscillator. In this regime, the TLS and the oscillator can't conceptually be separated - they don't have well defined identities anymore. Energy can move between the oscillator and TLS freely in the sense that we're no longer bound by strict resonance requirements between the TLS and the oscillator.
