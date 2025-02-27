@@ -28,6 +28,7 @@ $$
 The first four terms are the simple sum of each individual pendulum. The third term arrises due to the coupling.
 
 More abstractly, we can write:
+
 $$
 H = H_1 + H_2+ V_{\text{coupling}}
 $$
@@ -113,25 +114,63 @@ If we define $\hbar\gamma_{\rm diss}$  as a characteristic energy associated wit
 
 ## Strong coupling
 
-As in the classical case, when the coupling is strong in the sense that $\hbar\gamma_{\rm diss} \ll \sqrt{n}U \ll \Delta E , n\hbar \omega$, there is time for slow exchange between the different quantum states (remember each state is like it's own pendulum).  Unlike the classical case, where it's energy that's exchanged, in the quantum case it's state occupation probability $|\psi|^2$ that's exchanged. 
+As in the classical case, when the coupling is strong in the sense that $\hbar\gamma_{\rm diss} \ll \sqrt{n}U \ll \Delta E , \hbar \omega$, there is time for slow exchange between the different quantum states (remember each state is like it's own pendulum).  Unlike the classical case, where it's energy that's exchanged, in the quantum case it's state occupation probability $|\psi|^2$ that's exchanged. 
 
-In order for exchange to occur effectively, the quantum states have to have the same energy. This is equivalent to the conceptual pendulums having the same length. Two such states are often described as "resonant" with one another. Whether or not the system has any resonances depends on the relationship between $\hbar \omega$ and $\Delta E$.
+In order for exchange to occur effectively, the quantum states need to have the same energy. This is equivalent to the conceptual pendulums having the same length. Two such states are often described as "resonant" with one another. Whether or not the system has any resonances depends on the relationship between $\hbar \omega$ and $\Delta E$.
 
 ### Matched field and TLS
 
-When the field is matched to the TLS, $\Delta E = \hbar\omega$. This is the most widely discussed regime in which a transition of the TLS (often an atomic transition) results in the emission of a single field quanta (often a photon). In a cavity where discrete states can be arranged and field quanta can be confined, this results in occupation probability oscillating between states like $|n,+\rangle$ and  $|n+1,-\rangle$. These oscillations are called [Rabi oscillations](https://en.wikipedia.org/wiki/Jaynes%E2%80%93Cummings_model#Vacuum_Rabi_oscillations) which have a frequency $\Omega/\hbar\omega \sim \sqrt{n}U/\hbar\omega$
+When the field is matched to the TLS, $\Delta E = \hbar\omega$. This is the most widely discussed regime in which a transition of the TLS (often an atomic transition) results in the emission of a single field quantum (often a photon). In a cavity where discrete states can be arranged and field quanta can be confined, this results in occupation probability oscillating between states like $|n,+\rangle$ and  $|n+1,-\rangle$. These oscillations are called [Rabi oscillations](https://en.wikipedia.org/wiki/Jaynes%E2%80%93Cummings_model#Vacuum_Rabi_oscillations) which have a frequency $\Omega/\hbar\omega \sim \sqrt{n}U/\hbar\omega$
 
 ### Mismatched field and TLS
 
-When the field is mismatched to the TLS, $\Delta E \neq \hbar\omega$ . If the mismatch is arbitrary, e.g. $\Delta E/ \hbar\omega = 3.23677$ then Rabi oscillations won't occur and, in a cavity, a system initialised in state $|n,+\rangle$ will stay there forever.
+When the field is mismatched to the TLS, $\Delta E \neq \hbar\omega$ . If the mismatch is arbitrary, e.g. $\Delta E/ \hbar\omega = 2.83677$ then Rabi oscillations cannot occur because the coupling term ($\sim \sqrt{n}U$) is still very small compared to $\Delta E$ and $\hbar\omega$ and so it cannot accommodate any energy mismatch.
 
-However, if $\Delta E = m \hbar\omega$ where $m=3, 5, 7 ...$ then $|n,+\rangle$ is resonant with $|n+3,-\rangle$, $|n+5,-\rangle$, $|n+7,-\rangle ...$  and so Rabi oscillations can once again occur. The frequency is slower $\Omega/\hbar\omega \sim (\sqrt{n}U/\hbar\omega)^m$ and so for larger $m$ and so the emission of multiple quanta becomes less and less likely.
+If however, $\Delta E = m\hbar \omega$ where $m=3, 5, 7 ...$ then  $|n,+\rangle$ is resonant with,  $|n+3,-\rangle$, $|n+5,-\rangle$, $|n+7,-\rangle ...$  and so Rabi oscillations can once again occur. The frequency is slower $\Omega/\hbar\omega \sim (\sqrt{n}U/\hbar\omega)^m$ and so for larger $m$ the emission of multiple quanta becomes less and less likely.
 
 ## Ultra strong coupling
 
-When the coupling becomes a sizeable fraction of the TLS and field energies, $\hbar\gamma_{\rm diss} \ll U \sim 0.1 \times \Delta E , \hbar \omega$, non-resonant states begin to gain significant occupancy. For example, a system can start out in state $|0,+\rangle$ with 100% probability and overtime a state $|1,+\rangle$ can gain a non-trivial amount of occupation probability. Although this superficially appears to violate energy conservation, the energy in the coupling is no longer small and so all terms in the Hamiltonian need to be considered when thinking about energy conservation.
+When the coupling becomes a sizeable fraction of the TLS and field quantum, $\hbar\gamma_{\rm diss} \ll \sqrt{n}U \sim 0.1 \times \Delta E , \hbar \omega$, non-resonant states begin to gain significant occupancy. For example, a system can start out in state $|0,+\rangle$ with 100% probability and overtime a state $|1,+\rangle$ can gain a non-trivial amount of occupation probability. Although this superficially appears to violate energy conservation, the energy in the coupling is no longer small and so all terms in the Hamiltonian need to be considered when thinking about energy conservation.
+
+The coupling term can also accommodate energy mismatches between the TLS and the oscillator, e.g. $\Delta E/ \hbar\omega = 2.83677$ vs $\Delta E/ \hbar\omega = 3$. This makes it easier to observe the emission of multiple quanta.
 
 ## Deep strong coupling
 
-This regime was first theoretically explored in [2010 by Casanova at.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.263603). It's defined by $\hbar\gamma_{\rm diss} \ll \Delta E , \hbar \omega \lesssim U$ where the coupling is now plays an equal role as the TLS and the oscillator. In this regime, the TLS and the oscillator can't conceptually be separated - they don't have well defined identities anymore. Energy can move between the oscillator and TLS freely in the sense that we're no longer bound by strict resonance requirements between the TLS and the oscillator.
+When the coupling becomes on the same order or greater than the TLS and field quantum $\hbar\gamma_{\rm diss} \ll \Delta E , \hbar \omega \lesssim \sqrt{n}U$, then TLS transitions and creation/annihilation of field quanta can no longer be understood by thinking about the TLS and field exchanging energy with each other.
 
+This regime was first theoretically explored in [2010 by Casanova at.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.263603) where a simpler definition of "deep strong coupling" was given as $U/\hbar\omega \gtrsim 1$. Indeed, if their condition is satisfied then $\hbar \omega \lesssim \sqrt{n}U$ is guaranteed.
+
+Let's imagine that we have $U/\hbar\omega \gtrsim 1$, then the coupling term can spontaneously create quanta without requiring energy to come from the TLS.  As a quanta gets created, then $n$ increases which means the coupling term $\sim \sqrt{n}U$ increases which means more quanta can be made. We can figure out how many can be made by equating the field terms and coupling terms in the Hamiltonian:
+
+$$
+n\hbar\omega = \sqrt{n}U
+$$
+
+This gives us:
+
+$$
+n = \left(\frac{U}{\hbar\omega}\right)^2
+$$
+
+This is what's called a superradiant phase transition - above a certain coupling the system can go from having no field quanta to having many.
+
+For the case when $\Delta E < \hbar \omega$ the phase transition happens when  $U/\hbar\omega = 1$. 
+
+When $\Delta E \gtrsim \hbar \omega$ we have to also consider another balance of terms in the Hamiltonian:
+
+$$
+\Delta E = \sqrt{n}U
+$$
+
+We can substitute the value of $n$ to give:
+
+$$
+\Delta E = \frac{U^2}{\hbar\omega}
+$$
+
+And so the critical coupling is then:
+
+$$
+U = \sqrt{\Delta E \hbar\omega} \\
+\frac{U}{\hbar\omega} = \sqrt{\frac{\Delta E}{\hbar\omega}}
+$$
