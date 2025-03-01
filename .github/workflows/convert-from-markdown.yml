@@ -34,17 +34,22 @@ jobs:
       - name: Identify Modified Markdown Files
         run: |
           # Get a list of modified markdown files, including README.md
+          echo "Before SHA: ${{ github.event.before }}"
+          echo "Current SHA: ${{ github.sha }}"
           if [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
             echo "First push to this branch. Listing all markdown files in the commit."
-            git show --name-status --pretty="" ${{ github.sha }} | grep '\.md$' > markdown_changes.txt
+            git show --name-status --pretty="" ${{ github.sha }} | grep '\.md$' | grep -v -E '(pandoc|latex|pdf)/' > markdown_changes.txt || echo "Changes to md files in pandoc/latex/pdf folders"
           else
             if git cat-file -e ${{ github.event.before }}^{commit} 2>/dev/null; then
-              git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep '\.md$' > markdown_changes.txt
+              echo "Previous commit exists locally, running diff."
+              git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep '\.md$' | grep -v -E '(pandoc|latex|pdf)/' > markdown_changes.txt || echo "Changes to md files in pandoc/latex/pdf folders"
             else
-              git fetch origin ${{ github.event.before }} --depth=1
-              git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep '\.md$' > markdown_changes.txt
+              echo "Fetching origin for previous commit ${{ github.event.before }}."
+              git fetch origin ${{ github.event.before }} --depth=1 || echo "git fetch failed"
+              git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep '\.md$' | grep -v -E '(pandoc|latex|pdf)/' > markdown_changes.txt || echo "Changes to md files in pandoc/latex/pdf folders"
             fi
           fi
+          echo "Contents of markdown_changes.txt:"
           cat markdown_changes.txt
         
 
