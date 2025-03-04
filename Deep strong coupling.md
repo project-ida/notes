@@ -138,7 +138,7 @@ The coupling term can also accommodate energy mismatches between the TLS and the
 
 When the coupling becomes on the same order or greater than the TLS and field quantum $\hbar\gamma_{\rm diss} \ll \Delta E , \hbar \omega \lesssim \sqrt{n}U$, then TLS transitions and creation/annihilation of field quanta can no longer be understood by simply thinking about the TLS and field exchanging energy with each other and the coupling as a kind of glue between the two. The coupling term has an "identity" all of its own.
 
-This regime was first theoretically explored in [2010 by C/asanova at.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.263603) where a simpler definition of "deep strong coupling" was given as:
+This regime was first theoretically explored in [2010 by Casanova at.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.263603) where a simpler definition of "deep strong coupling" was given as:
 
 $$
 \frac{U}{\hbar\omega} \gtrsim 1
@@ -173,12 +173,16 @@ $$
 Eq. $\ref{eq:couplingbalancefield}$ and Eq. $\ref{eq:couplingbalancetls}$ can be solved simultaneously to eliminate $n$. This gives us a relationship between $U,\Delta E,\hbar\omega$:
 
 $$
-\Delta E \sim \sqrt{\left(\frac{U}{\hbar\omega}\right)^2}U \\
-\Delta E\sim \frac{U^2}{\hbar\omega} \\
-U \sim \sqrt{\Delta E \hbar\omega} \\
-\frac{U}{\hbar\omega} \sim \sqrt{\frac{\Delta E}{\hbar\omega}}
+\begin{aligned}
+\Delta E &\sim \sqrt{\left(\frac{U}{\hbar\omega}\right)^2}U \\
+\Delta E &\sim \frac{U^2}{\hbar\omega} \\
+U &\sim \sqrt{\Delta E \hbar\omega} \\
+\frac{U}{\hbar\omega} &\sim \sqrt{\frac{\Delta E}{\hbar\omega}}
+\end{aligned}
 \label{eq:uconstraint}
 $$
+
+
 For the case when the TLS energy dominates over the field, $\Delta E \gg \hbar \omega$, Eq. $\ref{eq:uconstraint}$ is a more appropriate coupling threshold to consider than Eq. $\ref{eq:deepstrongcoupling}$. This regime is sometimes called "dispersive deep strong coupling" as was first coined by [Felicetti et.al in 2017](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.95.013827). Again, when you do the detailed maths, you get an extra constant so that:
 
 $$
