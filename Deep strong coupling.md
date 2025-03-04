@@ -136,41 +136,76 @@ The coupling term can also accommodate energy mismatches between the TLS and the
 
 ## Deep strong coupling
 
-When the coupling becomes on the same order or greater than the TLS and field quantum $\hbar\gamma_{\rm diss} \ll \Delta E , \hbar \omega \lesssim \sqrt{n}U$, then TLS transitions and creation/annihilation of field quanta can no longer be understood by thinking about the TLS and field exchanging energy with each other.
+When the coupling becomes on the same order or greater than the TLS and field quantum $\hbar\gamma_{\rm diss} \ll \Delta E , \hbar \omega \lesssim \sqrt{n}U$, then TLS transitions and creation/annihilation of field quanta can no longer be understood by simply thinking about the TLS and field exchanging energy with each other and the coupling as a kind of glue between the two. The coupling term has an "identity" all of its own.
 
-This regime was first theoretically explored in [2010 by Casanova at.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.263603) where a simpler definition of "deep strong coupling" was given as $U/\hbar\omega \gtrsim 1$. Indeed, if their condition is satisfied then $\hbar \omega \lesssim \sqrt{n}U$ is guaranteed.
+This regime was first theoretically explored in [2010 by Casanova at.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.263603) where a simpler definition of "deep strong coupling" was given as:
+$$
+\frac{U}{\hbar\omega} \gtrsim 1
+\label{eq:deepstrongcoupling}
+$$
 
-Let's imagine that we have $U/\hbar\omega \gtrsim 1$, then the coupling term can spontaneously create quanta without requiring energy to come from the TLS.  As a quanta gets created, then $n$ increases which means the coupling term $\sim \sqrt{n}U$ increases which means more quanta can be made. We can figure out how many can be made by equating the field terms and coupling terms in the Hamiltonian:
+
+ Indeed, if their condition is satisfied then $\hbar \omega \lesssim \sqrt{n}U$ is guaranteed.
+
+Let's first consider the case (as Casanova did) that the TLS energy is small in the sense that  $\Delta E < \hbar \omega$. If the coupling is in the deep storing regime so that $U/\hbar\omega \gtrsim 1$ then, from an energy conservation point of view, the coupling term can spontaneously create field quanta. When a quanta gets created, then $n$ increases which means the coupling term $\sim \sqrt{n}U$ increases which means more quanta can be made. We can figure out how many can be made by equating the field energy to the coupling energy in the Hamiltonian:
 
 $$
-n\hbar\omega = \sqrt{n}U
+n\hbar\omega \sim \sqrt{n}U
+\label{eq:couplingbalancefield}
 $$
 
 This gives us:
 
 $$
-n = \left(\frac{U}{\hbar\omega}\right)^2
+n \sim \left(\frac{U}{\hbar\omega}\right)^2
+\label{eq:selfconsistentn}
 $$
 
-This is what's called a superradiant phase transition - above a certain coupling the system can go from having no field quanta to having many.
+When you work out the detailed maths, you end up with $n = 4(U/\hbar\omega)^2$. 
 
-For the case when $\Delta E < \hbar \omega$ the phase transition happens when  $U/\hbar\omega = 1$. 
-
-When $\Delta E \gtrsim \hbar \omega$ we have to also consider another balance of terms in the Hamiltonian:
-
+When the TLS energy is not small ($\Delta E \gtrsim \hbar \omega$) then there is an additional energy equivalence to consider:
 $$
-\Delta E = \sqrt{n}U
+\Delta E \sim \sqrt{n}U
+\label{eq:couplingbalancetls}
 $$
 
-We can substitute the value of $n$ to give:
+Eq. $\ref{eq:couplingbalancefield}$ and Eq. $\ref{eq:couplingbalancetls}$ can be solved simultaneously to eliminate $n$. This gives us a relationship between $U,\Delta E, \hbar\omega$:
+$$
+\Delta E \sim \sqrt{\left(\frac{U}{\hbar\omega}\right)^2}U \\
+
+\Delta E \sim \frac{U^2}{\hbar\omega} \\
+\Delta E\sim \frac{U^2}{\hbar\omega} \\
+U \sim \sqrt{\Delta E \hbar\omega} \\
+\frac{U}{\hbar\omega} \sim \sqrt{\frac{\Delta E}{\hbar\omega}}
+\label{eq:uconstraint}
+$$
+For the case when the TLS energy dominates over the field, $\Delta E \gg \hbar \omega$, Eq. $\ref{eq:uconstraint}$ is a more appropriate coupling threshold to consider than Eq. $\ref{eq:deepstrongcoupling}$. This regime is sometimes called "dispersive deep strong coupling" as was first coined by [Felicetti et.al in 2017](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.95.013827). Again, when you do the detailed maths, you get an extra constant so that:
 
 $$
-\Delta E = \frac{U^2}{\hbar\omega}
+\frac{U}{\hbar\omega} \gtrsim \frac{1}{2}\sqrt{\frac{\Delta E}{\hbar\omega}}
+\label{eq:superradianttransition}
 $$
 
-And so the critical coupling is then:
+In the extreme case when $\Delta E/\hbar\omega \rightarrow \infty$ then Eq. $\ref{eq:superradianttransition}$ represents a boundary of what's called a superradiant phase transition (detailed in [2015 by Hwang et.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.115.180404)). When you go above this critical coupling, the system undergoes a phase change where the lowest energy state is not with zero field quanta but a finite number of them.
+
+### Relativistic phonon nuclear coupling
+
+For acoustic phonons, we choose a notation $\omega \equiv \omega_A$. From notes on `Coupling constants in nuclear physics`, we derived:
 
 $$
-U = \sqrt{\Delta E \hbar\omega} \\
-\frac{U}{\hbar\omega} = \sqrt{\frac{\Delta E}{\hbar\omega}}
+\frac{U}{\hbar \omega_A} = \sqrt{\frac{2}{N}} \sqrt{\frac{\Delta E}{M c^2}} \sqrt{\frac{\Delta E}{\hbar \omega_A}} \times 10^{-3}
+\label{eq:phononcoupling}
 $$
+
+where $N$ is the number of nuclei involved in the phonon motion, and $M$ is the mass of the nucleus.
+
+Typically, we imagine a phonon as being the quantised oscillatory motion of many nuclei in a lattice. However, it's possible to arrange systems in which the motion of an isolated nucleus is considered (see e.g. [Cat et.al 2021](https://www.nature.com/articles/s41467-021-21425-8)) - in which case $N=1$.
+
+Our example Hamiltonian in Eq. $\ref{eq:H}$ is for a single TLS, so we'll consider Eq. $\ref{eq:phononcoupling}$ with $N=1$. We'll extend the Hamiltonian to many TLS later on.
+
+Substituting the expression for coupling (Eq. $\ref{eq:phononcoupling}$) into the critical coupling expression (Eq. $\ref{eq:criticalcoupling}$) gives the following condition:
+
+$$
+\sqrt{2} \sqrt{\frac{\Delta E}{M c^2}}  \times 10^{-3} \ge 1
+$$
+
