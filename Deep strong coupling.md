@@ -190,11 +190,11 @@ $$
 \label{eq:superradianttransition}
 $$
 
-In the extreme case when $\Delta E/\hbar\omega \rightarrow \infty$ then Eq. $\ref{eq:superradianttransition}$ represents a boundary of what's called a superradiant phase transition (detailed in [2015 by Hwang et.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.115.180404)). When you go above this critical coupling, the system undergoes a phase change where the lowest energy state is not with zero field quanta but a finite number of them.
+In the extreme case when $\Delta E/\hbar\omega \rightarrow \infty$ then Eq. $\ref{eq:superradianttransition}$ represents a boundary of what's called a superradiant phase transition (detailed in [2015 by Hwang et.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.115.180404)). When you go above this critical coupling, the system undergoes a phase change where the lowest energy state involves a non-zero amount of field quanta. In other words, above this threshold the TLS freely exchanges energy with the field and the usual restrictions around having a matched TLS and field are not important. Superradiant phase transitions have been discussed for much longer times [in relation to the Dicke model](https://en.wikipedia.org/wiki/Dicke_model#Superradiant_transition_and_Dicke_superradiance) and we'll come back to look at this later on.
 
 ### Relativistic phonon nuclear coupling
 
-For acoustic phonons, we choose a notation $\omega \equiv \omega_A$. From notes on `Coupling constants in nuclear physics`, we derived:
+For acoustic phonons, we choose a notation $\omega \equiv \omega_A$. From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the relativistic phonon nuclear coupling as:
 
 $$
 \frac{U}{\hbar \omega_A} = \sqrt{\frac{2}{N}} \sqrt{\frac{\Delta E}{M c^2}} \sqrt{\frac{\Delta E}{\hbar \omega_A}} \times 10^{-3}
@@ -207,9 +207,69 @@ Typically, we imagine a phonon as being the quantised oscillatory motion of many
 
 Our example Hamiltonian in Eq. $\ref{eq:H}$ is for a single TLS, so we'll consider Eq. $\ref{eq:phononcoupling}$ with $N=1$. We'll extend the Hamiltonian to many TLS later on.
 
+For nuclear transitions mediated by phonons, $\Delta E \sim MeV$and $\hbar\omega_A \sim 10neV$ and so $\Delta E/\hbar\omega \gg 1$. Therefore, Eq. $\ref{eq:superradianttransition}$ is the appropriate superradiant threshold condition.
+
 Substituting the expression for coupling (Eq. $\ref{eq:phononcoupling}$) into the critical coupling expression (Eq. $\ref{eq:superradianttransition}$) gives the following condition:
 
 $$
-\sqrt{2} \sqrt{\frac{\Delta E}{M c^2}}  \times 10^{-3} \ge \frac{1}{2}
+\begin{aligned}
+2\frac{U}{\hbar\omega_A}\sqrt{\frac{\hbar\omega_A}{\Delta E}} &\gtrsim 1 \\
+2\sqrt{2} \sqrt{\frac{\Delta E}{M c^2}}  \times 10^{-3} &\ge 1
+\end{aligned}
+\label{eq:criticalphononcouplingexplicit}
 $$
 
+For nuclear transitions $\Delta E \sim MeV$  and for a single nucleon $Mc^2 \sim GeV$ so it's already clear that for any sized nucleus we won't enter the superradiant regime. For the sake of completeness, let's evaluate Eq. $\ref{eq:criticalphononcouplingexplicit}$ for a fusion transition with $\Delta E \approx 24MeV$ and for a palladium nucleus with  $Mc^2 \approx 100GeV$
+
+$$
+2\sqrt{2} \sqrt{\frac{24\times10^6}{10^{11}}}  \times 10^{-3} \approx 4 \times 10^{-5} \ll 1
+$$
+
+This confirms that a single nucleus cannot become superradiant using relativistic phonon nuclear coupling. Let's look at another type of coupling that's also associated with oscillatory phonon motion.
+
+
+### Electric dipole coupling
+
+For electric dipole coupling associated with an oscillating electric field driving phonon motion, we continue to use the notation $\omega \equiv \omega_A$. From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the electric dipole phonon coupling as:
+
+$$
+\frac{U}{\hbar \omega_A} = \frac{2\pi\sqrt{2}}{Z \sqrt{N}} \sqrt{\frac{M c^2}{\hbar \omega_A}} \frac{\hbar \omega_A}{E_L} A^{1/3} \times 6 \times 10^{-3}
+\label{eq:dipolecoupling}
+$$
+
+If we once again take $N=1$,  thens substituting the expression for coupling (Eq. $\ref{eq:dipolecoupling}$) into the critical coupling expression (Eq. $\ref{eq:superradianttransition}$) gives the following condition:
+
+$$
+\begin{aligned}
+2\frac{U}{\hbar\omega_A}\sqrt{\frac{\hbar\omega_A}{\Delta E}} &\gtrsim 1 \\
+\frac{4\pi\sqrt{2}}{Z} \sqrt{\frac{M c^2}{\Delta E}} \frac{\hbar \omega_A}{E_L} A^{1/3} \times 6 \times 10^{-3} &\gtrsim 1
+\end{aligned}
+\label{eq:criticaldipolecouplingexplicit}
+$$
+
+
+For palladium nuclear transitions mediated by acoustic phonons:
+
+- $A \approx 106$
+- $Z \approx 106$
+- $M c^2 \approx 10^{11}$ eV
+- $\Delta E \approx 24 \times 10^{6}$ eV  
+- $\hbar \omega_A \approx 10^{-8}$ eV
+
+The localization energy $E_L$ is:
+
+$$
+E_L = \frac{\hbar c}{R_0} = \frac{6.6 \times 10^{-34} \times 3 \times 10^8}{10^{-15}}
+$$
+
+$$
+= 2 \times 10^{-10} \text{ J} = 1.2 \times 10^9 \text{ eV} \approx 10^9 \text{ eV}
+$$
+
+And so evaluating Eq. $\ref{eq:criticaldipolecouplingexplicit}$ gives:
+
+$$
+\frac{4 \pi\sqrt{2} }{106} \times \sqrt{\frac{10^{11}}{24\times10^{6}}} \times \frac{10^{-8}}{10^9} \times 6 \times 10^{-3} \times 106^{1/3} \approx 3\times 10^{-18} \ll 1
+$$
+
+And so we're even further away from the superradiant regime when considering the electric dipole coupling associated with the phonon motion.
