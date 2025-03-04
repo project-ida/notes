@@ -131,7 +131,7 @@ $$
 $$
 
 $$
-\approx 10^{-6}).
+\approx 10^{-6}
 $$
 
 ## Dicke enhancement
