@@ -174,8 +174,6 @@ Eq. $\ref{eq:couplingbalancefield}$ and Eq. $\ref{eq:couplingbalancetls}$ can be
 
 $$
 \Delta E \sim \sqrt{\left(\frac{U}{\hbar\omega}\right)^2}U \\
-
-\Delta E \sim \frac{U^2}{\hbar\omega} \\
 \Delta E\sim \frac{U^2}{\hbar\omega} \\
 U \sim \sqrt{\Delta E \hbar\omega} \\
 \frac{U}{\hbar\omega} \sim \sqrt{\frac{\Delta E}{\hbar\omega}}
@@ -205,9 +203,9 @@ Typically, we imagine a phonon as being the quantised oscillatory motion of many
 
 Our example Hamiltonian in Eq. $\ref{eq:H}$ is for a single TLS, so we'll consider Eq. $\ref{eq:phononcoupling}$ with $N=1$. We'll extend the Hamiltonian to many TLS later on.
 
-Substituting the expression for coupling (Eq. $\ref{eq:phononcoupling}$) into the critical coupling expression (Eq. $\ref{eq:criticalcoupling}$) gives the following condition:
+Substituting the expression for coupling (Eq. $\ref{eq:phononcoupling}$) into the critical coupling expression (Eq. $\ref{eq:superradianttransition}$) gives the following condition:
 
 $$
-\sqrt{2} \sqrt{\frac{\Delta E}{M c^2}}  \times 10^{-3} \ge 1
+\sqrt{2} \sqrt{\frac{\Delta E}{M c^2}}  \times 10^{-3} \ge \frac{1}{2}
 $$
 
