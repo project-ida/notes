@@ -17,7 +17,7 @@ to describe the different regimes.
 
 We'll begin with a classical example and use the quantum optics language above. We choose the example of coupled pendulums because it turns out each quantum state with a well defined energy behaves like it's own pendulum (see e.g. [Briggs et.al](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.85.052111)). 
 
-# A Classical example
+# Coupled pendulums
 
 For example, consider two identical pendulums of length $l$ and mass $m$ connected by a spring whose stiffness is characterised by $k$. In the small angle approximation ($\theta_1, \theta_1 \ll 1$), the Hamiltonian is:
 
@@ -72,9 +72,9 @@ This exact boundary for this regime is somewhat artificial - there is nothing pa
 
 When $\gamma_{\rm diss} \ll \omega_1,\omega_2 \lesssim \omega_{\rm coupling}$ , the coupling begins to dominate over everything else and we enter into a regime called "Deep strong coupling".  Energy transfer between the two pendulums is so fast that it's almost instantaneous and so it's not possible to move one pendulum without the other - they act as a single rigid body.
 
-# A quantum example
+# Rabi model
 
-A canonical quantum example is a single two level system (TLS) interacting with a quantised field. The Hamiltonian can be written as:
+A canonical quantum example is a single two level system (TLS) interacting with a quantised field often called the Rabi model. The Hamiltonian can be written as:
 
 $$
 H = \frac{\Delta E}{2} \sigma_z + \hbar\omega\left(b^{\dagger}b +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
@@ -273,3 +273,8 @@ $$
 $$
 
 And so we're even further away from the superradiant regime when considering the electric dipole coupling associated with the phonon motion.
+
+We've so far looked at the Rabi model where the number of TLS is $N=1$. How does the story change when we have many TLS?
+
+## Dicke model
+
