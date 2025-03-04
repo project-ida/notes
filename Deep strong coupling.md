@@ -138,14 +138,14 @@ The coupling term can also accommodate energy mismatches between the TLS and the
 
 When the coupling becomes on the same order or greater than the TLS and field quantum $\hbar\gamma_{\rm diss} \ll \Delta E , \hbar \omega \lesssim \sqrt{n}U$, then TLS transitions and creation/annihilation of field quanta can no longer be understood by simply thinking about the TLS and field exchanging energy with each other and the coupling as a kind of glue between the two. The coupling term has an "identity" all of its own.
 
-This regime was first theoretically explored in [2010 by Casanova at.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.263603) where a simpler definition of "deep strong coupling" was given as:
+This regime was first theoretically explored in [2010 by C/asanova at.al](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.263603) where a simpler definition of "deep strong coupling" was given as:
+
 $$
 \frac{U}{\hbar\omega} \gtrsim 1
 \label{eq:deepstrongcoupling}
 $$
 
-
- Indeed, if their condition is satisfied then $\hbar \omega \lesssim \sqrt{n}U$ is guaranteed.
+Indeed, if their condition is satisfied then $\hbar \omega \lesssim \sqrt{n}U$ is guaranteed.
 
 Let's first consider the case (as Casanova did) that the TLS energy is small in the sense that  $\Delta E < \hbar \omega$. If the coupling is in the deep storing regime so that $U/\hbar\omega \gtrsim 1$ then, from an energy conservation point of view, the coupling term can spontaneously create field quanta. When a quanta gets created, then $n$ increases which means the coupling term $\sim \sqrt{n}U$ increases which means more quanta can be made. We can figure out how many can be made by equating the field energy to the coupling energy in the Hamiltonian:
 
@@ -164,12 +164,14 @@ $$
 When you work out the detailed maths, you end up with $n = 4(U/\hbar\omega)^2$. 
 
 When the TLS energy is not small ($\Delta E \gtrsim \hbar \omega$) then there is an additional energy equivalence to consider:
+
 $$
 \Delta E \sim \sqrt{n}U
 \label{eq:couplingbalancetls}
 $$
 
-Eq. $\ref{eq:couplingbalancefield}$ and Eq. $\ref{eq:couplingbalancetls}$ can be solved simultaneously to eliminate $n$. This gives us a relationship between $U,\Delta E, \hbar\omega$:
+Eq. $\ref{eq:couplingbalancefield}$ and Eq. $\ref{eq:couplingbalancetls}$ can be solved simultaneously to eliminate $n$. This gives us a relationship between $U,\Delta E,\hbar\omega$:
+
 $$
 \Delta E \sim \sqrt{\left(\frac{U}{\hbar\omega}\right)^2}U \\
 
