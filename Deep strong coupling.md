@@ -225,6 +225,7 @@ For nuclear transitions $\Delta E \sim MeV$  and for a single nucleon $Mc^2 \sim
 
 $$
 2\sqrt{2} \sqrt{\frac{24\times10^6}{10^{11}}}  \times 10^{-3} \approx 4 \times 10^{-5} \ll 1
+\label{eq:criticalphononcouplingexplicitnumbers}
 $$
 
 This confirms that a single nucleus cannot become superradiant using relativistic phonon nuclear coupling. Let's look at another type of coupling that's also associated with oscillatory phonon motion.
@@ -287,7 +288,7 @@ H_{\text{Dicke}} = \frac{\Delta E}{2} \sum_{i=1}^N \sigma_z^{(i)} +  \hbar\omega
 \label{eq:dickeH}
 $$
 
-where the states of this system are described by $|n, \pm, \pm, \pm, \pm, ... \rangle$.
+The states of this system are described by $|n, \pm, \pm, \pm, \pm, ... \rangle$.
 
 It's worth emphasising that there is no spatial dependence of the field in Eq. $\ref{eq:dickeH}$. One way to understand this physically is that all the TLS are very close together in the sense that they are located in a region of space that is much smaller than the wavelength of the mode.  In that situation, all the TLS will experience the same strength of field at any given moment - in other words the field appears constant in space. This is the how Dicke originally presented his ideas in [his 1954 paper](https://journals.aps.org/pr/abstract/10.1103/PhysRev.93.99). It's also possible to use this Hamiltonian to describe many TLS arranged in a very special way so that they are placed at integer multiples of the mode wavelength.
 
@@ -310,19 +311,20 @@ $$
 
 and noting that $i$ in $\sigma_i$ means that this operator only acts on TLS number $i$ .
 
-When written in the way, each state can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS and by far the most significant kind of delocalised states are called  "Dicke states". These Dicke states have the largest $j_{\max} = N/2$. The states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state looks like:
+When written in the way, each state can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. By far the most significant kind of delocalised states are called  "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state looks like:
 
 $$
 \Psi_0 = \frac{1}{\sqrt{4}}\left(| 0, +, -, -, - \rangle + | 0, -, +, -, - \rangle + | 0, -, -, +, - \rangle + | 0, -, -, -, + \rangle \right)
 $$
 
-This state can instead be described by $j_{\max}= 4/2  = 2$ and $m = 1\times 1/2 + 3\times -1/2 =-1$
+Notice that if you swap any two TLS, the state looks the same.
 
+The above state can instead be described by $j_{\max}= 4/2  = 2$ and $m = 1\times 1/2 + 3\times -1/2 =-1$
 $$
 \Psi_0 = |0,2,-1>
 $$
 
-Dicke states with $j=j_{\max}$ are most significant because of the acceleration properties that these Dicke states offer; something people often describe as superradiance. We can start to get a sense of where the super comes from by looking at the action of the [ladder operators](https://en.wikipedia.org/wiki/Ladder_operator#Angular_momentum) $J_{+}$ and $J_{-}$ which raise and lower the $m$ value like this:
+Dicke states with $j=j_{\max}$ are significant because of the acceleration properties that these Dicke states offer; something people often describe as superradiance. We can start to get a sense of where the super comes from by looking at the action of the [ladder operators](https://en.wikipedia.org/wiki/Ladder_operator#Angular_momentum) $J_{+}$ and $J_{-}$ which excite and de-excite TLS. This causes a raising and lowering of the $m$ value like this:
 
 $$
 J_+ |n, j, m\rangle  =  \sqrt{j(j + 1) - m(m + 1)} |n, j, m + 1\rangle
@@ -332,13 +334,14 @@ $$
 J_- |n, j, m\rangle =  \sqrt{j(j + 1) - m(m - 1)} |n, j, m - 1\rangle
 $$
 
-For the case when **all TLS excited** , $m=N/2$:
+These ladder operators are conceptually similar to the creation and annihilation operators of the field. The details are however more complicated due to the addition rules of angular momentum.
 
+For the case with **all TLS excited** , $m=N/2$:
 $$
 J_- |n, N/2, N/2\rangle  = \sqrt{N} |n, N/2, N/2 - 1\rangle
 $$
 
-For the first de-excitation, the coupling terms gets enhanced by  $\sqrt{N}$ . This might not seem surprising at first glance, because we have $N$ TLS excited and so we should expect the rates of emission (which go as the square of the coupling) to be enhanced by $N$.
+For the first de-excitation, the coupling terms gets enhanced by  $\sqrt{N}$ . This might not seem surprising at first glance because we have $N$ TLS excited and so we should expect the rate of emission (which go as the square of the coupling) to be enhanced by $N$.
 
 For the case of **a single excitation** , $m=-N/2 + 1$:
 
@@ -346,7 +349,7 @@ $$
 J_- |n, N/2, -N/2 +1\rangle  = \sqrt{N}|n, N/2, -N/2\rangle
 $$
 
-For this singe de-excitation the coupling terms also gets enhanced by  $\sqrt{N}$ . This is more surprising because the rate of emission  (which go as the square of the coupling) to be enhanced by $N$ even though there is only a single excitation.
+For this singe de-excitation the coupling term also gets enhanced by  $\sqrt{N}$ . This is more surprising because the rate of emission  (which go as the square of the coupling) to be enhanced by $N$ even though there is only a single excitation.
 
 For the case of **50% excitation**, $m=0$:
 
@@ -354,10 +357,53 @@ $$
 J_- |n, N/2, 0 \rangle  = \sqrt{N^2 + N}|n, N/2, -1\rangle
 $$
 
-For the first de-excitation, the For the first de-excitation, the coupling terms gets enhanced by  $\sim\sqrt{N^2}$ for large $N$. In other words, the rate of emission  (which go as the square of the coupling) to be enhanced by $N^2$  - this is where the super in superradiance comes from.
+For the first de-excitation, the coupling terms gets enhanced by  $\sim\sqrt{N^2}$ for large $N$. In other words, the rate of emission  (which go as the square of the coupling) to be enhanced by $N^2$  - this is where the super in superradiance comes from.
 
-If we look back at the couplings in Eqs. $\ref{eq:phononcoupling}$ and $\ref{eq:dipolecoupling}$, we can see a $1/\sqrt{N}$ term which initially appears to reduce the coupling significantly for very large numbers of nuclei. However, if we are able to take advantage of Dicke effects, then the situation is very different:
+It's should be noted that the effect of Dicke superradiance and superradiant phase transitions are [not the same](https://en.wikipedia.org/wiki/Dicke_model#Superradiant_transition_and_Dicke_superradiance). The former involves a transient enhancement in emission of $N$ TLS which ultimately ends up with all the TLS in their ground state and the field quanta escape to infinity.  The latter involves a permanent change in the ground state a cavity system in which field and TLS are both confined.
 
-- For fully excited systems, Dicke enhancement of coupling scales like $\sqrt{N}$  and so coupling for $N$ nuclei is the same as for a single nuclei
-- For half excited systems,  Dicke enhancement of coupling scales like $N$  and so coupling for $N$ nuclei is enhanced by $N$.
+If we look back at the couplings in Eqs. $\ref{eq:phononcoupling}$ and $\ref{eq:dipolecoupling}$, we can see a $1/\sqrt{N}$ term appears to reduce the coupling significantly for very large numbers of nuclei. However, if we are able to take advantage of Dicke effects, then the situation is very different:
 
+- For fully excited systems, Dicke enhancement of the coupling scales like $\sqrt{N}$  and so coupling for $N$ nuclei is the same as for a single nuclei (from $\sqrt{N}/\sqrt{N}$)
+- For half excited systems,  Dicke enhancement of the coupling scales like $N$  and so coupling for $N$ nuclei scales like $\sqrt{N}$ (from $N/\sqrt{N}$)
+
+### Deep strong coupling
+
+We now understand that the coupling operators in Eq. $\ref{eq:dickeHpseudo}$ will produce terms like:
+
+- $\sqrt{n}$ from the field part
+-  At least $\sqrt{N}$ and at most $N$ from the TLS part due to Dicke effects
+
+If we take the most conservative Dicke enhancement then the condition for deep strong coupling can be arrived at by simply replacing $U$ in Eq. $\ref{eq:superradianttransition}$ with $U\sqrt{N{}}$:
+$$
+\frac{U\sqrt{N}}{\hbar\omega} \gtrsim \frac{1}{2}\sqrt{\frac{\Delta E}{\hbar\omega}}
+\label{eq:dickesuperradianttransition}
+$$
+As $N\rightarrow \infty$ this condition triggers a [superradiant phase transition](https://royalsocietypublishing.org/doi/10.1098/rsta.2010.0333) similar to what we saw in the Rabi model when $\Delta E / \hbar\omega \rightarrow \infty$.
+
+If we look back at the couplings in Eqs. $\ref{eq:phononcoupling}$ and $\ref{eq:dipolecoupling}$, we can see a $1/\sqrt{N}$ terms will cancel with the $\sqrt{N}$ in Eq. $\ref{eq:dickesuperradianttransition}$. This means that our earlier calculations with $N=1$ will apply to an arbitrary number of TLS and so we won't get closer to a superradiant phase transition by having more TLS involved.
+
+If however, we could use the most optimistic Dicke enhancement, then we'd instead have:
+
+$$
+\frac{UN}{\hbar\omega} \gtrsim \frac{1}{2}\sqrt{\frac{\Delta E}{\hbar\omega}}
+\label{eq:dickesuperradianttransition2}
+$$
+
+And so for relativistic phonon nuclear coupling (Eq. $\ref{eq:phononcoupling}$) we'd have:
+
+$$
+2\sqrt{2}\sqrt{N} \sqrt{\frac{\Delta E}{M c^2}}  \times 10^{-3} \ge 1
+$$
+
+Using the same numbers as before in Eq. $\ref{eq:criticalphononcouplingexplicitnumbers}$ then:
+
+
+$$
+2\sqrt{2} \sqrt{N}\sqrt{\frac{24\times10^6}{10^{11}}}  \times 10^{-3} \approx 4 \times 10^{-5} \sqrt{N} \ge 1
+$$
+
+This gives us a condition on the number of nuclei that we need:
+
+$$
+N \gtrsim 8 \times 10^8
+$$
