@@ -116,7 +116,7 @@ In the small angle approximation (\(\theta_1, \theta_1 \ll 1\)), the
 Hamiltonian is:
 
 \[
-H = \frac{m l^2}{2} \dot{\theta}_1^2 + \frac{m g l}{2} \theta_1^2 + \frac{m l^2}{2} \dot{\theta}_2^2 + \frac{m g l}{2} \theta_2^2 + \frac{1}{2} k l^2(\theta_1 - \theta_2)^2
+H_{\rm pen} = \frac{m l^2}{2} \dot{\theta}_1^2 + \frac{m g l}{2} \theta_1^2 + \frac{m l^2}{2} \dot{\theta}_2^2 + \frac{m g l}{2} \theta_2^2 + \frac{1}{2} k l^2(\theta_1 - \theta_2)^2
 \]
 
 The first four terms are the simple sum of each individual pendulum. The
@@ -222,15 +222,19 @@ interacting with a quantised field often called the Rabi model. The
 Hamiltonian can be written as:
 
 \[
-H = \frac{\Delta E}{2} \sigma_z + \hbar\omega\left(b^{\dagger}b +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
-\label{eq:H}
+H_{\rm Rabi} = \frac{\Delta E}{2} \sigma_z + \hbar\omega\left(a^{\dagger}a +\frac{1}{2}\right) + U\left( a^{\dagger} + a \right)(\sigma_+ + \sigma_-)
+\label{eq:rabiH}
 \]
 
 where \(\Delta E\) is the transition energy between the 2 levels of the
 TLS, \(\hbar\omega\) is the energy of each quantum of the field, and
 \(U\) is the coupling constant between the TLS and the field. The
-\(\sigma\) operators are the Pauli matrices and \(b^{\dagger}\), \(b\)
-are the field creation and annihilation operators respectively.
+\(\sigma\) operators are the Pauli spin matrices and \(a^{\dagger}\),
+\(a\) are the field creation and annihilation operators respectively.
+
+It's worth noting that we're using the Pauli spin matrices as a
+mathematical tool to describe two levels. Just keep in mind that we're
+not really talking about spin angular momentum here.
 
 Although a TLS has just 2 states (denoted \(|\pm\rangle\)), the
 quantised field has infinitely many states (denoted by the number of
@@ -247,15 +251,15 @@ however, it's not enough just to compare the various constants
 quanta \(n\) we have. This is because of how the field operators work:
 
 \[
-b^{\dagger} |n,\pm\rangle = \sqrt{n+1}|n+1,\pm\rangle \\
+a^{\dagger} |n,\pm\rangle = \sqrt{n+1}|n+1,\pm\rangle \\
 \]
 
 \[
-b^{} |n,\pm\rangle = \sqrt{n}|n-1,\pm\rangle \\
+a |n,\pm\rangle = \sqrt{n}|n-1,\pm\rangle \\
 \]
 
 \[
-b^{\dagger}b |n,\pm\rangle = n|n,\pm\rangle
+a^{\dagger}a |n,\pm\rangle = n|n,\pm\rangle
 \]
 
 The more field quanta we have, the larger the field and coupling terms
@@ -475,8 +479,8 @@ in which the motion of an isolated nucleus is considered (see
 e.g.~\href{https://www.nature.com/articles/s41467-021-21425-8}{Cat et.al
 2021}) - in which case \(N=1\).
 
-Our example Hamiltonian in Eq. \(\ref{eq:H}\) is for a single TLS, so
-we'll consider Eq. \(\ref{eq:phononcoupling}\) with \(N=1\). We'll
+Our example Hamiltonian in Eq. \(\ref{eq:rabiH}\) is for a single TLS,
+so we'll consider Eq. \(\ref{eq:phononcoupling}\) with \(N=1\). We'll
 extend the Hamiltonian to many TLS later on.
 
 For nuclear transitions mediated by phonons, \(\Delta E \sim MeV\)and
@@ -578,6 +582,155 @@ We've so far looked at the Rabi model where the number of TLS is
 \(N=1\). How does the story change when we have many TLS?
 
 \subsection{Dicke model}\label{dicke-model}
+
+When we have \(N\) identical TLS coupled to a single mode (i.e.~single
+frequency) of a quantised field then Hamiltonian is called the Dicke
+Hamiltonian. It's a simple extension of the Rabi Hamiltonian in Eq.
+\(\ref{eq:rabiH}\) in the sense that we just add \(N\) copies of the TLS
+terms as seen below:
+
+\[
+H_{\text{Dicke}} = \frac{\Delta E}{2} \sum_{i=1}^N \sigma_z^{(i)} +  \hbar\omega\left(a^{\dagger}a +\frac{1}{2}\right) + U \sum_{i=1}^N (a^\dagger + a) (\sigma_+^{(i)} + \sigma_-^{(i)})
+\label{eq:dickeH}
+\]
+
+where the states of this system are described by
+\(|n, \pm, \pm, \pm, \pm, ... \rangle\).
+
+It's worth emphasising that there is no spatial dependence of the field
+in Eq. \(\ref{eq:dickeH}\). One way to understand this physically is
+that all the TLS are very close together in the sense that they are
+located in a region of space that is much smaller than the wavelength of
+the mode. In that situation, all the TLS will experience the same
+strength of field at any given moment - in other words the field appears
+constant in space. This is the how Dicke originally presented his ideas
+in \href{https://journals.aps.org/pr/abstract/10.1103/PhysRev.93.99}{his
+1954 paper}. It's also possible to use this Hamiltonian to describe many
+TLS arranged in a very special way so that they are placed at integer
+multiples of the mode wavelength.
+
+What we really want to understand is how the extra TLS are going to
+affect the coupling term. Right now, Eq. \(\ref{eq:dickeH}\) is not in a
+form that allows us to readily see this. We're going to rewrite it by
+appealing to the physics of spin.
+
+We noted earlier that the use of the Pauli spin matrices is just a
+mathematical tool to describe two levels. Although we're not describing
+spin here, we are working with what is often called ``pseudo spin''. The
+\href{https://en.wikipedia.org/wiki/Angular_momentum_operator}{rules of
+angular momentum} work just as well for pseudo angular momentum. In
+particular, the rules of
+\href{https://www.tcm.phy.cam.ac.uk/~bds10/aqp/lec7_compressed.pdf}{angular
+momentum addition} and conservation.
+
+This means that we can treat all the TLS together as if they are a
+single object with many levels whose energies are determined by the
+addition rules of pseudo angular momentum. The Hamilton then looks like:
+
+\[
+H =  \Delta E J_{z} + \hbar\omega\left(a^{\dagger}a +\frac{1}{2}\right) + 2U\left( a^{\dagger} + a \right)(J_{+} + J_{-})
+\label{eq:dickeHpseudo}
+\]
+
+where the total pseudo total angular momentum operators (\(J\)) for
+\(N\) TLS:
+
+\[
+J_{+} + J_{-} = J_{x} = \frac{1}{2}\overset{N}{\underset{i=1}{\Sigma}} \sigma_{i x} \,\,\,\,\,\, J_{z} = \frac{1}{2}\overset{N}{\underset{i=1}{\Sigma}} \sigma_{i z}
+\]
+
+and noting that \(i\) in \(\sigma_i\) means that this operator only acts
+on TLS number \(i\) .
+
+When written in the way, each state can now be described in terms of 3
+numbers \(|n, j, m\rangle\) where \(j\) describes the total pseudo
+angular momentum number (which is conserved) and \(m\) describes the z
+component of the total pseudo angular momentum (which can change). This
+notation allows us to conveniently describe situations where excitations
+are ``delocalised'' among the TLS and by far the most significant kind
+of delocalised states are called ``Dicke states''. These Dicke states
+have the largest \(j_{\max} = N/2\). The states are symmetric in the
+sense that if you swap any of the TLS around, the state remains
+unchanged. For example, consider a single excitation in 4 TLS - the
+Dicke state looks like:
+
+\[
+\Psi_0 = \frac{1}{\sqrt{4}}\left(| 0, +, -, -, - \rangle + | 0, -, +, -, - \rangle + | 0, -, -, +, - \rangle + | 0, -, -, -, + \rangle \right)
+\]
+
+This state can instead be described by \(j_{\max}= 4/2  = 2\) and
+\(m = 1\times 1/2 + 3\times -1/2 =-1\)
+
+\[
+\Psi_0 = |0,2,-1>
+\]
+
+Dicke states with \(j=j_{\max}\) are most significant because of the
+acceleration properties that these Dicke states offer; something people
+often describe as superradiance. We can start to get a sense of where
+the super comes from by looking at the action of the
+\href{https://en.wikipedia.org/wiki/Ladder_operator\#Angular_momentum}{ladder
+operators} \(J_{+}\) and \(J_{-}\) which raise and lower the \(m\) value
+like this:
+
+\[
+J_+ |n, j, m\rangle  =  \sqrt{j(j + 1) - m(m + 1)} |n, j, m + 1\rangle
+\]
+
+\[
+J_- |n, j, m\rangle =  \sqrt{j(j + 1) - m(m - 1)} |n, j, m - 1\rangle
+\]
+
+For the case when \textbf{all TLS excited} , \(m=N/2\):
+
+\[
+J_- |n, N/2, N/2\rangle  = \sqrt{N} |n, N/2, N/2 - 1\rangle
+\]
+
+For the first de-excitation, the coupling terms gets enhanced by
+\(\sqrt{N}\) . This might not seem surprising at first glance, because
+we have \(N\) TLS excited and so we should expect the rates of emission
+(which go as the square of the coupling) to be enhanced by \(N\).
+
+For the case of \textbf{a single excitation} , \(m=-N/2 + 1\):
+
+\[
+J_- |n, N/2, -N/2 +1\rangle  = \sqrt{N}|n, N/2, -N/2\rangle
+\]
+
+For this singe de-excitation the coupling terms also gets enhanced by
+\(\sqrt{N}\) . This is more surprising because the rate of emission
+(which go as the square of the coupling) to be enhanced by \(N\) even
+though there is only a single excitation.
+
+For the case of \textbf{50\% excitation}, \(m=0\):
+
+\[
+J_- |n, N/2, 0 \rangle  = \sqrt{N^2 + N}|n, N/2, -1\rangle
+\]
+
+For the first de-excitation, the For the first de-excitation, the
+coupling terms gets enhanced by \(\sim\sqrt{N^2}\) for large \(N\). In
+other words, the rate of emission (which go as the square of the
+coupling) to be enhanced by \(N^2\) - this is where the super in
+superradiance comes from.
+
+If we look back at the couplings in Eqs. \(\ref{eq:phononcoupling}\) and
+\(\ref{eq:dipolecoupling}\), we can see a \(1/\sqrt{N}\) term which
+initially appears to reduce the coupling significantly for very large
+numbers of nuclei. However, if we are able to take advantage of Dicke
+effects, then the situation is very different:
+
+\begin{itemize}
+\tightlist
+\item
+  For fully excited systems, Dicke enhancement of coupling scales like
+  \(\sqrt{N}\) and so coupling for \(N\) nuclei is the same as for a
+  single nuclei
+\item
+  For half excited systems, Dicke enhancement of coupling scales like
+  \(N\) and so coupling for \(N\) nuclei is enhanced by \(N\).
+\end{itemize}
 
 \printbibliography
 
