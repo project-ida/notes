@@ -6,7 +6,7 @@ author: "Matt Lilley"
 
 Understanding the interaction between nucleons and external fields is essential in nuclear physics. We'll explore two coupling mechanisms that arise in quantum nuclear interactions:
 
-1. **Relativistic phonon nuclear coupling ($a \cdot cp$)** – where phonons couple to nucleons through momentum exchange.
+1. **Relativistic phonon nuclear coupling ($a \cdot cp$)** – where phonons couple to nucleons through momentum exchange (see [Hagelstein 2023](https://iopscience.iop.org/article/10.1088/1361-6455/acf3be) for more detail).
 2. **Electric dipole coupling ($d \cdot E$)** – where an electric field couples to nucleons through dipole moments.
 
 This document explores both couplings, derives their respective coupling constants, and compares their strength.
@@ -55,7 +55,6 @@ where:
 - $\pi$ represents the relative momentum of that nucleon.
 
 Since angular momentum is approximately $\hbar$, and using the Fermi scale $l_F = 10^{-15}$ m, we estimate:
-
 $$
 \pi \sim \frac{\hbar}{l_F} 
 $$
@@ -89,14 +88,15 @@ The final value of $a$ depends on both the nuclear transition type and the speci
 
 ## Overall coupling constant
 
-If we use this simple Hamiltonian in which a single TLS interacts with a single phonon mode:
+Let's consider a single TLS interacts with a single phonon mode. The Hamiltonian can be written as:
 
 $$
 H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(b^{\dagger}b +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
 $$
 
-then an $a \cdot cp$ coupling constant $U$ can be defined by combining Eq. $\ref{eq:p}$ (without the $\sqrt{n}$) with Eq. $\ref{eq:a}$:
+where $\Delta E$ is the transition energy between the 2 levels of the TLS, $\hbar\omega_A$ is the energy of each quantum of the field, and $U$ is the coupling constant between the TLS and the field. The $\sigma$ operators are the Pauli matrices and $b^{\dagger}$, $b$ are the field creation and annihilation operators respectively. Note that usually $a$ is used for the field operators, but in these notes we use $b$ to avoid confusion with $a \cdot cp$ .
 
+then an $a \cdot cp$ coupling constant $U$ can be defined by combining Eq. $\ref{eq:p}$ (without the $\sqrt{n}$) with Eq. $\ref{eq:a}$:
 $$
 U = c \sqrt{\frac{2M}{N}} \sqrt{\hbar \omega_A} \times \frac{\Delta E}{M c^2} \times 10^{-3}
 $$

@@ -20,3 +20,10 @@ When the exposed CR-39 is submerged in a chemical etchant (usually 6M NaOH or KO
 
 Although not charged, neutrons can be detected by CR-39 through an indirect mechanism.
 
+Proton Recoil (Elastic Scattering) - most common
+
+Secondary Reactions with Carbon or Oxygen - less common
+
+Fission fragments with contaminants
+
+#### 
