@@ -107,7 +107,7 @@ $$
 
 In this regime, the field retains its "identity" but the TLS gets significantly altered by the field and the coupling.
 
-Eq. $\ref{eq:strongfield}$ can in principle be satisfied for any type of coupling by just increasing the field. In practice, there will be physical limits on how strong a field can be. Let's try and work through an example using relativistic phonon nuclear coupling to mediate a nuclear transition with phonons.
+Eq. $\ref{eq:strongfield}$ can in principle be satisfied for any type of coupling by just increasing the field strength. In practice, there will be physical limits on how strong a field can be. Let's try and work through an example using relativistic phonon nuclear coupling to mediate a nuclear transition with phonons.
 
 From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the relativistic phonon nuclear coupling as:
 
@@ -116,7 +116,7 @@ $$
 \label{eq:phononcoupling}
 $$
 
-where $N$ is the number of nuclei involved in the phonon motion, and $M$ is the mass of the nucleus and $\omega_A$ is the acoustic phonon mode frequency. the first condition in Eq. $\ref{eq:strongfield}$ gives:
+where $N$ is the number of nuclei involved in the phonon motion, and $M$ is the mass of the nucleus and $\omega_A$ is the acoustic phonon mode frequency. The first condition in Eq. $\ref{eq:strongfield}$ gives:
 $$
 \begin{aligned}
 \Delta E &\lesssim U\sqrt{N}\sqrt{n} \\
@@ -155,10 +155,10 @@ For a $\rm 24 \ MeV$ palladium transition mediated by acoustic phonons we have:
 $$
 n \gg 10^{6}
 $$
-And so, we can describe some different regions of $n$ for this palladium example:
+So, we can describe some different regions of $n$ for this palladium example:
 
 -  $n<10^{6}$ - weak field, the coupling term is greater than the total field energy but is a lot less than the TLS energy. 
--  $10^6 < n < 5 \times 10^{24}$ - intermediate field, the field and the TLS dominate over the coupling.  
+-  $10^6 < n < 5 \times 10^{24}$ - intermediate field, the field and the TLS dominate over the coupling.
 - $n > 5\times 10^{24}$ - strong field, the field dominates but now the coupling is bigger than the TLS energy 
 
 When the field is strong, and the field quanta have a low enough energy such that $U\sqrt{N}>\hbar\omega$ then there can be a free exchange of energy between the field and the TLS because even though an individual low energy energy quanta cannot "hold" all the energy of a TLS transition, the coupling term can.  Another way of thinking about this is that incredibly unlikely transitions like the downconversion of nuclear energy into phonon energy or the upconversion of phonon energy to nuclear energy become possible.
