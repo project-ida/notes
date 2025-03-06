@@ -303,7 +303,7 @@ H =  \Delta E J_{z} + \hbar\omega\left(a^{\dagger}a +\frac{1}{2}\right) + 2U\lef
 \label{eq:dickeHpseudo}
 $$
 
-where the total pseudo total angular momentum operators ($J$) for $N$ TLS:
+where the total pseudo total angular momentum operators ($J$) for $N$ TLS are:
 
 $$
 J_{+} + J_{-} = J_{x} = \frac{1}{2}\overset{N}{\underset{i=1}{\Sigma}} \sigma_{i x} \,\,\,\,\,\, J_{z} = \frac{1}{2}\overset{N}{\underset{i=1}{\Sigma}} \sigma_{i z}
@@ -311,7 +311,7 @@ $$
 
 and noting that $i$ in $\sigma_i$ means that this operator only acts on TLS number $i$ .
 
-When written in the way, each state can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. By far the most significant kind of delocalised states are called  "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state looks like:
+When written in this way, each state can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. By far the most significant kind of delocalised states are called  "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state looks like:
 
 $$
 \Psi_0 = \frac{1}{\sqrt{4}}\left(| 0, +, -, -, - \rangle + | 0, -, +, -, - \rangle + | 0, -, -, +, - \rangle + | 0, -, -, -, + \rangle \right)
@@ -325,7 +325,7 @@ $$
 \Psi_0 = |0,2,-1>
 $$
 
-Dicke states with $j=j_{\max}$ are significant because of the acceleration properties that these Dicke states offer; something people often describe as superradiance. We can start to get a sense of where the super comes from by looking at the action of the [ladder operators](https://en.wikipedia.org/wiki/Ladder_operator#Angular_momentum) $J_{+}$ and $J_{-}$ which excite and de-excite TLS. This causes a raising and lowering of the $m$ value like this:
+Dicke states with $j=j_{\max}$ are significant because of the acceleration properties that these Dicke states offer; something people often describe as superradiance. We can start to get a sense of where the super comes from by looking at the action of the [ladder operators](https://en.wikipedia.org/wiki/Ladder_operator#Angular_momentum) $J_{+}$ and $J_{-}$ which excite and de-excite the TLS. This causes a raising and lowering of the $m$ value like this:
 
 $$
 J_+ |n, j, m\rangle  =  \sqrt{j(j + 1) - m(m + 1)} |n, j, m + 1\rangle
