@@ -79,9 +79,86 @@ These ladder operators are conceptually similar to the creation and annihilation
 
 The coupling term in Eq. $\ref{eq:dickeHpseudo}$ therefore conservatively scales like $U\sqrt{N}\sqrt{n}$ and optimistically as $UN\sqrt{n}$.
 
+# Deep strong coupling
 
+In the notes on [Deep strong coupling](https://github.com/project-ida/notes/blob/main/pdf/Deep%20strong%20coupling.pdf), we described a regime in which all the terms in the Hamiltonian in Eq. $\ref{eq:dickeHpseudo}$ were of the same order. In other words:
 
+$$
+\Delta E \sim n\hbar\omega \sim U\sqrt{N}\sqrt{n}
+\label{eq:deepstrongcoupling}
+$$
 
+where we have taken the conservative Dicke scaling of $\sqrt{N}$. This regime is characterised by a [superradiant phase transition](https://en.wikipedia.org/wiki/Dicke_model#Superradiant_transition_and_Dicke_superradiance).
 
+For a given $\Delta E, \hbar\omega$, Eq. $\ref{eq:deepstrongcoupling}$ fixes the strength of the field $n$ and the number of TLS $N$. For nuclear transitions mediated by phonons via a relativistic phonon nuclear coupling, we found that we could **not** satisfy Eq. $\ref{eq:deepstrongcoupling}$.
 
+Mathematically, the reason Eq. $\ref{eq:deepstrongcoupling}$ is hard to satisfy is because $n\hbar\omega \sim U\sqrt{N}\sqrt{n}$ limits how large $n$ can be because $n$ grows faster than $\sqrt{n}$.
 
+What happens if we look for a regime in which $n$ is not constrained?
+
+# Strong field
+
+Let's imagine that the field is so strong, i.e. $n$ is so large, that the following is satisfied:
+
+$$
+\Delta E \lesssim U\sqrt{N}\sqrt{n} \ll n\hbar \omega
+\label{eq:strongfield}
+$$
+
+In this regime, the field retains its "identity" but the TLS gets significantly altered by the field and the coupling.
+
+Eq. $\ref{eq:strongfield}$ can in principle be satisfied for any type of coupling by just increasing the field. In practice, there will be physical limits on how strong a field can be. Let's try and work through an example using relativistic phonon nuclear coupling to mediate a nuclear transition with phonons.
+
+From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the relativistic phonon nuclear coupling as:
+
+$$
+\frac{U}{\hbar \omega_A} = \sqrt{\frac{2}{N}} \sqrt{\frac{\Delta E}{M c^2}} \sqrt{\frac{\Delta E}{\hbar \omega_A}} \times 10^{-3}
+\label{eq:phononcoupling}
+$$
+
+where $N$ is the number of nuclei involved in the phonon motion, and $M$ is the mass of the nucleus and $\omega_A$ is the acoustic phonon mode frequency. the first condition in Eq. $\ref{eq:strongfield}$ gives:
+$$
+\begin{aligned}
+\Delta E &\lesssim U\sqrt{N}\sqrt{n} \\
+\frac{\Delta E}{\hbar \omega_A} &\lesssim \sqrt{2} \sqrt{\frac{\Delta E}{M c^2}} \sqrt{\frac{\Delta E}{\hbar \omega_A}} \times 10^{-3}\sqrt{n} \\
+1 &\lesssim \sqrt{2} \sqrt{\frac{\hbar\omega_A}{M c^2}} \times 10^{-3}\sqrt{n} \\
+\frac{1}{2}\frac{Mc^2}{\hbar\omega_A}\times 10^6 &\lesssim n
+\end{aligned}
+$$
+
+For palladium nuclear transitions mediated by acoustic phonons, $M c^2 \approx 10^{11}$ eV  and $\hbar \omega_A \approx 10^{-8}$ eV  . This tells us that the number of phonons must be at least:
+
+$$
+n \gtrsim 5\times 10^{24}
+$$
+
+This seems like a very large number of phonons, so let's sense check the total energy content of the field:
+
+$$
+5\times 10^{24} \times 10^{-8} \times 1.6\times 10^{-19} = 8 \, \rm mJ
+$$
+
+This does not seem like an outrageous amount of energy.
+
+The second condition in Eq. $\ref{eq:strongfield}$ gives:
+
+$$
+\begin{aligned}
+U\sqrt{N}\sqrt{n} &\ll  n\hbar \omega_A \\
+\sqrt{2} \sqrt{\frac{\Delta E}{M c^2}} \sqrt{\frac{\Delta E}{\hbar \omega_A}} \times 10^{-3}\sqrt{n} &\ll n \\
+2\frac{\Delta E}{M c^2} \frac{\Delta E}{\hbar \omega_A} \times 10^{-6} \ll n
+\end{aligned}
+$$
+
+For a $\rm 24 \ MeV$ palladium transition mediated by acoustic phonons we have:
+
+$$
+n \gg 10^{6}
+$$
+And so, we can describe some different regions of $n$ for this palladium example:
+
+-  $n<10^{6}$ - weak field, the coupling term is greater than the total field energy but is a lot less than the TLS energy. 
+-  $10^6 < n < 5 \times 10^{24}$ - intermediate field, the field and the TLS dominate over the coupling.  
+- $n > 5\times 10^{24}$ - strong field, the field dominates but now the coupling is bigger than the TLS energy 
+
+When the field is strong, and the field quanta have a low enough energy such that $U\sqrt{N}>\hbar\omega$ then there can be a free exchange of energy between the field and the TLS because even though an individual low energy energy quanta cannot "hold" all the energy of a TLS transition, the coupling term can.  Another way of thinking about this is that incredibly unlikely transitions like the downconversion of nuclear energy into phonon energy or the upconversion of phonon energy to nuclear energy become possible.
