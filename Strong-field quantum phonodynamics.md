@@ -105,7 +105,7 @@ $$
 \label{eq:strongfield}
 $$
 
-In this regime, the field retains its "identity" but the TLS gets significantly altered by the field and the coupling.
+In this regime, the field retains its "identity" but the TLS gets significantly altered by the field and the coupling. 
 
 Eq. $\ref{eq:strongfield}$ can in principle be satisfied for any type of coupling by just increasing the field strength. In practice, there will be physical limits on how strong a field can be. Let's try and work through an example using relativistic phonon nuclear coupling to mediate a nuclear transition with phonons.
 
