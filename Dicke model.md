@@ -21,7 +21,8 @@ It's worth noting that we're using the Pauli spin matrices as a mathematical too
 
 The TLS has just 2 states denoted by  $|\pm\rangle$ but the quantised field has infinitely many states denoted by the number of quanta $|n\rangle$. The combined state of the system can therefore be represented by $|n, \pm\rangle$. Each quantum state can be conceptually thought of as a pendulum whose frequency is related to the energy of the state (see e.g. [Briggs et.al](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.85.052111)).
 
-The strength of the interaction between the TLS and the field is not only determined by the constants $U$ but also how many field quanta $n$ we have. This is because of how the field operators work:
+The strength of the interaction between the TLS and the field is not only determined by the constant $U$ but also how many field quanta $n$ we have. This is because of how the field operators work:
+
 $$
 a^{\dagger} |n,\pm\rangle = \sqrt{n+1}|n+1,\pm\rangle
 \label{eq:fieldcreate}
@@ -41,7 +42,6 @@ The more field quanta we have (the stronger the field), the larger the coupling 
 # Dicke model
 
 The Dicke model describes a system where we have $N$ identical TLS coupled to a single mode (i.e. single frequency/wavelength) of a quantised field. The Dicke Hamiltonians is a simple extension of the Rabi Hamiltonian in Eq. $\ref{eq:rabiH}$ in the sense that we just add $N$ copies of the TLS terms as seen below:
-
 
 $$
 H_{\text{Dicke}} = \frac{\Delta E}{2} \sum_{i=1}^N \sigma_z^{(i)} +  \hbar\omega\left(a^{\dagger}a +\frac{1}{2}\right) + U \sum_{i=1}^N (a^\dagger + a) (\sigma_+^{(i)} + \sigma_-^{(i)})
@@ -73,9 +73,10 @@ $$
 
 and noting that $i$ in $\sigma_i$ means that this operator only acts on TLS number $i$ .
 
-When written in this way, each state can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. By far the most significant kind of delocalised states are called  "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state looks like:
+When written in this way, states can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. By far the most significant kind of delocalised states are called  "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state looks like:
+
 $$
-\Psi_0 = \frac{1}{\sqrt{4}}\left(| 0, +, -, -, - \rangle + | 0, -, +, -, - \rangle + | 0, -, -, +, - \rangle + | 0, -, -, -, + \rangle \right)
+\Psi = \frac{1}{\sqrt{4}}\left(| n, +, -, -, - \rangle + | n, -, +, -, - \rangle + | n, -, -, +, - \rangle + | n, -, -, -, + \rangle \right)
 $$
 
 Notice that if you swap any two TLS, the state looks the same.
@@ -83,10 +84,11 @@ Notice that if you swap any two TLS, the state looks the same.
 The above state can instead be described by $j_{\max}= 4/2  = 2$ and $m = 1\times 1/2 + 3\times -1/2 =-1$
 
 $$
-\Psi_0 = |0,2,-1>
+\Psi = |n,2,-1>
 $$
 
 In this way of describing the system, the [ladder operators](https://en.wikipedia.org/wiki/Ladder_operator#Angular_momentum) $J_{+}$ and $J_{-}$ create and destroy excitations of the TLS. This causes a raising and lowering of the $m$ value like this:
+
 $$
 J_+ |n, j, m\rangle  =  \sqrt{j(j + 1) - m(m + 1)} |n, j, m + 1\rangle
 $$
@@ -102,6 +104,7 @@ These ladder operators are conceptually similar to the creation and annihilation
 Dicke states with $j=j_{\max}$ are significant because of the acceleration properties that they offer; something people often describe as superradiance. 
 
 For the case with **all TLS excited** , $m=N/2$:
+
 $$
 J_- |n, N/2, N/2\rangle  = \sqrt{N} |n, N/2, N/2 - 1\rangle
 $$
