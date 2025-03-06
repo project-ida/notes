@@ -311,7 +311,7 @@ $$
 
 and noting that $i$ in $\sigma_i$ means that this operator only acts on TLS number $i$ .
 
-When written in this way, each state can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. By far the most significant kind of delocalised states are called  "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state looks like:
+When written in this way, states can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. By far the most significant kind of delocalised states are called  "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state looks like:
 
 $$
 \Psi_0 = \frac{1}{\sqrt{4}}\left(| 0, +, -, -, - \rangle + | 0, -, +, -, - \rangle + | 0, -, -, +, - \rangle + | 0, -, -, -, + \rangle \right)
