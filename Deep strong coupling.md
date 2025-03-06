@@ -221,7 +221,7 @@ $$
 \label{eq:criticalphononcouplingexplicit}
 $$
 
-For nuclear transitions $\Delta E \sim MeV$  and for a single nucleon $Mc^2 \sim GeV$ so it's already clear that for any sized nucleus we won't enter the superradiant regime. For the sake of completeness, let's evaluate Eq. $\ref{eq:criticalphononcouplingexplicit}$ for a fusion transition with $\Delta E \approx 24MeV$ and for a palladium nucleus with  $Mc^2 \approx 100GeV$
+For nuclear transitions $\Delta E \sim MeV$  and for a single nucleon $Mc^2 \sim GeV$ so it's already clear that for any sized nucleus we won't enter the superradiant regime. For the sake of completeness, let's evaluate Eq. $\ref{eq:criticalphononcouplingexplicit}$ for a transition with $\Delta E \approx 24MeV$ and for a palladium nucleus with  $Mc^2 \approx 100GeV$
 
 $$
 2\sqrt{2} \sqrt{\frac{24\times10^6}{10^{11}}}  \times 10^{-3} \approx 4 \times 10^{-5} \ll 1
