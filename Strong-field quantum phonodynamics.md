@@ -29,7 +29,7 @@ $$
 J_{+} + J_{-} = J_{x} = \frac{1}{2}\overset{N}{\underset{i=1}{\Sigma}} \sigma_{i x} \,\,\,\,\,\, J_{z} = \frac{1}{2}\overset{N}{\underset{i=1}{\Sigma}} \sigma_{i z}
 $$
 
-Here $\sigma$ are the Pauli spin matrices the $i$ in $\sigma_i$ means that this operator only acts on TLS number $i$ .
+Here $\sigma$ are the [Pauli spin matrices](https://ocw.mit.edu/courses/5-61-physical-chemistry-fall-2007/3b1fb40c61e7f939861b190bedbc57a7_lecture24.pdf) the $i$ in $\sigma_i$ means that this operator only acts on TLS number $i$ .
 
 When written in this way, states are described in terms of 3 numbers $|n, j, m\rangle$ where $n$ describes the number of field quanta, $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. By far the most significant kind of delocalised states are called  "Dicke states" which have the largest $j=j_{\max} = N/2$. These states are capable of accelerated emission rates due to superradiance. Dicke starts are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state written in $|n,\pm,\pm, \pm, \pm\rangle$ notation looks like:
 

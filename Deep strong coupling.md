@@ -81,7 +81,7 @@ H_{\rm Rabi} = \frac{\Delta E}{2} \sigma_z + \hbar\omega\left(a^{\dagger}a +\fra
 \label{eq:rabiH}
 $$
 
-where $\Delta E$ is the transition energy between the 2 levels of the TLS, $\hbar\omega$ is the energy of each quantum of the field, and $U$ is the coupling constant between the TLS and the field. The $\sigma$ operators are the Pauli spin matrices and $a^{\dagger}$, $a$ are the field creation and annihilation operators respectively.
+where $\Delta E$ is the transition energy between the 2 levels of the TLS, $\hbar\omega$ is the energy of each quantum of the field, and $U$ is the coupling constant between the TLS and the field. The $\sigma$ operators are the [Pauli spin matrices](https://ocw.mit.edu/courses/5-61-physical-chemistry-fall-2007/3b1fb40c61e7f939861b190bedbc57a7_lecture24.pdf) that act on the TLS, where $\sigma_+$ and $\sigma_-$ act as raising and lowering operators. The $a^{\dagger}$, $a$ are the field creation and annihilation operators respectively.
 
 It's worth noting that we're using the Pauli spin matrices as a mathematical tool to describe two levels. Just keep in mind that we're not really talking about spin angular momentum here.
 

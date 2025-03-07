@@ -15,7 +15,7 @@ H_{\rm Rabi} = \frac{\Delta E}{2} \sigma_z + \hbar\omega\left(a^{\dagger}a +\fra
 \label{eq:rabiH}
 $$
 
-where $\Delta E$ is the transition energy between the 2 levels of the TLS, $\hbar\omega$ is the energy of each quantum of the field, and $U$ is the coupling constant between the TLS and the field. The $\sigma$ operators are the Pauli spin matrices and $a^{\dagger}$, $a$ are the field creation and annihilation operators respectively.
+where $\Delta E$ is the transition energy between the 2 levels of the TLS, $\hbar\omega$ is the energy of each quantum of the field, and $U$ is the coupling constant between the TLS and the field. The $\sigma$ operators are the [Pauli spin matrices](https://ocw.mit.edu/courses/5-61-physical-chemistry-fall-2007/3b1fb40c61e7f939861b190bedbc57a7_lecture24.pdf) that act on the TLS, where $\sigma_+$ and $\sigma_-$ act as raising and lowering operators. The $a^{\dagger}$, $a$ are the field creation and annihilation operators respectively.
 
 It's worth noting that we're using the Pauli spin matrices as a mathematical tool to describe two levels. Just keep in mind that we're not really talking about spin angular momentum here.
 
@@ -179,7 +179,7 @@ then we get no emission at all because we get complete destructive interference 
 
 The biggest physical limitation associated with superradiance is the requirement for many TLS to be in a space much smaller than a wavelength so that all TLS see the same field at any moment in time. This is another way of saying that we have to make sure we can indeed use the Dicke Hamiltonian in Eq. $\ref{eq:dickeH}$.
 
-Consider for example the acceleration of the decay of the $\rm 14\ keV$ transition of excited $\rm ^{57}Fe$ as described in[ Chumakov 2017](https://www.nature.com/articles/s41567-017-0001-z) . There, a $\rm 14\ keV$ x-ray laser is responsible for exciting the $\rm ^{57}Fe$ initially. In such an experiment, it's possible to create a Dicke state with an extremely large $N$ proportional to the spot size of the laser. In the case of iron with a surface density on the order of $10^{15} \ \rm m^{-2}$ with an x-ray spot size of $1 \ \rm \mu m$ there are $N=10^7$ atoms.
+Consider for example the acceleration of the decay of the $\rm 14\ keV$ transition of excited $\rm ^{57}Fe$ as described in [Chumakov 2017](https://www.nature.com/articles/s41567-017-0001-z). There, a $\rm 14\ keV$ x-ray laser is responsible for exciting the $\rm ^{57}Fe$ initially. In such an experiment, it's possible to create a Dicke state with an extremely large $N$ proportional to the spot size of the laser. In the case of iron with a surface density on the order of $10^{15} \ \rm m^{-2}$ with an x-ray spot size of $1 \ \rm \mu m$ there are $N=10^7$ atoms.
 
 While we might delight in the prospect of a $10^{7}$ enhancement of the decay rate, we must also consider the wavelength of the mode that the atoms are eventually going to collectively emit into. The wavelength associated with $\rm 14\ keV$ is only about $\sim 1\AA$. Since the number density of iron is about $8\times 10^{28} \rm m^{-3}$ then we'd have less than 1 atom per cubic wavelength and so we'd not be able to apply the Dicke Hamiltonian. Although all $10^{7}$ atoms see the same initial $\rm 14\ keV$ exciting x-ray beam, because the collective emission happens over distances spanning many wavelengths then there is potential for interference which can destroy the superradiance effects. Indeed in the Chumakov paper, they only observed a factor of 10 increase in the decay rate.
 
@@ -189,4 +189,4 @@ Alternatively if we have two groups of TLS, system A and system B and they are e
 
 ## Supertransfer
 
->  TODO
+> TODO
