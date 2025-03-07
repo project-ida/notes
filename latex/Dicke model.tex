@@ -8,6 +8,7 @@
 
 \usepackage{hyperref}
 \usepackage{ulem}  % For underlining links
+\normalem
 
 \hypersetup{
     colorlinks=false,         % Disable colored links (boxes will appear)
@@ -281,6 +282,139 @@ For the first de-excitation, the coupling terms gets enhanced by
 \(\sim\sqrt{N^2}\) for large \(N\). In other words, the rate of emission
 (which go as the square of the coupling) to be enhanced by \(N^2\) -
 this is where the super in superradiance comes from.
+
+\subsubsection{Understanding
+superradiance}\label{understanding-superradiance}
+
+Superradiance might at first seem counterintuitive, but we can
+understand it from one of the most fundamental principles of quantum
+mechanics
+\href{https://www.feynmanlectures.caltech.edu/III_01.html\#Ch1-S7}{according
+to Richard Feynman} which reads:
+
+\begin{quote}
+``When an event can occur in several alternative ways, the probability
+amplitude for the event is the sum of the probability amplitudes for
+each way considered separately. There is interference''
+\end{quote}
+
+Let's take the example of 2 excitations amongst 4 TLS. The initial
+delocalised Dicke state looks like:
+
+\[
+\Psi_i = \frac{1}{\sqrt{6}}\left(| 0, +, +, -, - \rangle + | 0, +, -, +, - \rangle + | 0, +, -, -, + \rangle + | 0, -, +, +, - \rangle + | 0, -, +, -, + \rangle + | 0, -, -, +, + \rangle \right)
+\]
+
+We can see there are 6 different configurations for the TLS. Each of the
+2 excitations in those 6 configurations could transition from \(+\) to a
+\(-\) with a release of a single field quanta. That means each of the 6
+configurations has 2 emission paths that it could go in order to reach
+one of 4 configurations in final the state:
+
+\[
+\Psi_f = \frac{1}{\sqrt{4}}\left(| 1, +, -, -, - \rangle + | 1, -, +, -, - \rangle + | 1, -, -, +, - \rangle + | 1, -, -, -, + \rangle \right)
+\]
+
+The total number of emission paths is therefore \(6\times 2 = 12\). Each
+of these paths contributes the same to the overall emission amplitude
+because the Dicke state is constructed with \(+\) between each of the
+configurations that make up the state. This creates what's called
+``constructive interference'' where the effects of each path add up to a
+larger effect.
+
+To get the numbers right, we must remember that our states are
+normalised. The 6 configurations in our starting state means dividing
+the amplitude by \(\sqrt{6}\). The 4 configurations in the final state
+means dividing the amplitude by \(\sqrt{4}\). So the overall amplitude
+enhancement factor is:
+
+\[
+\frac{6\times 2}{\sqrt{6}\sqrt{4}} = \sqrt{6}
+\]
+
+and so the probability enhancement factor (which is proportional to the
+emission rate) is the square of this, i.e.~6. To derive a general, we
+just have to do this counting and normalising for the general case:
+
+\[
+\left(\frac{^N C_{N_+} N_+}{\sqrt{^N C_{N_+}}\sqrt{^N C_{{N_+}-1}}}\right)^2 = N_+\left(N-N_++1\right)
+\]
+
+where \(N_+\) is the number of excitations amongst the \(N\) TLS.
+
+Now we can really understand just how important those ``\(+\)'s'' are
+that make the Dicke state symmetric. As soon as you allow any ``\(-\)''
+you reduce the emission rates. Take for example the case of 2 TLS with a
+single delocalised excitation. If instead of a symmetric Dicke state \[
+\Psi = \frac{1}{\sqrt{2}}\left(| 0, +, -\rangle + | 0, -, + \rangle \right)
+\]
+
+we instead use
+
+\[
+\Psi = \frac{1}{\sqrt{2}}\left(| 0, +, -\rangle - | 0, -, + \rangle \right)
+\]
+
+then we get no emission at all because we get complete destructive
+interference of the two paths. Such states are often referred to as
+``dark states''.
+
+\subsubsection{Limitations of
+superradiance}\label{limitations-of-superradiance}
+
+The biggest physical limitation associated with superradiance is the
+requirement for many TLS to be in a space much smaller than a wavelength
+so that all TLS see the same field at any moment in time. This is
+another way of saying that we have to make sure we can indeed use the
+Dicke Hamiltonian in Eq. \(\ref{eq:dickeH}\).
+
+Consider for example the acceleration of the decay of the
+\(\rm 14\ keV\) transition of excited \(\rm ^{57}Fe\) as described
+in\href{https://www.nature.com/articles/s41567-017-0001-z}{Chumakov
+2017} . There, a \(\rm 14\ keV\) x-ray laser is responsible for exciting
+the \(\rm ^{57}Fe\) initially. In such an experiment, it's possible to
+create a Dicke state with an extremely large \(N\) proportional to the
+spot size of the laser. In the case of iron with a surface density on
+the order of \(10^{15} \ \rm m^{-2}\) with an x-ray spot size of
+\(1 \ \rm \mu m\) there are \(N=10^7\) atoms.
+
+While we might delight in the prospect of a \(10^{7}\) enhancement of
+the decay rate, we must also consider the wavelength of the mode that
+the atoms are eventually going to collectively emit into. The wavelength
+associated with \(\rm 14\ keV\) is only about \(\sim 1\AA\). Since the
+number density of iron is about \(8\times 10^{28} \rm m^{-3}\) then we'd
+have less than 1 atom per cubic wavelength and so we'd not be able to
+apply the Dicke Hamiltonian. Although all \(10^{7}\) atoms see the same
+initial \(\rm 14\ keV\) exciting x-ray beam, because the collective
+emission happens over distances spanning many wavelengths then there is
+potential for interference which can destroy the superradiance effects.
+Indeed in the Chumakov paper, they only observed a factor of 10 increase
+in the decay rate.
+
+One way to overcome the limitation described above is to use a mode with
+a lower frequency and so a longer wavelength. There is however a price
+to pay for this approach. If the field and TLS are not matched,
+i.e.~\(\hbar\omega \neq \Delta E\) , then virtual transitions must take
+place in which quanta after quanta are ``emitted'' until there are
+enough field quanta \(n\) so that energy balance is reached
+i.e.~\(n\hbar\omega = \Delta E\). This is known as downconversion. The
+rate of this process scales at most as fast as
+\((nN^2U^2)^{\Delta E / \hbar\omega}\) and so the only way this process
+can work is if there are enough TLS (\(N\)) and the field is initially
+strong enough (\(n\)) to make the overall coupling large.
+
+Alternatively if we have two groups of TLS, system A and system B and
+they are energy matched in the sense that \(\Delta E_A = \Delta E_B\)
+then a mismatched field can be used to increase the rate of excitation
+transfer between A and B without the constraints described above because
+the field does not have to be ``responsible'' for the energy balance in
+the final state. We'll explore this more in the next section.
+
+\subsection{Supertransfer}\label{supertransfer}
+
+\begin{quote}
+TODO
+\end{quote}
 
 \printbibliography
 
