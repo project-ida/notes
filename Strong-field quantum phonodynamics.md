@@ -109,6 +109,8 @@ In this regime, the field retains its "identity" but the TLS gets significantly 
 
 Eq. $\ref{eq:strongfield}$ can in principle be satisfied for any type of coupling by just increasing the field strength. In practice, there will be physical limits on how strong a field can be. Let's try and work through an example using relativistic phonon nuclear coupling to mediate a nuclear transition with phonons.
 
+### Relativistic phonon nuclear coupling
+
 From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the relativistic phonon nuclear coupling as:
 
 $$
@@ -162,3 +164,46 @@ So, we can describe some different regions of $n$ for this palladium example:
 - $n > 5\times 10^{24}$ - strong field, the field dominates but now the coupling is bigger than the TLS energy 
 
 When the field is strong, and the field quanta have a low enough energy such that $U\sqrt{N}>\hbar\omega$ then there can be a free exchange of energy between the field and the TLS because even though an individual low energy energy quanta cannot "hold" all the energy of a TLS transition, the coupling term can.  Another way of thinking about this is that incredibly unlikely transitions like the downconversion of nuclear energy into phonon energy or the upconversion of phonon energy to nuclear energy become possible.
+
+### Magnetic dipole coupling
+
+From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the magnetic dipole coupling as:
+$$
+U \approx 0.02 \frac{{\mu_N}B}{\sqrt{n}}
+$$
+where $\mu_N = e\hbar/m_p \approx 5\times 10^{-27} \ \rm J/T$ is the nuclear magneton
+
+The first condition in Eq. $\ref{eq:strongfield}$ gives:
+$$
+\begin{aligned}
+\Delta E &\lesssim U\sqrt{N}\sqrt{n} \\
+{\Delta E} &\lesssim  0.02 \mu_N B \sqrt{N} \\
+1 &\lesssim 0.02\sqrt{N}\frac{\mu_N B}{\Delta E} \\
+\end{aligned}
+$$
+We can turn this into a condition for the number of nuclei $N$ by using the largest reasonable magnetic field strength of $B\sim 1 \ \rm T$. Let's look at the $\rm 14 \ keV$ nuclear transition of $\rm ^{57}Fe$ .
+$$
+\begin{aligned}
+N &\gtrsim \left(50\frac{\Delta E}{\mu_N B}\right)^2 \\
+&\gtrsim 2500 \times \left(\frac{14 \times 10^3 \times 1.6\times 10^{-19}}{5\times 10^{-27}}\right)^2
+\\
+&\gtrsim 5 \times 10^{26}
+\end{aligned}
+$$
+This works out at about $50 \ \rm kg$ of iron - at the very least!
+
+The second condition in Eq. $\ref{eq:strongfield}$ gives:
+$$
+\begin{aligned}
+U\sqrt{N}\sqrt{n} &\ll  n\hbar \omega \\
+0.02 \mu_N B \sqrt{N} &\ll \frac{1}{\mu_0} B^2 V  \\
+N \ll \left(50\frac{1}{\mu_0\mu_N}BV\right)^2
+\end{aligned}
+$$
+Again we'll use $B=1 \ \rm T$ . For the volume let's use the volume of $5 \times 10^{26}$ iron atoms. The density of iron is about $8000 \ \rm kg/m^{-3}$ so $V \approx 0.006 \ \rm m^3$ . Substituting the numbers gives:
+$$
+N \ll 2\times 10^{63}
+$$
+This condition is well satisfied.
+
+If we were to consider magnons with energy $100 \ \rm meV$ which have frequency $f \approx 24 \ \rm THz$ and wavelength $\lambda \approx 10 \ \rm \mu m$  (which would define a coherence domain for the Dicke model) then the number of iron atoms in a cubic wavelength would be $N \approx 8 \times 10^{13}$. From this we can conclude that the strong field regime can't be physically realised with magnetic dipole coupling with magnons.

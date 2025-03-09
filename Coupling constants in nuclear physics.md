@@ -344,7 +344,18 @@ and so even with Dicke enhancement, dipole coupling remains in the weak coupling
 
 ## $B$ in $\mu\cdot B$
 
-We assume there is an externally driven oscillatory magnetic field $B$ with frequency $\omega$. 
+We assume there is an externally driven oscillatory magnetic field $B$ with frequency $\omega$ in some volume V. Since field energy density $\sim \mu_0B^2$ then:
+$$
+\frac{1}{\mu_0} B^2 V = n\hbar\omega
+$$
+where $n$ is the field occupation number.
+
+We can therefore write:
+$$
+B = \sqrt{\frac{\mu_0n\hbar\omega}{V}}
+\label{eq:B}
+$$
+
 
 ## $\mu$ in $\mu \cdot B$
 
@@ -454,7 +465,7 @@ $$
 $$
 Where $\mu_N = e\hbar/m_p \approx 5\times 10^{-27} \ \rm J/T$ is the nuclear magneton. 
 
-### Overall coupling constant
+## Overall coupling constant
 
 If we again use this simple Hamiltonian in which a single TLS interacts with a single mode but this time it's not a phonon mode but a magnon mode:
 
@@ -462,10 +473,25 @@ $$
 H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(a^{\dagger}a +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
 $$
 
-then a $\mu \cdot B$ coupling constant $U$ can be defined by simply multiplying  Eq. $\ref{eq:mu}$ by B
+then a $\mu \cdot B$ coupling constant $U$ can be defined by simply multiplying  Eq. $\ref{eq:mu}$ by Eq. $\ref{eq:B}$ (without the $\sqrt{n}$) :
 
 $$
-\frac{U}{\hbar\omega} \approx 0.02 \frac{\mu_N B}{\hbar\omega}
+U \approx 0.02 \frac{{\mu_N}B}{\sqrt{n}}
+$$
+
+$$
+U \approx 0.02 {\mu_N}\sqrt{\frac{\mu_0\hbar\omega}{V}}
+$$
+
+## Example with magnons
+
+For [magnons](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.61.R11875) with $\hbar \omega \approx 100 \ \rm meV$, lets use a volume $V = 0.001 \ \rm m^{-3}$
+$$
+\begin{aligned}
+U &\approx 0.02 \times 5\times 10^{-27}\times \sqrt{\frac{4\pi\times 10^{-7}\times 100\times 10^{3}\times 1.6\times 10^{-19}}{0.001}} \\
+\frac{U}{\hbar\omega} &\approx 0.02 \times 5\times 10^{-27}\times\sqrt{\frac{4\pi\times 10^{-7} }{0.001 \times 100\times 10^{3}\times 1.6\times 10^{-19}}} \\
+\frac{U}{\hbar\omega} &\approx 2.8\times10^{-23}
+\end{aligned}
 $$
 
 
