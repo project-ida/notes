@@ -51,6 +51,7 @@ a \sim \frac{1}{2} \frac{\Delta E}{M c^2} \frac{\pi}{m c}
 $$
 
 where:
+
 - $\Delta E$ is the nuclear transition energy,
 - $m$ is the mass of a single nucleon within the nucleus,
 - $\pi$ represents the relative momentum of that nucleon.
@@ -97,7 +98,7 @@ $$
 
 where $\Delta E$ is the transition energy between the 2 levels of the TLS, $\hbar\omega_A$ is the energy of each quantum of the field, and $U$ is the coupling constant between the TLS and the field. The $\sigma$ operators are the Pauli matrices and $b^{\dagger}$, $b$ are the field creation and annihilation operators respectively. Note that usually $a$ is used for the field operators, but in these notes we use $b$ to avoid confusion with $a \cdot cp$ .
 
-then an $a \cdot cp$ coupling constant $U$ can be defined by combining Eq. $\ref{eq:p}$ (without the $\sqrt{n}$) with Eq. $\ref{eq:a}$:
+The $a \cdot cp$ coupling constant $U$ can be defined by combining Eq. $\ref{eq:p}$ (without the $\sqrt{n}$) with Eq. $\ref{eq:a}$:
 $$
 U = c \sqrt{\frac{2M}{N}} \sqrt{\hbar \omega_A} \times \frac{\Delta E}{M c^2} \times 10^{-3}
 $$
@@ -177,7 +178,6 @@ We can connect two key expressions related to electric dipole interactions:
 ### Radiation from an electric dipole
 
 The radiative decay rate due to dipole radiation is given by:
-
 $$
 \gamma_{\text{rad}} = \frac{4}{3} \frac{1}{4 \pi \epsilon_0 \hbar} \frac{\omega^3}{c^3} d^2
 $$
@@ -196,13 +196,14 @@ $$
 
 ### Weisskopf estimate for E1 transition
 
-Weisskopf's formula for radiative decay is given by ([Eq. 16.35 of Bielajew's book](https://public.websites.umich.edu/~ners311/CourseLibrary/bookchapter16.pdf#page=14) or [Eq. A.190 of Dommelen's book](http://www.dommelen.net/quantum2/style_a/nt_weis.html#SECTION091258000000000000000)):
+Weisskopf's formula for radiative decay is given by ([Eq. A.190 of Dommelen's book](http://www.dommelen.net/quantum2/style_a/nt_weis.html#SECTION091258000000000000000)):
 
 $$
-\gamma_{\text{rad}} = \frac{8\pi (L+1)}{L \left[(2L+1)!!\right]^2} \alpha (kR)^{2L} \omega \left( \frac{3}{L+3} \right)^2
+\gamma_{\text{rad}} = \frac{2 (L+1)}{L \left[(2L+1)!!\right]^2} \alpha (kR)^{2L} \omega \left( \frac{3}{L+3} \right)^2
 $$
 
 where:
+
 - $L$ is the multipolarity ($L=1$ for dipole, $L=2$ for quadrupole).
 - $k$ is the wavenumber of the emitted radiation.
 - $R$ is the nuclear radius, given by:
@@ -216,13 +217,13 @@ where $R_0$ is the radius of a single nucleon and $A$ is the number of nucleons.
 For a dipole transition ($L=1$), this simplifies to:
 
 $$
-\gamma_{\text{rad}} = \frac{8\pi \times 2}{1 \times [3!!]^2} \alpha \frac{\omega^2}{c^2} R_0^2 A^{2/3} \omega \left(\frac{3}{4} \right)^2
+\gamma_{\text{rad}} = \frac{2 \times 2}{1 \times [3!!]^2} \alpha \frac{\omega^2}{c^2} R_0^2 A^{2/3} \omega \left(\frac{3}{4} \right)^2
 $$
 
 Rewriting more compactly:
 
 $$
-\gamma_{\text{rad}} = \frac{9\pi}{(3!!)^2} \alpha \frac{\omega^3}{c^2} R_0^2 A^{2/3}
+\gamma_{\text{rad}} = \frac{9}{4\times(3!!)^2} \alpha \frac{\omega^3}{c^2} R_0^2 A^{2/3}
 $$
 
 ### Equating the two expressions
@@ -230,31 +231,31 @@ $$
 From the previous derivations, we equate:
 
 $$
-\frac{9\pi}{(3!!)^2} \alpha \frac{\omega^3}{c^2} R_0^2 A^{2/3} = \frac{4}{3} \frac{1}{e^2} \alpha \frac{\omega^3}{c^2} d^2
+\frac{9}{4\times(3!!)^2} \alpha \frac{\omega^3}{c^2} R_0^2 A^{2/3} = \frac{4}{3} \frac{1}{e^2} \alpha \frac{\omega^3}{c^2} d^2
 $$
 
 Rearranging:
 
 $$
-\frac{27\pi}{4 \times (3!!)^2} A^{2/3} e^2 R_0^2 = d^2
+\frac{27}{16 \times (3!!)^2} A^{2/3} e^2 R_0^2 = d^2
 $$
 
 Taking the square root:
 
 $$
-d = \frac{\sqrt{27\pi}}{2 \times (3!!)} A^{1/3} e R_0
+d = \frac{\sqrt{27}}{4 \times (3!!)} A^{1/3} e R_0
 $$
 
 which simplifies to:
 
 $$
-d = \frac{\sqrt{27\pi}}{1440} A^{1/3} e R_0
+d = \frac{\sqrt{27}}{2880} A^{1/3} e R_0
 $$
 
 Approximating numerically:
 
 $$
-d \approx 6 \times 10^{-3} A^{1/3} e R_0 \label{eq:d}
+d \approx 2 \times 10^{-3} A^{1/3} e R_0 \label{eq:d}
 $$
 
 ## Overall coupling constant
@@ -268,25 +269,25 @@ $$
 then a $d \cdot E$ coupling constant $U$ can be defined by combining Eq. $\ref{eq:E}$ (without the $\sqrt{n}$) with Eq. $\ref{eq:d}$:
 
 $$
-\frac{U}{\hbar \omega_A} = \frac{1}{\hbar \omega_A} \frac{\omega_A \sqrt{2M \hbar \omega_A}}{Ze \sqrt{N}} \times 6 \times 10^{-3} A^{1/3} e R_0
+\frac{U}{\hbar \omega_A} = \frac{1}{\hbar \omega_A} \frac{\omega_A \sqrt{2M \hbar \omega_A}}{Ze \sqrt{N}} \times 2 \times 10^{-3} A^{1/3} e R_0
 $$
 
 Rearranging,
 
 $$
-\frac{U}{\hbar \omega_A} = \frac{\sqrt{2}}{Z \sqrt{N}} \sqrt{\frac{M c^2}{\hbar \omega_A}} \frac{\hbar \omega_A R_0}{\hbar c} A^{1/3} \times 6 \times 10^{-3}
+\frac{U}{\hbar \omega_A} = \frac{\sqrt{2}}{Z \sqrt{N}} \sqrt{\frac{M c^2}{\hbar \omega_A}} \frac{\hbar \omega_A R_0}{\hbar c} A^{1/3} \times 2 \times 10^{-3}
 $$
 
 We recognize $\hbar c / R_0$ as the localization energy of a nucleon, which we call $E_L$. Thus, we obtain:
 
 $$
-\frac{U}{\hbar \omega_A} = \frac{2\pi\sqrt{2}}{Z \sqrt{N}} \sqrt{\frac{M c^2}{\hbar \omega_A}} \frac{\hbar \omega_A}{E_L} A^{1/3} \times 6 \times 10^{-3}
+\frac{U}{\hbar \omega_A} = \frac{\sqrt{2}}{Z \sqrt{N}} \sqrt{\frac{M c^2}{\hbar \omega_A}} \frac{\hbar \omega_A}{E_L} A^{1/3} \times 2 \times 10^{-3}
 $$
 
 which can also be written as:
 
 $$
-\frac{U}{\hbar \omega_A} = \frac{2\pi\sqrt{2}}{Z \sqrt{N}} \sqrt{\frac{M c^2}{E_L}} \sqrt{\frac{\hbar \omega_A}{E_L}} A^{1/3} \times 6 \times 10^{-3}
+\frac{U}{\hbar \omega_A} = \frac{\sqrt{2}}{Z \sqrt{N}} \sqrt{\frac{M c^2}{E_L}} \sqrt{\frac{\hbar \omega_A}{E_L}} A^{1/3} \times 2 \times 10^{-3}
 $$
 
 Note how the expressions for $a \cdot cp$ and $d \cdot E$ have an interesting reciprocal relationship if we see that $E_L$ plays the role of $\Delta E$.
@@ -294,6 +295,7 @@ Note how the expressions for $a \cdot cp$ and $d \cdot E$ have an interesting re
 ## Example of Pd with Acoustic Phonons
 
 Given:
+
 - $A \approx 106$
 - $N \approx 10^{18}$
 - $Z \approx 106$
@@ -313,21 +315,21 @@ $$
 Now, substituting these numbers gives:
 
 $$
-\frac{U}{\hbar \omega_A} \approx \frac{2 \pi\sqrt{2} }{106 \times 10^9} \times \sqrt{\frac{10^{11}}{10^{-8}}} \times \frac{10^{-8}}{10^9} \times 6 \times 10^{-3} \times 106^{1/3}
+\frac{U}{\hbar \omega_A} \approx \frac{\sqrt{2} }{106 \times 10^9} \times \sqrt{\frac{10^{11}}{10^{-8}}} \times \frac{10^{-8}}{10^9} \times 2 \times 10^{-3} \times 106^{1/3}
 $$
 
 Approximating:
 
 $$
-\approx \frac{ 2 \pi \sqrt{2} \sqrt{10}}{106 \times 10^9} \times 10^9 \times 10^{-17} \times 6 \times 10^{-3} \times 106^{1/3}
+\approx \frac{\sqrt{2} \sqrt{10}}{106 \times 10^9} \times 10^9 \times 10^{-17} \times 2 \times 10^{-3} \times 106^{1/3}
 $$
 
 $$
-\approx 8\pi \times 6 \times 10^{-20} \times 106^{-2/3}
+= \sqrt{20} \times 2 \times 10^{-20} \times 106^{-2/3}
 $$
 
 $$
-\approx 7 \times 10^{-20}
+\approx 4 \times 10^{-21}
 $$
 
 ## Dicke enhancement
@@ -335,7 +337,7 @@ $$
 For an ensemble of $N$ nuclei interacting collectively with a phonon field, coupling is enhanced by $\sqrt{N}$, leading to:
 
 $$
-\frac{U}{\hbar \omega_A} \sim 7 \times 10^{-11}
+\frac{U}{\hbar \omega_A} \sim 4 \times 10^{-12}
 $$
 
 and so even with Dicke enhancement, dipole coupling remains in the weak coupling regime. 
@@ -363,7 +365,7 @@ In order to calculate the dipole moment $\mu$ associated with the $\mu\cdot B$ c
 
 We can connect two key expressions related to magnetic dipole interactions:
 
-1. Radiation from a magnetic dipole – describes how an oscillating magnetic dipole emits radiation.  
+1. Radiation from a magnetic dipole – describes how an oscillating magnetic dipole emits radiation.
 2. Radiative decay rates from Weisskopf – provides an estimate for transition rates.
 
 ### Radiation from a magnetic dipole
@@ -493,5 +495,4 @@ U &\approx 0.02 \times 5\times 10^{-27}\times \sqrt{\frac{4\pi\times 10^{-7}\tim
 \frac{U}{\hbar\omega} &\approx 2.8\times10^{-16}
 \end{aligned}
 $$
-
 
