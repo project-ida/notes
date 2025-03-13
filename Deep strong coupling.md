@@ -209,7 +209,7 @@ Typically, we imagine a phonon as being the quantised oscillatory motion of many
 
 Our example Hamiltonian in Eq. $\ref{eq:rabiH}$ is for a single TLS, so we'll consider Eq. $\ref{eq:phononcoupling}$ with $N=1$. We'll extend the Hamiltonian to many TLS later on.
 
-For nuclear transitions mediated by phonons, $\Delta E \sim MeV$and $\hbar\omega_A \sim 10neV$ and so $\Delta E/\hbar\omega \gg 1$. Therefore, Eq. $\ref{eq:superradianttransition}$ is the appropriate superradiant threshold condition.
+For nuclear transitions mediated by phonons, $\Delta E \sim \rm MeV$and $\hbar\omega_A \sim 10 \ \rm neV$ and so $\Delta E/\hbar\omega \gg 1$. Therefore, Eq. $\ref{eq:superradianttransition}$ is the appropriate superradiant threshold condition.
 
 Substituting the expression for coupling (Eq. $\ref{eq:phononcoupling}$) into the critical coupling expression (Eq. $\ref{eq:superradianttransition}$) gives the following condition:
 
