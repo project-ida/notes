@@ -64,7 +64,7 @@ $$
 Substituting this into the expression for $a$ gives:
 
 $$
-a \sim \frac{1}{2} \frac{\Delta E}{M c^2} \frac{\bar\lambda_c}{l_F} 
+a \sim \frac{1}{2} \frac{\Delta E}{M c^2} \frac{\bar\lambda_c}{l_F}
 $$
 
 where $\bar\lambda_c = \hbar / m c$ is the reduced Compton wavelength, approximately:
@@ -298,7 +298,7 @@ Given:
 
 - $A \approx 106$
 - $N \approx 10^{18}$
-- $Z \approx 106$
+- $Z \approx 46$
 - $M c^2 \approx 10^{11}$ eV
 - $\hbar \omega_A \approx 10^{-8}$ eV
 
@@ -321,15 +321,15 @@ $$
 Approximating:
 
 $$
-\approx \frac{\sqrt{2} \sqrt{10}}{106 \times 10^9} \times 10^9 \times 10^{-17} \times 2 \times 10^{-3} \times 106^{1/3}
+\approx \frac{\sqrt{2} \sqrt{10}}{46 \times 10^9} \times 10^9 \times 10^{-17} \times 2 \times 10^{-3} \times 106^{1/3}
 $$
 
 $$
-= \sqrt{20} \times 2 \times 10^{-20} \times 106^{-2/3}
+\approx 0.1 \times 2 \times 10^{-20} \times 106^{1/3}
 $$
 
 $$
-\approx 4 \times 10^{-21}
+\approx 10^{-20}
 $$
 
 ## Dicke enhancement
@@ -337,7 +337,7 @@ $$
 For an ensemble of $N$ nuclei interacting collectively with a phonon field, coupling is enhanced by $\sqrt{N}$, leading to:
 
 $$
-\frac{U}{\hbar \omega_A} \sim 4 \times 10^{-12}
+\frac{U}{\hbar \omega_A} \sim 10^{-12}
 $$
 
 and so even with Dicke enhancement, dipole coupling remains in the weak coupling regime. 
