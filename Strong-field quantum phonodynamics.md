@@ -109,7 +109,7 @@ In this regime, the field retains its "identity" but the TLS gets significantly 
 
 Eq. $\ref{eq:strongfield}$ can in principle be satisfied for any type of coupling by just increasing the field strength. In practice, there will be physical limits on how strong a field can be. Let's try and work through an example using relativistic phonon nuclear coupling to mediate a nuclear transition with phonons.
 
-### Relativistic phonon nuclear coupling
+## Relativistic phonon nuclear coupling
 
 From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the relativistic phonon nuclear coupling as:
 
@@ -124,8 +124,10 @@ $$
 \Delta E &\lesssim U\sqrt{N}\sqrt{n} \\
 \frac{\Delta E}{\hbar \omega_A} &\lesssim \sqrt{2} \sqrt{\frac{\Delta E}{M c^2}} \sqrt{\frac{\Delta E}{\hbar \omega_A}} \times 10^{-3}\sqrt{n} \\
 1 &\lesssim \sqrt{2} \sqrt{\frac{\hbar\omega_A}{M c^2}} \times 10^{-3}\sqrt{n} \\
-\frac{1}{2}\frac{Mc^2}{\hbar\omega_A}\times 10^6 &\lesssim n
+\frac{1}{2}\frac{Mc^2}{\hbar\omega_A}\times 10^6 &\lesssim n \\
+\frac{1}{2}Mc^2\times 10^6  &\lesssim n\hbar\omega_A
 \end{aligned}
+\label{eq:strongfieldconditiononn}
 $$
 
 For palladium nuclear transitions mediated by acoustic phonons, $M c^2 \approx 10^{11}$ eV  and $\hbar \omega_A \approx 10^{-8}$ eV  . This tells us that the number of phonons must be at least:
@@ -134,10 +136,11 @@ $$
 n \gtrsim 5\times 10^{24}
 $$
 
-This seems like a very large number of phonons, so let's sense check the total energy content of the field:
+And the total energy of the phonons is at least:
 
 $$
-5\times 10^{24} \times 10^{-8} \times 1.6\times 10^{-19} = 8 \, \rm mJ
+\frac{1}{2}\times 10^{11} \times 10^{6} \times 1.6\times 10^{-19} = 8 \, \rm mJ
+\label{eq:minfieldenergy}
 $$
 
 This does not seem like an outrageous amount of energy.
@@ -165,7 +168,43 @@ So, we can describe some different regions of $n$ for this palladium example:
 
 When the field is strong, and the field quanta have a low enough energy such that $U\sqrt{N}>\hbar\omega$ then there can be a free exchange of energy between the field and the TLS because even though an individual low energy energy quanta cannot "hold" all the energy of a TLS transition, the coupling term can.  Another way of thinking about this is that incredibly unlikely transitions like the downconversion of nuclear energy into phonon energy or the upconversion of phonon energy to nuclear energy become possible.
 
-### Magnetic dipole coupling
+### Ion traps
+
+Although the phonon energy doesn't seem that large - Eq. $\ref{eq:minfieldenergy}$ gave $8 \ \rm mJ$ - it can be a bit deceiving. For example, one might imagine giving $8 \ \rm mJ$ of energy to a single nucleus via the electric field of an ion trap such as a Paul trap like the one used in [Cai 2021](https://www.nature.com/articles/s41467-021-21425-8). Such a setup might allow us to explore relativistic phonon nuclear coupling of a single nucleus. However, we must consider both the physical limits on the size of the electric field that would drive the oscillatory motion and the size of the experiment over which acceleration of the nucleus occurs.
+
+From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the magnitude of an oscillating electric field associated with phonon motion to be:
+
+$$
+E = \frac{\omega_A \sqrt{2M n\hbar \omega_A}}{Ze \sqrt{N}} \label{eq:E}
+$$
+
+The electric field depends on the frequency and so in principle we can bring the field down to manageable levels. However, the smaller the field, the greater than size of the experiment because smaller field has to act over a greater distance in order to produce phonon energies required from Eq. $\ref{eq:strongfieldconditiononn}$.
+
+A simple test of practicality is to substitute the largest practical $E$ field of $\sim 10^{11}$. It should be noted that this field is used for acceleration of charged particles and not for trapping of ions. It will however give us a good bound for how large a hypothetical trap might need to be.
+
+For a single palladium nucleus with $Z \sim 50$, the size of the trap $d$ can be estimated from force multiplied by distance:
+
+$$
+\begin{aligned}
+ZeEd &= 8\times 10^{-3} \\
+d  &= \frac{8\times 10^{-3}}{ZeE} \\
+d  &\sim \frac{5\times 10^{16}}{50 \times 10^{11}} \\
+d &\sim 10^4 \ \rm m
+\end{aligned}
+$$
+
+A monstrously large ion trap. 
+
+A smaller electric field would only make the the situation worse and so we can conclude that the strong field regime cannot be accessed for a single nucleus in an ion trap.
+
+In some ways this might not be so surprising because for a single nucleus, we're requiring $\frac{1}{2}Mc^2\times 10^6 \ \rm eV$ to be transferred to it - one million times more energy than it's rest mass energy!!!
+
+One might hope to alleviate the problems described above by adding more nuclei to the trap and thus bringing down the energy per nucleus. However, in order to avoid collective non-neutral plasma effects coming into play we'd need to limit $N < 1000$. This would still make the trap $\sim 10 \ \rm m$ which is  orders of magnitude larger that typical trap sizes.
+
+
+
+
+## Magnetic dipole coupling
 
 From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the magnetic dipole coupling as:
 $$
