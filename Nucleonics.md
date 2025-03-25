@@ -16,11 +16,11 @@ The answer seems to be yes - nucleonics is possible. Now to the question of "Wha
 
 # A vision for nucleonics
 
-What if, similar to our control of electronic states, we gained precise control of nuclear states? We might imagine a world where nuclear radiation is a thing of the past or a world where we can increase nuclear fusion rates in solid states to technologically relevant levels. 
+What if, similar to our control of electronic states, we gained precise control of nuclear states? We might imagine a world where [nuclear radiation is a thing of the past](https://nucleonics.substack.com/p/going-beyond-radiation) or a world where we can increase nuclear fusion rates in solid states to technologically relevant levels. 
 
 There are other possible visions for nucleonics, e.g. one might take an information technology angle relating to nuclear spintronics. However, our vision takes an energy angle. We can recast the vision into a "mission statement"
 
-> **We want to enable rational engineering of small-scale devices fueled by clean nuclear energy**
+> **We want to enable rational engineering of small-scale devices fuelled by clean nuclear energy**
 
 Now that we have a "destination", how are we going to get there? Are there any potential roadblocks along the way? We need a roadmap.
 
@@ -35,7 +35,7 @@ It may be that manipulating nuclear states for the purposes of energy technology
 From the energy perspective that our mission statement focusses on, practicality means that we need to be able to:
 
 - Accelerate nuclear transitions by many orders of magnitude
-- Transfer nuclear energy from one type of nucleus to another
+- Transfer nuclear energy non-radiatively from one nucleus to another
 - Control nuclear transitions with low frequency stimulation
 - Extract nuclear energy in benign forms
 
@@ -45,9 +45,9 @@ Hagelstein's theoretical framework relies on combining several pieces of well es
 
 ## Accelerating nuclear transitions by many orders of magnitude
 
-One of the key bit of physics responsible for accelerating nuclear transitions is Dicke Superradiance. First proposed by [Dicke in the 1950s](https://doi.org/10.1103/PhysRev.93.99) for atoms and then extended by [Terhune and Baldwin in the 1960s](https://doi.org/10.1103/physrevlett.14.589) for nuclei, Dicke's model showed that $N$ particles can radiate/decay collectively up to $N^2$ faster that an individual particle. In a solid lattice, the number density is $\sim 10^{28} \ \rm m^{-3}$ and so Dicke enhancements can in principle be extremely large.
+One of the key bits of physics responsible for accelerating nuclear transitions is Dicke Superradiance. First proposed by [Dicke in the 1950s](https://doi.org/10.1103/PhysRev.93.99) for atoms and then extended by [Terhune and Baldwin in the 1960s](https://doi.org/10.1103/physrevlett.14.589) for nuclei, Dicke's model showed that $N$ particles can radiate/decay collectively up to $N^2$ faster than an individual particle. In a solid lattice, the number density is $\sim 10^{28} \ \rm m^{-3}$ and so Dicke enhancements can in principle be extremely large.
 
-The challenge for nuclear superradaince is how close the nuclei need to be for collective emission to occur. Dicke's model is based on all $N$ nuclei being coupled together through an interaction with a common oscillating field. In order to get the full $N^2$ enhancement, all the nuclei need to be located within a single wavelength of one other. The wavelength is determined by the frequency (and hence energy) of the field oscillations. Typically the frequency is chosen to be matched to the nuclear transitions which mostly have energies of $E > 10 \ \rm keV$ and wavelengths of $\lambda < 0.1 \ \rm nm$. In a typical solid lattice you can fit at most one particle in cube whose sides are  given by such a small wavelength. [Chumakov et.al 2017](https://www.nature.com/articles/s41567-017-0001-z) achieved small levels of nuclear superradiance ($\sim 10 \times$ rate enhancements) in $\rm ^{57}Fe$ experiments because of this.
+The challenge for nuclear superradaince is how close the nuclei need to be for collective emission to occur. Dicke's model is based on all $N$ nuclei being coupled together through an interaction with a common oscillating field. In order to get the full $N^2$ enhancement, all the nuclei need to be located within a single wavelength of one other. The wavelength is determined by the frequency (and hence energy) of the field oscillations. Typically the frequency is chosen to be matched to the nuclear transitions which mostly have energies of $E > 10 \ \rm keV$ and wavelengths of $\lambda < 0.1 \ \rm nm$. In a typical solid lattice you can fit at most one particle in cube whose sides are  given by such a small wavelength. [Chumakov et.al 2017](https://www.nature.com/articles/s41567-017-0001-z) achieved only small levels of nuclear superradiance ($\sim 10 \times$ rate enhancements) in $\rm ^{57}Fe$ experiments because of this.
 
 Much larger Dicke enhancement rates are required for practical applications. Bridging the rate enhancement gap can in principle be achieved by choosing a low frequency (and hence long wavelength) that's mismatched with respect to the nuclear transitions. In such a set-up, a nucleus radiates a number of smaller energy oscillator quanta instead of a single large one. The challenge with this approach is that the more quanta that are involved, the slower the process becomes - this can dominate over Dicke enhancements depending on the specific details.
 
@@ -57,7 +57,17 @@ $\rm ^{229}Th$ has a nuclear isomer $\rm ^{229m}Th$ whose existence was hypothes
 
 The specifics of $\rm ^{229m}Th$ require us to arrange the system to:
 
-- Maximise radiative decay over internal conversion
-  - Excite half of the $\rm ^{229m}Th$ nuclei instead of all of them will give us $N^2$ enhancement of radiation and only $N/2$ enhancement of internal conversion
-- Minimise the reflection of the UV laser light from the surface
-  - Embed the $\rm ^{229m}Th$ into an UV transparent material
+- Maximise radiative decay over internal conversion. This can be achieved by excite half of the $\rm ^{229m}Th$ nuclei instead of all of them will give us $N^2$ enhancement of radiation and only $N/2$ enhancement of internal conversion.
+- Minimise the reflection of the UV laser light from the surface. This can be achived by embedding the $\rm ^{229m}Th$ into an UV transparent material.
+
+## Transferring nuclear energy non-radiatively from one nucleus to another
+
+Excitation transfer (also known as resonance energy transfer) is the key bit of physics responsible for moving energy from a donor system to a receiver system without the emission/absorption of radiation.  [Supertransfer](https://doi.org/10.1088/1367-2630/12/7/075020) is the Dicke acceleration of this process due to the coupling of many donors/receivers to a shared oscillator.
+
+There are numerous examples of excitation transfer dynamics at the atomic scale such as exciton diffusion at room temperature e.g., [photosynthetic systems](https://www.annualreviews.org/content/journals/10.1146/annurev-physchem-040214-121713) and [organic semiconductors](https://www.nature.com/articles/s41467-022-30308-5). Supertransfer in engineered systems has also been demonstrated by Park and colleagues in a [2015 Nature Materials paper](https://www.nature.com/articles/nmat4448) at the atomic scale at room temperature.
+
+Nuclear supertransfer has not yet been demonstrated. 
+
+We seek to adapt the [Chumakov et.al 2017](https://www.nature.com/articles/s41567-017-0001-z) experiment to make it work for supertransfer instead of a superradiance. More specifically, we propose exciting $\rm ^{57}Fe$ nuclei and transferring the $14 \ \rm keV$ of nuclear energy to $\rm Pb$ atoms. The transfer needs to be achieved in a very short timescale in order to beat the natural radiative decay of the excited $\rm ^{57}Fe$. In other words, we need supertransfer.
+
+In order to couple the $\rm ^{57}Fe$ and $\rm Pb$ together non-radiatively, we need to mismatch the oscillator and nuclei. Supertransfer does not suffer the same challenges as superradiance when using mismatched oscillator and nuclei. This is because superradiance involves the radiation of many small quanta, whereas supertransfer involves none - it is radiationless. We can therefore use a low frequency (long wavelength) oscillating magnetic field provided by a solenoid to involve a macroscopically large number of nuclei that will produce the Dicke enhancements that we need.
