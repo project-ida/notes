@@ -74,7 +74,7 @@ In order to couple the $\rm ^{57}Fe$ and $\rm Pb$ together non-radiatively, we n
 
 The advantage of using a magnetic field is that it's a well established coupling mechanism that's suitable for demonstration purposes. The disadvantages are:
 
--  Magnetic dipole coupling is weak and so limits how practical this form of coupling can be
+-  Magnetic dipole coupling of nuclei is weak and so limits how practical this form of coupling can be
 - Excitation transfer rates with this coupling can be insensitive to frequency (depending on the details) so it does not give us a reliable way to control the transition rates.
 
 ## Controlling nuclear transitions with low frequency stimulation
