@@ -38,7 +38,6 @@ Neutrons can also interact with the carbon ($\rm C$) or oxygen ($\rm O$) nuclei 
   - $\rm ^{16}O(n, \alpha)^{13}C$: A neutron triggers the emission of an alpha particle, producing a carbon isotope.
 - **Detection**: The emitted charged particles (protons or alpha particles) create latent tracks in the CR-39, which are then etched and analyzed microscopically. The track characteristics can provide clues about the reaction type and neutron energy.
 - **Significance**: These reactions are more relevant for very high-energy neutrons but contribute less to overall detection compared to proton recoil, since the abundance of hydrogen in CR-39 and the higher cross-section for neutron scattering with hydrogen make proton recoil more likely, while nuclear reactions with carbon or oxygen are rarer and require more energy.
-- 
 ### Fission Fragments with Contaminants
 
 In some specialized applications, CR-39 can detect neutrons by incorporating external materials or contaminants that undergo neutron-induced fission.

@@ -368,8 +368,11 @@ Using the most optimistic Dicke enhancement, for electric dipole coupling (Eq. $
 $$
 3\times 10^{-18}\sqrt{N}  \ge 1
 $$
+
 Which would gives us the following condition on the number of nuclei that we need:
+
 $$
 N \gtrsim 10^{35}
 $$
+
 This is well outside of what is practical.
