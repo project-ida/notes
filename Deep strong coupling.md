@@ -33,7 +33,7 @@ $$
 H = H_1 + H_2+ V_{\text{coupling}}
 $$
 
-and associate frequencies to the different parts:
+and we can associate frequencies to the different parts:
 
 - $\omega_1 = \sqrt{g/l}$
 - $\omega_2 = \sqrt{g/l}$
@@ -52,17 +52,17 @@ There are very small changes in the natural frequencies of the system as compare
 - $\omega_1 \rightarrow \omega_+ = \sqrt{g/l}$
 - $\omega_2 \rightarrow \omega_- = \sqrt{g/l + 2k/m}$
 
-The energy does not however move back and forwards between the pendulums because of the large dissipation.  
+The energy does not however move back and forwards between the pendulums because the large dissipation sucks out the energy before any transfer can occur.
 
 ## Strong coupling
 
-When the coupling is "strong" in the sense that $\gamma_{\rm diss} \ll \omega_{\rm coupling} \ll \omega_1,\omega_2$,  dissipation is small enough to allow energy to be slowly [exchanged between the two pendulums](https://www.youtube.com/watch?v=CjJVBvDNxcE&t=57s). The motion is characterised by individual swings happening with a frequency $\approx \sqrt{g/l}$ where the amplitude of those swings gradually undulates on a timescale characterised by $\omega_{\rm exchange} = k/2m\omega_+$. This exchange happens most effectively when the pendulums have the same length, so that their natural frequencies are the same .
+When the coupling is "strong" in the sense that $\gamma_{\rm diss} \ll \omega_{\rm coupling} \ll \omega_1,\omega_2$,  dissipation is small enough to allow energy to be slowly [exchanged between the two pendulums](https://www.youtube.com/watch?v=CjJVBvDNxcE&t=57s). The motion is characterised by individual swings happening with a frequency $\approx \sqrt{g/l}$ where the amplitude of those swings gradually undulates on a timescale characterised by $\omega_{\rm exchange} = \omega_+ \times k/2m$. This exchange happens most effectively when the pendulums have the same length, so that their natural frequencies are the same .
 
 Strong coupling allows us to still conceptually consider the pendulums as having well defined identities in the sense that they have their own natural frequencies. As the coupling becomes larger, this is no longer the case.
 
 ## Ultra strong coupling
 
-When the coupling is "ultra strong" in the sense that $\gamma_{\rm diss} \ll \omega_{\rm coupling} \sim 0.1\times  \omega_1,\omega_2$, energy exchange happens on the time scale of a single swing of one of the pendulums.  The two natural natural frequencies can be noticeably discerned, $\omega_+ = \sqrt{g/l}$  when both pendulums move "in phase" (the spring is not stretched) with one another and $\omega_- = \sqrt{g/l + 2k/m}$ when the pendulums move "out of phase".
+When the coupling is "ultra strong" in the sense that $\gamma_{\rm diss} \ll \omega_{\rm coupling} \sim 0.1\times  \omega_1,\omega_2$, energy exchange happens on the time scale of a single swing of one of the pendulums.  The two natural natural frequencies can be noticeably discerned, $\omega_+ = \sqrt{g/l}$  when both pendulums move "in phase" (the spring is not stretched) with one another and $\omega_- = \sqrt{g/l + 2k/m}$ when the pendulums move "out of phase" (the spring is periodically compressed and expanded)
 
 The coupling is getting strong enough so that more energy can be exchanged between pendulums of different lengths.
 
@@ -74,8 +74,7 @@ When $\gamma_{\rm diss} \ll \omega_1,\omega_2 \lesssim \omega_{\rm coupling}$ , 
 
 # Rabi model
 
-A canonical quantum example is a single two level system (TLS) interacting with a quantised field often called the Rabi model. The Hamiltonian can be written as:
-
+A canonical quantum example is a single two level system (TLS) interacting with a a single mode (i.e. single frequency/wavelength) of a quantised field. This is often called the Rabi model and its Hamiltonian can be written as:
 $$
 H_{\rm Rabi} = \frac{\Delta E}{2} \sigma_z + \hbar\omega\left(a^{\dagger}a +\frac{1}{2}\right) + U\left( a^{\dagger} + a \right)(\sigma_+ + \sigma_-)
 \label{eq:rabiH}
@@ -101,7 +100,7 @@ $$
 a^{\dagger}a |n,\pm\rangle = n|n,\pm\rangle
 $$
 
-The more field quanta we have, the larger the field and coupling terms will be compared to the TLS term.
+The more field quanta we have, the larger the field and coupling terms will be.
 
 ## Weak coupling
 
@@ -122,13 +121,13 @@ In order for exchange to occur effectively, the quantum states need to have the 
 
 ### Matched field and TLS
 
-When the field is matched to the TLS, $\Delta E = \hbar\omega$. This is the most widely discussed regime in which a transition of the TLS (often an atomic transition) results in the emission of a single field quantum (often a photon). In a cavity where discrete states can be arranged and field quanta can be confined, this results in occupation probability oscillating between states like $|n,+\rangle$ and  $|n+1,-\rangle$. These oscillations are called [Rabi oscillations](https://en.wikipedia.org/wiki/Jaynes%E2%80%93Cummings_model#Vacuum_Rabi_oscillations) which have a frequency $\Omega/\hbar\omega \sim \sqrt{n}U/\hbar\omega$
+The field is matched to the TLS when $\Delta E = \hbar\omega$. This is the most widely discussed regime in which a transition of the TLS (often an atomic transition) results in the emission of a single field quantum (often a photon). In a cavity where discrete states can be arranged and field quanta can be confined, this results in occupation probability oscillating between states like $|n,+\rangle$ and  $|n+1,-\rangle$. These oscillations are called [Rabi oscillations](https://en.wikipedia.org/wiki/Jaynes%E2%80%93Cummings_model#Vacuum_Rabi_oscillations) which have a frequency $\Omega/\hbar\omega \sim \sqrt{n}U/\hbar\omega$
 
 ### Mismatched field and TLS
 
-When the field is mismatched to the TLS, $\Delta E \neq \hbar\omega$ . If the mismatch is arbitrary, e.g. $\Delta E/ \hbar\omega = 2.83677$ then Rabi oscillations cannot occur because the coupling term ($\sim \sqrt{n}U$) is still very small compared to $\Delta E$ and $\hbar\omega$ and so it cannot accommodate any energy mismatch.
+The field is mismatched to the TLS when $\Delta E \neq \hbar\omega$ . If the mismatch is arbitrary, e.g. $\Delta E/ \hbar\omega = 2.83677$ then Rabi oscillations cannot occur because the coupling term ($\sim \sqrt{n}U$) is still very small compared to $\Delta E$ and $\hbar\omega$ and so it cannot accommodate any energy mismatch between the field and the TLS.
 
-If however, $\Delta E = m\hbar \omega$ where $m=3, 5, 7 ...$ then  $|n,+\rangle$ is resonant with,  $|n+3,-\rangle$, $|n+5,-\rangle$, $|n+7,-\rangle ...$  and so Rabi oscillations can once again occur. The frequency is slower $\Omega/\hbar\omega \sim (\sqrt{n}U/\hbar\omega)^m$ and so for larger $m$ the emission of multiple quanta becomes less and less likely.
+If however, $\Delta E = m\hbar \omega$ where $m=3, 5, 7 ...$ then  $|n,+\rangle$ is "resonant" with,  $|n+3,-\rangle$, $|n+5,-\rangle$, $|n+7,-\rangle ...$  and so Rabi oscillations can once again occur. The frequency is slower $\Omega/\hbar\omega \sim (\sqrt{n}U/\hbar\omega)^m$ and so for larger $m$ the emission of multiple quanta becomes less and less likely.
 
 ## Ultra strong coupling
 
@@ -149,7 +148,10 @@ $$
 
 Indeed, if their condition is satisfied then $\hbar \omega \lesssim \sqrt{n}U$ is guaranteed.
 
-Let's first consider the case (as Casanova did) that the TLS energy is small in the sense that  $\Delta E < \hbar \omega$. If the coupling is in the deep storing regime so that $U/\hbar\omega \gtrsim 1$ then, from an energy conservation point of view, the coupling term can spontaneously create field quanta. When a quanta gets created, then $n$ increases which means the coupling term $\sim \sqrt{n}U$ increases which means more quanta can be made. We can figure out how many can be made by equating the field energy to the coupling energy in the Hamiltonian:
+Let's first consider the case (as Casanova did) where the TLS energy is small in the sense that  $\Delta E < \hbar \omega$. If the coupling is in the deep strong regime so that $U/\hbar\omega \gtrsim 1$ then, from an energy conservation point of view, the coupling term can spontaneously create field quanta. The field effectively "borrows" energy from interaction energy which can take on a form of energy debt. There is a limit to how much energy debt that the interaction term can take on because the energy cost of the quanta grows like $n$ whereas the interaction terms grows more slowly like $\sqrt{n}$. At some level of quanta, the energy required to make an extra quanta outstrips the interaction's ability to provide.
+
+
+From these ideas, we can find out how many quanta get created by equating the field energy to the coupling energy in the Hamiltonian:
 
 $$
 n\hbar\omega \sim \sqrt{n}U
@@ -165,8 +167,8 @@ $$
 
 When you work out the detailed maths, you end up with $n = 4(U/\hbar\omega)^2$. 
 
-When the TLS energy is not small ($\Delta E \gtrsim \hbar \omega$) then there is an additional energy equivalence to consider:
 
+When the TLS energy is not small ($\Delta E \gtrsim \hbar \omega$) then there is an additional energy equivalence to consider:
 $$
 \Delta E \sim \sqrt{n}U
 \label{eq:couplingbalancetls}
@@ -228,7 +230,7 @@ $$
 \label{eq:criticalphononcouplingexplicitnumbers}
 $$
 
-This confirms that a single nucleus cannot become superradiant using relativistic phonon nuclear coupling. Let's look at another type of coupling that's also associated with oscillatory phonon motion.
+This confirms that a single nucleus cannot undergo a superradiant phase transition using relativistic phonon nuclear coupling. Let's look at another type of coupling that's also associated with oscillatory phonon motion.
 
 
 ### Electric dipole coupling
@@ -273,15 +275,16 @@ And so evaluating Eq. $\ref{eq:criticaldipolecouplingexplicit}$ gives:
 
 $$
 \frac{4 \pi\sqrt{2} }{106} \times \sqrt{\frac{10^{11}}{24\times10^{6}}} \times \frac{10^{-8}}{10^9} \times 6 \times 10^{-3} \times 106^{1/3} \approx 3\times 10^{-18} \ll 1
+\label{eq:dipolewithnumbers}
 $$
 
-And so we're even further away from the superradiant regime when considering the electric dipole coupling associated with the phonon motion.
+And so we're even further away from the superradiant regime when considering the electric dipole coupling associated with the phonon motion for a single nucleus.
 
 We've so far looked at the Rabi model where the number of TLS is $N=1$. How does the story change when we have many TLS?
 
-## Dicke model
+# Dicke model
 
-When we have $N$ identical TLS coupled to a single mode (i.e. single frequency) of a quantised field then Hamiltonian is called the Dicke Hamiltonian. It's a simple extension of the Rabi Hamiltonian in Eq. $\ref{eq:rabiH}$ in the sense that we just add $N$ copies of the TLS terms as seen below:
+The Dicke model describes a system where we have $N$ identical TLS coupled to a single mode (i.e. single frequency/wavelength) of a quantised field. The Dicke Hamiltonians is a simple extension of the Rabi Hamiltonian in Eq. $\ref{eq:rabiH}$ in the sense that we just add $N$ copies of the TLS terms as seen below:
 
 $$
 H_{\text{Dicke}} = \frac{\Delta E}{2} \sum_{i=1}^N \sigma_z^{(i)} +  \hbar\omega\left(a^{\dagger}a +\frac{1}{2}\right) + U \sum_{i=1}^N (a^\dagger + a) (\sigma_+^{(i)} + \sigma_-^{(i)})
@@ -290,91 +293,23 @@ $$
 
 The states of this system are described by $|n, \pm, \pm, \pm, \pm, ... \rangle$.
 
-It's worth emphasising that there is no spatial dependence of the field in Eq. $\ref{eq:dickeH}$. One way to understand this physically is that all the TLS are very close together in the sense that they are located in a region of space that is much smaller than the wavelength of the mode.  In that situation, all the TLS will experience the same strength of field at any given moment - in other words the field appears constant in space. This is the how Dicke originally presented his ideas in [his 1954 paper](https://journals.aps.org/pr/abstract/10.1103/PhysRev.93.99). It's also possible to use this Hamiltonian to describe many TLS arranged in a very special way so that they are placed at integer multiples of the mode wavelength.
+For this ensemble of $N$ nuclei, the coupling is enhanced by at least $\sqrt{N}$ and at most $N$ due to Dicke superradiance effects. For more detail on the Dicke model that leads to these enhancements, see the [notes](https://github.com/project-ida/notes/blob/main/pdf/Dicke%20model.pdf) I made on the subject.
 
-What we really want to understand is how the extra TLS are going to affect the coupling term. Right now, Eq. $\ref{eq:dickeH}$ is not in a form that allows us to readily see this. We're going to rewrite it by appealing to the physics of spin.
-
-We noted earlier that the use of the Pauli spin matrices is just a mathematical tool to describe two levels. Although we're not describing spin here, we are working with what is often called "pseudo spin". The [rules of angular momentum](https://en.wikipedia.org/wiki/Angular_momentum_operator) work just as well for pseudo angular momentum. In particular, the rules of [angular momentum addition](https://www.tcm.phy.cam.ac.uk/~bds10/aqp/lec7_compressed.pdf) and conservation.
-
-This means that we can treat all the TLS together as if they are a single object with many levels whose energies are determined by the addition rules of pseudo angular momentum. The Hamilton then looks like:
-
-$$
-H =  \Delta E J_{z} + \hbar\omega\left(a^{\dagger}a +\frac{1}{2}\right) + 2U\left( a^{\dagger} + a \right)(J_{+} + J_{-})
-\label{eq:dickeHpseudo}
-$$
-
-where the total pseudo total angular momentum operators ($J$) for $N$ TLS are:
-
-$$
-J_{+} + J_{-} = J_{x} = \frac{1}{2}\overset{N}{\underset{i=1}{\Sigma}} \sigma_{i x} \,\,\,\,\,\, J_{z} = \frac{1}{2}\overset{N}{\underset{i=1}{\Sigma}} \sigma_{i z}
-$$
-
-and noting that $i$ in $\sigma_i$ means that this operator only acts on TLS number $i$ .
-
-When written in this way, states can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. By far the most significant kind of delocalised states are called  "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state looks like:
-
-$$
-\Psi_0 = \frac{1}{\sqrt{4}}\left(| 0, +, -, -, - \rangle + | 0, -, +, -, - \rangle + | 0, -, -, +, - \rangle + | 0, -, -, -, + \rangle \right)
-$$
-
-Notice that if you swap any two TLS, the state looks the same.
-
-The above state can instead be described by $j_{\max}= 4/2  = 2$ and $m = 1\times 1/2 + 3\times -1/2 =-1$
-
-$$
-\Psi_0 = |0,2,-1>
-$$
-
-Dicke states with $j=j_{\max}$ are significant because of the acceleration properties that these Dicke states offer; something people often describe as superradiance. We can start to get a sense of where the super comes from by looking at the action of the [ladder operators](https://en.wikipedia.org/wiki/Ladder_operator#Angular_momentum) $J_{+}$ and $J_{-}$ which excite and de-excite the TLS. This causes a raising and lowering of the $m$ value like this:
-
-$$
-J_+ |n, j, m\rangle  =  \sqrt{j(j + 1) - m(m + 1)} |n, j, m + 1\rangle
-$$
-
-$$
-J_- |n, j, m\rangle =  \sqrt{j(j + 1) - m(m - 1)} |n, j, m - 1\rangle
-$$
-
-These ladder operators are conceptually similar to the creation and annihilation operators of the field. The details are however more complicated due to the addition rules of angular momentum.
-
-For the case with **all TLS excited** , $m=N/2$:
-$$
-J_- |n, N/2, N/2\rangle  = \sqrt{N} |n, N/2, N/2 - 1\rangle
-$$
-
-For the first de-excitation, the coupling terms gets enhanced by  $\sqrt{N}$ . This might not seem surprising at first glance because we have $N$ TLS excited and so we should expect the rate of emission (which go as the square of the coupling) to be enhanced by $N$.
-
-For the case of **a single excitation** , $m=-N/2 + 1$:
-
-$$
-J_- |n, N/2, -N/2 +1\rangle  = \sqrt{N}|n, N/2, -N/2\rangle
-$$
-
-For this singe de-excitation the coupling term also gets enhanced by  $\sqrt{N}$ . This is more surprising because the rate of emission  (which go as the square of the coupling) to be enhanced by $N$ even though there is only a single excitation.
-
-For the case of **50% excitation**, $m=0$:
-
-$$
-J_- |n, N/2, 0 \rangle  = \sqrt{N^2 + N}|n, N/2, -1\rangle
-$$
-
-For the first de-excitation, the coupling terms gets enhanced by  $\sim\sqrt{N^2}$ for large $N$. In other words, the rate of emission  (which go as the square of the coupling) to be enhanced by $N^2$  - this is where the super in superradiance comes from.
-
-It's should be noted that the effect of Dicke superradiance and superradiant phase transitions are [not the same](https://en.wikipedia.org/wiki/Dicke_model#Superradiant_transition_and_Dicke_superradiance). The former involves a transient enhancement in emission of $N$ TLS which ultimately ends up with all the TLS in their ground state and the field quanta escape to infinity.  The latter involves a permanent change in the ground state a cavity system in which field and TLS are both confined.
+> It should be noted that the effect of Dicke superradiance and superradiant phase transitions are [not the same](https://en.wikipedia.org/wiki/Dicke_model#Superradiant_transition_and_Dicke_superradiance). The former involves a transient enhancement in emission of $N$ TLS which ultimately ends up with all the TLS in their ground state and the field quanta escaping to infinity.  The latter involves a permanent change in the ground state a cavity system in which field and TLS are both confined.
 
 If we look back at the couplings in Eqs. $\ref{eq:phononcoupling}$ and $\ref{eq:dipolecoupling}$, we can see a $1/\sqrt{N}$ term appears to reduce the coupling significantly for very large numbers of nuclei. However, if we are able to take advantage of Dicke effects, then the situation is very different:
 
 - For fully excited systems, Dicke enhancement of the coupling scales like $\sqrt{N}$  and so coupling for $N$ nuclei is the same as for a single nuclei (from $\sqrt{N}/\sqrt{N}$)
 - For half excited systems,  Dicke enhancement of the coupling scales like $N$  and so coupling for $N$ nuclei scales like $\sqrt{N}$ (from $N/\sqrt{N}$)
 
-### Deep strong coupling
-
-We now understand that the coupling operators in Eq. $\ref{eq:dickeHpseudo}$ will produce terms like:
+And so, we have two sources of coupling enhancement:
 
 - $\sqrt{n}$ from the field part
 -  At least $\sqrt{N}$ and at most $N$ from the TLS part due to Dicke effects
 
-If we take the most conservative Dicke enhancement then the condition for deep strong coupling can be arrived at by simply replacing $U$ in Eq. $\ref{eq:superradianttransition}$ with $U\sqrt{N{}}$:
+### Deep strong coupling
+
+If we take the most conservative Dicke enhancement, then the condition for deep strong coupling can be arrived at by simply replacing $U$ in Eq. $\ref{eq:superradianttransition}$ with $U\sqrt{N{}}$:
 $$
 \frac{U\sqrt{N}}{\hbar\omega} \gtrsim \frac{1}{2}\sqrt{\frac{\Delta E}{\hbar\omega}}
 \label{eq:dickesuperradianttransition}
@@ -390,8 +325,9 @@ $$
 \label{eq:dickesuperradianttransition2}
 $$
 
-And so for relativistic phonon nuclear coupling (Eq. $\ref{eq:phononcoupling}$) we'd have:
+#### Relativistic phonon nuclear coupling
 
+Using the most optimistic Dicke enhancement, for relativistic phonon nuclear coupling (Eq. $\ref{eq:phononcoupling}$) we'd have:
 $$
 2\sqrt{2}\sqrt{N} \sqrt{\frac{\Delta E}{M c^2}}  \times 10^{-3} \ge 1
 $$
@@ -420,3 +356,20 @@ Which would gives us the following condition on the number of nuclei that we nee
 $$
 N \gtrsim 4 \times 10^{11}
 $$
+
+Both the $\rm Pd$ and $\rm ^{57}Fe$ numbers are well within practical limits given that solid number density is about $5\times 10^{28} \rm m^{-3}$
+
+
+
+#### Electric dipole coupling
+
+Using the most optimistic Dicke enhancement, for electric dipole coupling (Eq. $\ref{eq:dipolecoupling}$) we have (using the same numbers as in Eq. $\ref{eq:dipolewithnumbers}$):
+
+$$
+3\times 10^{-18}\sqrt{N}  \ge 1
+$$
+Which would gives us the following condition on the number of nuclei that we need:
+$$
+N \gtrsim 10^{35}
+$$
+This is well outside of what is practical.
