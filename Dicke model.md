@@ -37,7 +37,7 @@ $$
 a^{\dagger}a |n,\pm\rangle = n|n,\pm\rangle
 $$
 
-The more field quanta we have (the stronger the field), the larger the coupling terms will be compared to the TLS term which remains unchanged. 
+The more field quanta we have (the stronger the field), the larger the coupling terms will be. 
 
 # Dicke model
 
@@ -73,8 +73,9 @@ $$
 
 and noting that $i$ in $\sigma_i$ means that this operator only acts on TLS number $i$ .
 
-When written in this way, states can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. By far the most significant kind of delocalised states are called  "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation in 4 TLS - the Dicke state looks like:
+When written in this way, states can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. A delocalised excitation means that the excitation is shared among many TLS in such a way that you don't know which TLS holds the excitation at any moment.
 
+By far the most significant kind of delocalised states are called "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation among 4 TLS - the Dicke state looks like:
 $$
 \Psi = \frac{1}{\sqrt{4}}\left(| n, +, -, -, - \rangle + | n, -, +, -, - \rangle + | n, -, -, +, - \rangle + | n, -, -, -, + \rangle \right)
 $$
@@ -87,7 +88,7 @@ $$
 \Psi = |n,2,-1>
 $$
 
-In this way of describing the system, the [ladder operators](https://en.wikipedia.org/wiki/Ladder_operator#Angular_momentum) $J_{+}$ and $J_{-}$ create and destroy excitations of the TLS. This causes a raising and lowering of the $m$ value like this:
+In this way of describing the system, the [ladder operators](https://en.wikipedia.org/wiki/Ladder_operator#Angular_momentum) $J_{+}$ and $J_{-}$ create and destroy delocalised excitations of the combined TLS. This causes a raising and lowering of the $m$ value like this:
 
 $$
 J_+ |n, j, m\rangle  =  \sqrt{j(j + 1) - m(m + 1)} |n, j, m + 1\rangle
@@ -103,13 +104,14 @@ These ladder operators are conceptually similar to the creation and annihilation
 
 Dicke states with $j=j_{\max}$ are significant because of the acceleration properties that they offer; something people often describe as superradiance. 
 
-For the case with **all TLS excited** , $m=N/2$:
+Let's operate using $J_-$ on some states. This represents a single de-excitation of the combined TLS.
 
+For the case with **all TLS excited** , $m=N/2$:
 $$
 J_- |n, N/2, N/2\rangle  = \sqrt{N} |n, N/2, N/2 - 1\rangle
 $$
 
-For the first de-excitation, the coupling terms gets enhanced by  $\sqrt{N}$ . This might not seem surprising at first glance because we have $N$ TLS excited and so we should expect the rate of emission (which go as the square of the coupling) to be enhanced by $N$.
+This means that for the first de-excitation, the coupling terms gets enhanced by $\sqrt{N}$ . This might not seem surprising at first glance because we have $N$ TLS excited and so we should expect the rate of emission (which go as the square of the coupling) to be enhanced by $N$.
 
 For the case of **a single excitation** , $m=-N/2 + 1$:
 
@@ -154,7 +156,7 @@ $$
 \frac{6\times 2}{\sqrt{6}\sqrt{4}} = \sqrt{6}
 $$
 
-and so the probability enhancement factor (which is proportional to the emission rate) is the square of this, i.e. 6. To derive a general, we just have to do this counting and normalising for the general case:
+and so the probability enhancement factor (which is proportional to the emission rate) is the square of this, i.e. 6. To derive a general formula, we just have to do this counting and normalising for the general case:
 
 $$
 \left(\frac{^N C_{N_+} N_+}{\sqrt{^N C_{N_+}}\sqrt{^N C_{{N_+}-1}}}\right)^2 = N_+\left(N-N_++1\right)
@@ -177,7 +179,7 @@ then we get no emission at all because we get complete destructive interference 
 
 ### Limitations of superradiance
 
-The biggest physical limitation associated with superradiance is the requirement for many TLS to be in a space much smaller than a wavelength so that all TLS see the same field at any moment in time. This is another way of saying that we have to make sure we can indeed use the Dicke Hamiltonian in Eq. $\ref{eq:dickeH}$.
+The biggest limitation associated with superradiance is the requirement for many TLS to be in a space much smaller than a wavelength so that all TLS see the same field at any moment in time. This is another way of saying that we have to make sure we can indeed use the Dicke Hamiltonian in Eq. $\ref{eq:dickeH}$ to describe the system.
 
 Consider for example the acceleration of the decay of the $\rm 14\ keV$ transition of excited $\rm ^{57}Fe$ as described in [Chumakov 2017](https://www.nature.com/articles/s41567-017-0001-z). There, a $\rm 14\ keV$ x-ray laser is responsible for exciting the $\rm ^{57}Fe$ initially. In such an experiment, it's possible to create a Dicke state with an extremely large $N$ proportional to the spot size of the laser. In the case of iron with a surface density on the order of $10^{15} \ \rm m^{-2}$ with an x-ray spot size of $1 \ \rm \mu m$ there are $N=10^7$ atoms.
 
