@@ -139,15 +139,17 @@ When written in this way, states are described in terms of 3 numbers
 conserved) and \(m\) describes the z component of the total pseudo
 angular momentum (which can change). This notation allows us to
 conveniently describe situations where excitations are ``delocalised''
-among the TLS. By far the most significant kind of delocalised states
-are called ``Dicke states'' which have the largest \(j=j_{\max} = N/2\).
-These states are capable of accelerated emission rates due to
-superradiance. Dicke starts are symmetric in the sense that if you swap
-any of the TLS around, the state remains unchanged. For example,
-consider a single excitation in 4 TLS - the Dicke state written in
-\(|n,\pm,\pm, \pm, \pm\rangle\) notation looks like:
+among the TLS. A delocalised excitation means that the excitation is
+shared among many TLS in such a way that you don't know which TLS holds
+the excitation at any moment.
 
-\[
+By far the most significant kind of delocalised states are called
+``Dicke states'' which have the largest \(j=j_{\max} = N/2\). These
+states are capable of accelerated emission rates due to superradiance.
+Dicke starts are symmetric in the sense that if you swap any of the TLS
+around, the state remains unchanged. For example, consider a single
+excitation in 4 TLS - the Dicke state written in
+\(|n,\pm,\pm, \pm, \pm\rangle\) notation looks like: \[
 \Psi = \frac{1}{\sqrt{4}}\left(| n, +, -, -, - \rangle + | n, -, +, -, - \rangle + | n, -, -, +, - \rangle + | n, -, -, -, + \rangle \right)
 \]
 
@@ -181,7 +183,7 @@ a^{\dagger}a |n,j,m\rangle = n|n,j,m\rangle
 \]
 
 The more field quanta we have (the stronger the field), the larger the
-coupling terms will be compared to the TLS term which remains unchanged.
+coupling terms will be.
 
 The coupling is also affected by the number of TLS we have. This is
 because of how the the
@@ -254,7 +256,9 @@ the following is satisfied:
 \]
 
 In this regime, the field retains its ``identity'' but the TLS gets
-significantly altered by the field and the coupling.
+significantly altered by the field and the coupling. We should also
+expect to have a free exchange of energy between the TLS and the field
+in this regime but we shouldn't expect a formal phase transition.
 
 Eq. \(\ref{eq:strongfield}\) can in principle be satisfied for any type
 of coupling by just increasing the field strength. In practice, there
@@ -337,12 +341,12 @@ palladium example:
   the coupling is bigger than the TLS energy
 \end{itemize}
 
-When the field is strong, and the field quanta have a low enough energy
-such that \(U\sqrt{N}>\hbar\omega\) then there can be a free exchange of
-energy between the field and the TLS because even though an individual
-low energy energy quanta cannot ``hold'' all the energy of a TLS
-transition, the coupling term can. Another way of thinking about this is
-that incredibly unlikely transitions like the downconversion of nuclear
+If the field is strong and the field quanta have a low energy such that
+\(U\sqrt{N}>\hbar\omega\), then there can be a free exchange of energy
+between the field and the TLS because even though an individual low
+energy energy quanta cannot ``hold'' all the energy of a TLS transition,
+the coupling term can. Another way of thinking about this is that
+incredibly unlikely transitions like the downconversion of nuclear
 energy into phonon energy or the upconversion of phonon energy to
 nuclear energy become possible.
 
@@ -376,10 +380,10 @@ to act over a greater distance in order to produce phonon energies
 required from Eq. \(\ref{eq:strongfieldconditiononn}\).
 
 A simple test of practicality is to substitute the largest practical
-\(E\) field of \(\sim 10^{11}\). It should be noted that this field is
-used for acceleration of charged particles and not for trapping of ions.
-It will however give us a good bound for how large a hypothetical trap
-might need to be.
+\(E\) field of \(\sim 10^{11} \rm Vm^{-1}\). It should be noted that
+this field is used for acceleration of charged particles and not for
+trapping of ions. It will however give us a good bound for how large a
+hypothetical trap would need to be.
 
 For a single palladium nucleus with \(Z \sim 50\), the size of the trap
 \(d\) can be estimated from force multiplied by distance:
@@ -393,10 +397,10 @@ d &\sim 10^4 \ \rm m
 \end{aligned}
 \]
 
-A monstrously large ion trap.
+A monstrously large ion trap!
 
-A smaller electric field would only make the the situation worse and so
-we can conclude that the strong field regime cannot be accessed for a
+A smaller electric field would only make the situation worse and so we
+can conclude that the strong field regime cannot be accessed for a
 single nucleus in an ion trap.
 
 In some ways this might not be so surprising because for a single
@@ -417,7 +421,7 @@ From notes on
 \href{https://github.com/project-ida/notes/blob/main/pdf/Coupling\%20constants\%20in\%20nuclear\%20physics.pdf}{Coupling
 constants in nuclear physics}, we derived the magnetic dipole coupling
 as: \[
-U \approx 0.02 \frac{{\mu_N}B}{\sqrt{n}}
+U \approx 0.02 \frac{{\mu_N}B}{\sqrt{n}} = 0.02 {\mu_N}\sqrt{\frac{\mu_0\hbar\omega}{V}}
 \] where \(\mu_N = e\hbar/m_p \approx 5\times 10^{-27} \ \rm J/T\) is
 the nuclear magneton
 
@@ -453,12 +457,12 @@ the numbers gives: \[
 N \ll 2\times 10^{65}
 \] This condition is well satisfied.
 
-If we were to magnetic quanta with energy \(4 \ \rm neV\) which have
-frequency \(f \approx 1 \ \rm MHz\) and wavelength
+If we were to use quanta with energy \(4 \ \rm neV\) which correspond to
+a frequency \(f \approx 1 \ \rm MHz\) and wavelength
 \(\lambda \approx 300 \ \rm  m\) (which would define a coherence domain
 for the Dicke model) then we could in principle reach the strong field
 regime using magnetic coupling. It would be a LOT of iron of course and
-the solid would be very large too.
+the solenoid would be very large too.
 
 \printbibliography
 
