@@ -346,7 +346,7 @@ and so even with Dicke enhancement, dipole coupling remains in the weak coupling
 
 ## $B$ in $\mu\cdot B$
 
-We assume there is an externally driven oscillatory magnetic field $B$ with frequency $\omega$ in some volume V. Since field energy density $\sim \mu_0B^2$ then:
+We assume there is an externally driven oscillatory magnetic field $B$ with frequency $\omega$ in some volume V. Since field energy density $\sim \frac{1}{\mu_0}B^2$ then:
 $$
 \frac{1}{\mu_0} B^2 V = n\hbar\omega
 $$
@@ -488,6 +488,7 @@ $$
 ## Example with low frequency solenoid
 
 For $1 \ \rm MHz$ field oscillations ($\sim 4 \ \rm neV$), and using a volume $V = 0.001 \ \rm m^{-3}$
+
 $$
 \begin{aligned}
 U &\approx 0.02 \times 5\times 10^{-27}\times \sqrt{\frac{4\pi\times 10^{-7}\times 4\times 10^{-9}\times 1.6\times 10^{-19}}{0.001}} \\
