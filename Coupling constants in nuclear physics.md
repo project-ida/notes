@@ -40,20 +40,20 @@ $$
 p = \sqrt{\frac{2M}{N}} \sqrt{\hbar \omega_A} \sqrt{n} \label{eq:p}
 $$
 
-Note that later we'll drop the $\sqrt{n}$ because it should be picked up in the Hamiltonian operator $(b^{\dagger} + b)$.
+Note that later we'll drop the $\sqrt{n}$ because it will be picked up in the Hamiltonian operator $(b^{\dagger} + b)$.
 
 ## $a$ in $a \cdot cp$
 
 From Eq. 470 in section 6.11 of [Models for nuclear fusion in the solid state](https://arxiv.org/pdf/2501.08338), the $a$ component of $a \cdot cp$ can be approximated as:
 
 $$
-a \sim \frac{1}{2} \frac{\Delta E}{M c^2} \frac{\pi}{m c}
+a \sim \frac{1}{2} \frac{\Delta E}{M c^2} \frac{\pi}{m_p c}
 $$
 
 where:
 
 - $\Delta E$ is the nuclear transition energy,
-- $m$ is the mass of a single nucleon within the nucleus,
+- $m_p$ is the mass of a single proton within the nucleus,
 - $\pi$ represents the relative momentum of that nucleon.
 
 Since angular momentum is approximately $\hbar$, and using the Fermi scale $l_F = 10^{-15}$ m, we estimate:
@@ -67,7 +67,7 @@ $$
 a \sim \frac{1}{2} \frac{\Delta E}{M c^2} \frac{\bar\lambda_c}{l_F}
 $$
 
-where $\bar\lambda_c = \hbar / m c$ is the reduced Compton wavelength, approximately:
+where $\bar\lambda_c = \hbar / m_p c$ is the reduced Compton wavelength, approximately:
 
 $$
 \bar\lambda_c \approx 2 \times 10^{-16} \text{ m}.
@@ -90,7 +90,7 @@ The final value of $a$ depends on both the nuclear transition type and the speci
 
 ## Overall coupling constant
 
-Let's consider a single TLS interacts with a single phonon mode. The Hamiltonian can be written as:
+Let's consider a single TLS interacting with a single phonon mode. The Hamiltonian can be written as:
 
 $$
 H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(b^{\dagger}b +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
@@ -121,7 +121,7 @@ $$
 \frac{U}{\hbar \omega_A} = \sqrt{\frac{2}{N}} \sqrt{\frac{\hbar \omega_A}{M c^2}} \frac{\Delta E}{\hbar \omega_A} \times 10^{-3}
 $$
 
-## Example for palladium with acoustic phonons
+## Example for a 24MeV palladium transition with acoustic phonons
 
 - $\Delta E \approx 24 \times 10^{6}$ eV  
 - $M c^2 \approx 10^{11}$ eV  
@@ -138,13 +138,16 @@ $$
 
 ## Dicke enhancement
 
-For an ensemble of $N$ nuclei interacting collectively with a phonon field, coupling is enhanced by $\sqrt{N}$, leading to:
+*For more detail on the Dicke model, see the [notes](https://github.com/project-ida/notes/blob/main/pdf/Dicke%20model.pdf) I made on the subject.* 
 
+For an ensemble of $N$ nuclei interacting collectively with a phonon field, coupling is enhanced by $\sqrt{N}$, leading to:
 $$
 \frac{U}{\hbar \omega_A} \sim 10^{3}
 $$
 
 Based on this, we can be far into the "deep strong coupling" regime where $U/\hbar \omega_A > 1$.
+
+*For more detail on the Deep strong coupling, see the [notes](https://github.com/project-ida/notes/blob/main/pdf/Deep%20strong%20coupling.pdf) I made on the subject.* 
 
 # Electric dipole coupling (E1 transitions)
 
@@ -266,7 +269,7 @@ $$
 H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(a^{\dagger}a +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
 $$
 
-then a $d \cdot E$ coupling constant $U$ can be defined by combining Eq. $\ref{eq:E}$ (without the $\sqrt{n}$) with Eq. $\ref{eq:d}$:
+then the $d \cdot E$ coupling constant $U$ can be defined by combining Eq. $\ref{eq:E}$ (without the $\sqrt{n}$) with Eq. $\ref{eq:d}$:
 
 $$
 \frac{U}{\hbar \omega_A} = \frac{1}{\hbar \omega_A} \frac{\omega_A \sqrt{2M \hbar \omega_A}}{Ze \sqrt{N}} \times 2 \times 10^{-3} A^{1/3} e R_0
@@ -290,9 +293,7 @@ $$
 \frac{U}{\hbar \omega_A} = \frac{\sqrt{2}}{Z \sqrt{N}} \sqrt{\frac{M c^2}{E_L}} \sqrt{\frac{\hbar \omega_A}{E_L}} A^{1/3} \times 2 \times 10^{-3}
 $$
 
-Note how the expressions for $a \cdot cp$ and $d \cdot E$ have an interesting reciprocal relationship if we see that $E_L$ plays the role of $\Delta E$.
-
-## Example of Pd with Acoustic Phonons
+## Example for a 24MeV palladium transition with acoustic phonons
 
 Given:
 
@@ -334,19 +335,20 @@ $$
 
 ## Dicke enhancement
 
-For an ensemble of $N$ nuclei interacting collectively with a phonon field, coupling is enhanced by $\sqrt{N}$, leading to:
+*For more detail on the Dicke model, see the [notes](https://github.com/project-ida/notes/blob/main/pdf/Dicke%20model.pdf) I made on the subject.* 
 
+For an ensemble of $N$ nuclei interacting collectively with a phonon field, coupling is enhanced by $\sqrt{N}$, leading to:
 $$
 \frac{U}{\hbar \omega_A} \sim 10^{-12}
 $$
 
-and so even with Dicke enhancement, dipole coupling remains in the weak coupling regime. 
+and so even with Dicke enhancement, electric dipole coupling from phonons remains in the weak coupling regime. 
 
 # Magnetic dipole coupling (M1 transitions)
 
 ## $B$ in $\mu\cdot B$
 
-We assume there is an externally driven oscillatory magnetic field $B$ with frequency $\omega$ in some volume V. Since field energy density $\sim \frac{1}{\mu_0}B^2$ then:
+We assume there is an externally driven oscillatory magnetic field $B$ with frequency $\omega$ in some volume $V$. Since field energy density $\sim \frac{1}{\mu_0}B^2$ then:
 $$
 \frac{1}{\mu_0} B^2 V = n\hbar\omega
 $$
@@ -410,7 +412,7 @@ $$
 
 where $R_0$ is the radius of a single nucleon and $A$ is the number of nucleons. Note that there exist other forms of Weisskopf's formula that are [more convenient for numerical evaluation](http://www.dommelen.net/quantum2/style_a/ntgd.html#SECTION086204000000000000000) but they obscure the physical constants.
 
-The last term can be related to the reduced Compton wavelength $\bar\lambda_c = \hbar / m c$:
+The last term can be related to the reduced Compton wavelength $\bar\lambda_c = \hbar / m_p c$:
 
 $$
 \gamma_{\text{rad}}  =  10\frac{2(L+1)}{L [(2L+1)!!]^2} \alpha (kR)^{2L} \omega \left( \frac{3}{l+3} \right)^2 \left( \frac{\bar\lambda_c}{R} \right)^2
@@ -469,7 +471,7 @@ Where $\mu_N = e\hbar/m_p \approx 5\times 10^{-27} \ \rm J/T$ is the nuclear mag
 
 ## Overall coupling constant
 
-If we again use this simple Hamiltonian in which a single TLS interacts with a single mode but this time it's not a phonon mode but a magnon mode:
+If we again use this simple Hamiltonian in which a single TLS interacts with a single mode but this time it's not a phonon mode but a photon mode:
 
 $$
 H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(a^{\dagger}a +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
@@ -493,7 +495,19 @@ $$
 \begin{aligned}
 U &\approx 0.02 \times 5\times 10^{-27}\times \sqrt{\frac{4\pi\times 10^{-7}\times 4\times 10^{-9}\times 1.6\times 10^{-19}}{0.001}} \\
 \frac{U}{\hbar\omega} &\approx 0.02 \times 5\times 10^{-27}\times\sqrt{\frac{4\pi\times 10^{-7} }{0.001 \times 4\times 10^{-9}\times 1.6\times 10^{-19}}} \\
-\frac{U}{\hbar\omega} &\approx 2.8\times10^{-16}
+\frac{U}{\hbar\omega} &\approx 3\times10^{-16}
 \end{aligned}
 $$
 
+
+
+## Dicke enhancement
+
+*For more detail on the Dicke model, see the [notes](https://github.com/project-ida/notes/blob/main/pdf/Dicke%20model.pdf) I made on the subject.* 
+
+For an ensemble of $N\sim 10^{18}$ nuclei interacting collectively with this low frequency magnetic field, coupling is enhanced by $\sqrt{N}$, leading to:
+$$
+\frac{U}{\hbar \omega_A} \sim 3 \times 10^{-7}
+$$
+
+and so even with Dicke enhancement, magnetic dipole coupling remains in the weak coupling regime. 
