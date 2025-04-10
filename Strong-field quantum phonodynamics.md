@@ -10,6 +10,11 @@ In this document, I'll try and describe a regime that we might call "Strong-fiel
 
 Unlike "Strong-field QED" that has as well defined parameter range given in terms of the "normalised vector potential" $a_0\equiv eE/m_e\omega c\gg 1$, for "Strong field QPD" I've not yet come up with a single parameter. Let's see whether one comes out of the analysis in this document.
 
+We'll explore two different models here:
+
+- Many two-level-system (TLS) coupled to a single field (the Dicke model)
+- Many TLS coupled to two different fields
+
 # Dicke model
 
 *For more detail on the Dicke model, see the [notes](https://github.com/project-ida/notes/blob/main/pdf/Dicke%20model.pdf) I made on the subject.*
@@ -17,7 +22,6 @@ Unlike "Strong-field QED" that has as well defined parameter range given in term
 ## Describing the states
 
 The Dicke model describes a system where we have $N$ identical TLS coupled to a single mode (i.e. single frequency/wavelength) of a quantised field. The Dicke Hamiltonians can be written as:
-
 $$
 H =  \Delta E J_{z} + \hbar\omega\left(a^{\dagger}a +\frac{1}{2}\right) + 2U\left( a^{\dagger} + a \right)(J_{+} + J_{-})
 \label{eq:dickeHpseudo}
@@ -80,7 +84,7 @@ These ladder operators are conceptually similar to the creation and annihilation
 
 The coupling term in Eq. $\ref{eq:dickeHpseudo}$ therefore conservatively scales like $U\sqrt{N}\sqrt{n}$ and optimistically as $UN\sqrt{n}$.
 
-# Deep strong coupling
+## Deep strong coupling
 
 In the notes on [Deep strong coupling](https://github.com/project-ida/notes/blob/main/pdf/Deep%20strong%20coupling.pdf), we described a regime in which all the terms in the Hamiltonian in Eq. $\ref{eq:dickeHpseudo}$ were of the same order. In other words:
 
@@ -97,7 +101,7 @@ Mathematically, the reason Eq. $\ref{eq:deepstrongcoupling}$ is hard to satisfy 
 
 What happens if we look for a regime in which $n$ is not constrained?
 
-# Strong field
+## Strong field
 
 Let's imagine that the field is so strong, i.e. $n$ is so large, that the following is satisfied:
 
@@ -108,9 +112,9 @@ $$
 
 In this regime, the field retains its "identity" but the TLS gets significantly altered by the field and the coupling. We should also expect to have a free exchange of energy between the TLS and the field in this regime but we shouldn't expect a formal phase transition.
 
-Eq. $\ref{eq:strongfield}$ can in principle be satisfied for any type of coupling by just increasing the field strength. In practice, there will be physical limits on how strong a field can be. Let's try and work through an example using relativistic phonon nuclear coupling to mediate a nuclear transition with phonons.
+Eq. $\ref{eq:strongfield}$ can in principle be satisfied for any type of coupling by just increasing the field strength. In practice, there will be physical limits on how strong a field can be. Let's try and work through a couple of examples using relativistic phonon nuclear coupling and magnetic coupling.
 
-## Relativistic phonon nuclear coupling
+### Relativistic phonon nuclear coupling
 
 From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the relativistic phonon nuclear coupling as:
 
@@ -169,7 +173,9 @@ So, we can describe some different regions of $n$ for this palladium example:
 
 If the field is strong and the field quanta have a low energy such that $U\sqrt{N}>\hbar\omega$, then there can be a free exchange of energy between the field and the TLS because even though an individual low energy energy quanta cannot "hold" all the energy of a TLS transition, the coupling term can.  Another way of thinking about this is that incredibly unlikely transitions like the downconversion of nuclear energy into phonon energy or the upconversion of phonon energy to nuclear energy become possible.
 
-### Ion traps
+From a practical point of view, $8  \rm \ mJ$ of phonon energy is not a lot for a macroscopic solid sample. There is however an interesting question to ask - could we see these strong field effects with a single nucleus?
+
+#### Ion traps
 
 Although the phonon energy doesn't seem that large - Eq. $\ref{eq:minfieldenergy}$ gave $8 \ \rm mJ$ - it can be a bit deceiving. For example, one might imagine giving $8 \ \rm mJ$ of energy to a single nucleus via the electric field of an ion trap such as a Paul trap like the one used in [Cai 2021](https://www.nature.com/articles/s41467-021-21425-8). Such a setup might allow us to explore relativistic phonon nuclear coupling of a single nucleus. However, we must consider both the physical limits on the size of the electric field that would drive the oscillatory motion and the size of the experiment over which acceleration of the nucleus occurs.
 
@@ -202,8 +208,9 @@ In some ways this might not be so surprising because for a single nucleus, we're
 
 One might hope to alleviate the problems described above by adding more nuclei to the trap and thus bringing down the energy per nucleus. However, in order to avoid collective non-neutral plasma effects coming into play we'd need to limit $N < 1000$. This would still make the trap $\sim 10 \ \rm m$ which is  orders of magnitude larger that typical trap sizes.
 
+From this perspective to seems like we cannot study free energy exchange between phonons and the nucleus with small numbers of nuclei.
 
-## Magnetic dipole coupling
+### Magnetic dipole coupling
 
 From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the magnetic dipole coupling as:
 $$
@@ -245,3 +252,88 @@ $$
 This condition is well satisfied.
 
 If we were to use quanta with energy $4 \ \rm neV$ which correspond to a frequency $f \approx 1 \ \rm MHz$ and wavelength $\lambda \approx 300 \ \rm  m$  (which would define a coherence domain for the Dicke model) then we could in principle reach the strong field regime using magnetic coupling. It would be a LOT of iron of course and the solenoid would be very large too.
+
+# Two field Dicke model
+
+When we looked at the Dicke model, we concluded that strong field would only be possible for a macroscopically large number of TLS. This was based on the the idea that the coupling energy must match the full transition energy of the TLS:
+
+$$
+\Delta E \lesssim U\sqrt{N}\sqrt{n}
+$$
+
+This condition meant that the phonon energy required would be far too much to give a single nucleus. It is possible to lower the energy requirement, by extending the Dicke model with an additional quantised field. The Hamiltonian for this two field Dicke model is:
+
+$$
+H =  \Delta E J_{z} + \hbar\omega_A\left(a^{\dagger}a +\frac{1}{2}\right) +\hbar\omega_p\left(b^{\dagger}b +\frac{1}{2}\right) + 2U_A\left( a^{\dagger} + a \right)(J_{+} + J_{-}) + 2U_p\left( b^{\dagger} + b \right)(J_{+} + J_{-})
+\label{eq:dicke2Hpseudo}
+$$
+
+Conceptually we might think about the TLS as a nucleus, and the fields as a phonon field ($A$) and a photon field ($p$). Eq. $\ref{eq:dicke2Hpseudo}$ would then allow us to start exploring the possibility of energy moving from a low energy phonon field to a higher energy photon field with the TLS being the mediator.  This would normally not be possible because of the mismatch between the energy quanta of the two fields. However, with a strong field it might be possible.
+
+The photon quanta need not have the same energy as the TLS energy - e.g. it could be the case that:
+
+$$
+\hbar\omega_A\ll \hbar\omega_p \ll \Delta E
+$$
+
+We might then think about strong field as:
+
+$$
+\hbar \omega_p \sim U_A\sqrt{N}\sqrt{n_A}\ll n_A\hbar \omega_A
+\label{eq:strongfield2}
+$$
+
+instead of:
+
+$$
+\Delta E \lesssim U_A\sqrt{N}\sqrt{n_A} \ll n_A\hbar \omega_A
+$$
+
+Eq. $\ref{eq:strongfield2}$ would lower the phonon energy requirement and might make single particle phonon nuclear coupling observable. It's not clear how observable it might be at this stage, but we can look at the phonon energy requirements as a first step.
+
+### Relativistic phonon nuclear coupling
+
+From notes on [Coupling constants in nuclear physics](https://github.com/project-ida/notes/blob/main/pdf/Coupling%20constants%20in%20nuclear%20physics.pdf), we derived the relativistic phonon nuclear coupling as:
+
+$$
+\frac{U}{\hbar \omega_A} = \sqrt{\frac{2}{N}} \sqrt{\frac{\Delta E}{M c^2}} \sqrt{\frac{\Delta E}{\hbar \omega_A}} \times 10^{-3}
+\label{eq:phononcoupling2}
+$$
+
+where $N$ is the number of nuclei involved in the phonon motion, and $M$ is the mass of the nucleus and $\omega_A$ is the acoustic phonon mode frequency. The first condition in Eq. $\ref{eq:strongfield2}$ gives:
+$$
+\begin{aligned}
+\hbar\omega_p &\lesssim U_A\sqrt{N}\sqrt{n_A} \\
+\frac{\hbar\omega_p}{\hbar \omega_A} &\lesssim \sqrt{2} \sqrt{\frac{\Delta E}{M c^2}} \sqrt{\frac{\Delta E}{\hbar \omega_A}} \times 10^{-3}\sqrt{n_A} \\
+\frac{\hbar\omega_p}{\Delta E} &\lesssim \sqrt{2} \sqrt{\frac{\hbar\omega_A}{M c^2}} \times 10^{-3}\sqrt{n_A} \\
+\frac{\hbar\omega_p}{\Delta E} &\lesssim \sqrt{2}\times 10^{-3}\sqrt{\frac{n_A\hbar\omega_A}{ Mc^2}}\\
+\\ \frac{1}{2}Mc^2 \times 10^6 \times \left(\frac{\hbar\omega_p}{\Delta E}\right)^2 &\lesssim n_A\hbar\omega_A \\
+
+\end{aligned}
+\label{eq:strongfieldconditiononn2}
+$$
+
+For palladium with $M c^2 \approx 10^{11}$ eV  and a nuclear transition at $\Delta E \sim 10 \rm \ MeV$ , if we imagine x-ray photons with energy $\hbar\omega _p\sim 10 \rm \ keV$ then the phonon energy required would be:
+$$
+n\hbar\omega_A \gtrsim \frac{1}{2}\times 10^{11} \times 10^6 \times \left(\frac{10^3}{10^6}\right)^2 = \frac{1}{2}\times 10^{11} = \frac{1}{2} Mc^2
+$$
+This is 6 orders of magnitude less phonon energy that we needed before. Instead of $8 \rm \ mJ$, we'd need $8 \rm \ nJ$.
+
+The reduction means that for a single nucleus ion trap experiment, we'd not need a 10km long trap but a 1cm trap. That calculation was however made with the largest electric field possible ($10^{11} \rm \ Vm^{-1}$). For typical Paul traps, electric fields go up to $10^{6} \rm \ Vm^{-1}$. That would again make the experiment balloon by $\times 10^5$ to 1km.
+
+We can work out what energy of radiation $\hbar\omega_p$ would be possible for a physically realistic Paul trap by solving:
+$$
+\begin{aligned}
+ZeEd &= n_A\hbar\omega_A \\
+ZeEd &= \frac{1}{2}Mc^2 \times 10^6 \times \left(\frac{\hbar\omega_p}{\Delta E}\right)^2 \\
+\frac{2ZeEd}{Mc^2\times 10^6} &= \left(\frac{\hbar\omega_p}{\Delta E}\right)^2 \\
+\sqrt{\frac{2ZeEd}{Mc^2\times 10^6}}\Delta E &= \hbar\omega_p
+\end{aligned}
+$$
+If we plug in the relevant numbers, $Mc^2\sim 10^{11} \rm \ eV$ , $Z\sim 50$, $E\sim 10^6 \rm \ Vm^{-1}$, $d\sim 0.01 \rm \ m$ and $\Delta E \sim 10 \rm \ MeV$ we get
+$$
+\hbar\omega_p = \sqrt{\frac{2\times 50\times 1.6\times 10^{-19}\times 10^6\times 0.01}{10^{11}\times 1.6\times 10^{-19}\times 10^6}}\times 10\times 10^6 = 31\rm \ eV
+$$
+And so if we wanted to explore relativistic phonon nuclear coupling with a single nucleus inside a Paul trap of typical parameters, then we'd be looking for emission of ultraviolet radiation.
+
+The next question is how often would we expect to see this radiation.
