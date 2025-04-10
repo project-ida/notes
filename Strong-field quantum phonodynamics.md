@@ -124,6 +124,7 @@ $$
 $$
 
 where $N$ is the number of nuclei involved in the phonon motion, and $M$ is the mass of the nucleus and $\omega_A$ is the acoustic phonon mode frequency. The first condition in Eq. $\ref{eq:strongfield}$ gives:
+
 $$
 \begin{aligned}
 \Delta E &\lesssim U\sqrt{N}\sqrt{n} \\
@@ -309,6 +310,7 @@ $$
 $$
 
 where $N$ is the number of nuclei involved in the phonon motion, and $M$ is the mass of the nucleus and $\omega_A$ is the acoustic phonon mode frequency. The first condition in Eq. $\ref{eq:strongfield2}$ gives:
+
 $$
 \begin{aligned}
 \hbar\omega_p &\lesssim U_A\sqrt{N}\sqrt{n_A} \\
