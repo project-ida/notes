@@ -234,8 +234,7 @@ We can turn this into a condition for the number of nuclei $N$ by using the larg
 $$
 \begin{aligned}
 N &\gtrsim \left(50\frac{\Delta E}{\mu_N B}\right)^2 \\
-&\gtrsim 2500 \times \left(\frac{14 \times 10^3 \times 1.6\times 10^{-19}}{5\times 10^{-27}\times 0.1}\right)^2
-\\
+&\gtrsim 2500 \times \left(\frac{14 \times 10^3 \times 1.6\times 10^{-19}}{5\times 10^{-27}\times 0.1}\right)^2 \\
 &\gtrsim 5 \times 10^{28}
 \end{aligned}
 $$
@@ -317,16 +316,17 @@ $$
 \frac{\hbar\omega_p}{\hbar \omega_A} &\lesssim \sqrt{2} \sqrt{\frac{\Delta E}{M c^2}} \sqrt{\frac{\Delta E}{\hbar \omega_A}} \times 10^{-3}\sqrt{n_A} \\
 \frac{\hbar\omega_p}{\Delta E} &\lesssim \sqrt{2} \sqrt{\frac{\hbar\omega_A}{M c^2}} \times 10^{-3}\sqrt{n_A} \\
 \frac{\hbar\omega_p}{\Delta E} &\lesssim \sqrt{2}\times 10^{-3}\sqrt{\frac{n_A\hbar\omega_A}{ Mc^2}}\\
-\\ \frac{1}{2}Mc^2 \times 10^6 \times \left(\frac{\hbar\omega_p}{\Delta E}\right)^2 &\lesssim n_A\hbar\omega_A \\
-
+\\ \frac{1}{2}Mc^2 \times 10^6 \times \left(\frac{\hbar\omega_p}{\Delta E}\right)^2 &\lesssim n_A\hbar\omega_A
 \end{aligned}
 \label{eq:strongfieldconditiononn2}
 $$
 
 For palladium with $M c^2 \approx 10^{11}$ eV  and a nuclear transition at $\Delta E \sim 10 \rm \ MeV$ , if we imagine x-ray photons with energy $\hbar\omega _p\sim 10 \rm \ keV$ then the phonon energy required would be:
+
 $$
 n\hbar\omega_A \gtrsim \frac{1}{2}\times 10^{11} \times 10^6 \times \left(\frac{10^3}{10^6}\right)^2 = \frac{1}{2}\times 10^{11} = \frac{1}{2} Mc^2
 $$
+
 This is 6 orders of magnitude less phonon energy that we needed before. Instead of $8 \rm \ mJ$, we'd need $8 \rm \ nJ$.
 
 The reduction means that for a single nucleus ion trap experiment, we'd not need a 10km long trap but a 1cm trap. That calculation was however made with the largest electric field possible ($10^{11} \rm \ Vm^{-1}$). For typical Paul traps, electric fields go up to $10^{6} \rm \ Vm^{-1}$. That would again make the experiment balloon by $\times 10^5$ to 1km.
