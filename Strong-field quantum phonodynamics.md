@@ -219,6 +219,7 @@ $$
 where $\mu_N = e\hbar/m_p \approx 5\times 10^{-27} \ \rm J/T$ is the nuclear magneton
 
 The first condition in Eq. $\ref{eq:strongfield}$ gives:
+
 $$
 \begin{aligned}
 \Delta E &\lesssim U\sqrt{N}\sqrt{n} \\
@@ -226,7 +227,9 @@ $$
 1 &\lesssim 0.02\sqrt{N}\frac{\mu_N B}{\Delta E} \\
 \end{aligned}
 $$
+
 We can turn this into a condition for the number of nuclei $N$ by using the largest reasonable magnetic field strength of $B\sim 0.1 \ \rm T$. Let's look at the $\rm 14 \ keV$ nuclear transition of $\rm ^{57}Fe$ .
+
 $$
 \begin{aligned}
 N &\gtrsim \left(50\frac{\Delta E}{\mu_N B}\right)^2 \\
@@ -235,9 +238,11 @@ N &\gtrsim \left(50\frac{\Delta E}{\mu_N B}\right)^2 \\
 &\gtrsim 5 \times 10^{28}
 \end{aligned}
 $$
+
 This works out at about $5000 \ \rm kg$ of iron - at the very least!
 
 The second condition in Eq. $\ref{eq:strongfield}$ gives:
+
 $$
 \begin{aligned}
 U\sqrt{N}\sqrt{n} &\ll  n\hbar \omega \\
@@ -245,10 +250,13 @@ U\sqrt{N}\sqrt{n} &\ll  n\hbar \omega \\
 N \ll \left(50\frac{1}{\mu_0\mu_N}BV\right)^2
 \end{aligned}
 $$
+
 Again we'll use $B=0.1 \ \rm T$ . For the volume let's use the volume of $5 \times 10^{28}$ iron atoms. The density of iron is about $8000 \ \rm kg/m^{-3}$ so $V \approx 0.6 \ \rm m^3$ . Substituting the numbers gives:
+
 $$
 N \ll 2\times 10^{65}
 $$
+
 This condition is well satisfied.
 
 If we were to use quanta with energy $4 \ \rm neV$ which correspond to a frequency $f \approx 1 \ \rm MHz$ and wavelength $\lambda \approx 300 \ \rm  m$  (which would define a coherence domain for the Dicke model) then we could in principle reach the strong field regime using magnetic coupling. It would be a LOT of iron of course and the solenoid would be very large too.
@@ -322,6 +330,7 @@ This is 6 orders of magnitude less phonon energy that we needed before. Instead 
 The reduction means that for a single nucleus ion trap experiment, we'd not need a 10km long trap but a 1cm trap. That calculation was however made with the largest electric field possible ($10^{11} \rm \ Vm^{-1}$). For typical Paul traps, electric fields go up to $10^{6} \rm \ Vm^{-1}$. That would again make the experiment balloon by $\times 10^5$ to 1km.
 
 We can work out what energy of radiation $\hbar\omega_p$ would be possible for a physically realistic Paul trap by solving:
+
 $$
 \begin{aligned}
 ZeEd &= n_A\hbar\omega_A \\
@@ -330,10 +339,13 @@ ZeEd &= \frac{1}{2}Mc^2 \times 10^6 \times \left(\frac{\hbar\omega_p}{\Delta E}\
 \sqrt{\frac{2ZeEd}{Mc^2\times 10^6}}\Delta E &= \hbar\omega_p
 \end{aligned}
 $$
+
 If we plug in the relevant numbers, $Mc^2\sim 10^{11} \rm \ eV$ , $Z\sim 50$, $E\sim 10^6 \rm \ Vm^{-1}$, $d\sim 0.01 \rm \ m$ and $\Delta E \sim 10 \rm \ MeV$ we get
+
 $$
 \hbar\omega_p = \sqrt{\frac{2\times 50\times 1.6\times 10^{-19}\times 10^6\times 0.01}{10^{11}\times 1.6\times 10^{-19}\times 10^6}}\times 10\times 10^6 = 31\rm \ eV
 $$
+
 And so if we wanted to explore relativistic phonon nuclear coupling with a single nucleus inside a Paul trap of typical parameters, then we'd be looking for emission of ultraviolet radiation.
 
 The next question is how often would we expect to see this radiation.
