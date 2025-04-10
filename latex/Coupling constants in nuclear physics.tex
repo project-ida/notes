@@ -132,8 +132,8 @@ over \(N\) atoms:
 p = \sqrt{\frac{2M}{N}} \sqrt{\hbar \omega_A} \sqrt{n} \label{eq:p}
 \]
 
-Note that later we'll drop the \(\sqrt{n}\) because it should be picked
-up in the Hamiltonian operator \((b^{\dagger} + b)\).
+Note that later we'll drop the \(\sqrt{n}\) because it will be picked up
+in the Hamiltonian operator \((b^{\dagger} + b)\).
 
 \subsection{\texorpdfstring{\(a\) in
 \(a \cdot cp\)}{a in a \textbackslash cdot cp}}\label{a-in-a-cdot-cp}
@@ -144,7 +144,7 @@ solid state}, the \(a\) component of \(a \cdot cp\) can be approximated
 as:
 
 \[
-a \sim \frac{1}{2} \frac{\Delta E}{M c^2} \frac{\pi}{m c}
+a \sim \frac{1}{2} \frac{\Delta E}{M c^2} \frac{\pi}{m_p c}
 \]
 
 where:
@@ -154,7 +154,7 @@ where:
 \item
   \(\Delta E\) is the nuclear transition energy,
 \item
-  \(m\) is the mass of a single nucleon within the nucleus,
+  \(m_p\) is the mass of a single proton within the nucleus,
 \item
   \(\pi\) represents the relative momentum of that nucleon.
 \end{itemize}
@@ -170,8 +170,8 @@ Substituting this into the expression for \(a\) gives:
 a \sim \frac{1}{2} \frac{\Delta E}{M c^2} \frac{\bar\lambda_c}{l_F}
 \]
 
-where \(\bar\lambda_c = \hbar / m c\) is the reduced Compton wavelength,
-approximately:
+where \(\bar\lambda_c = \hbar / m_p c\) is the reduced Compton
+wavelength, approximately:
 
 \[
 \bar\lambda_c \approx 2 \times 10^{-16} \text{ m}.
@@ -197,7 +197,7 @@ the specific nucleus under consideration.
 
 \subsection{Overall coupling constant}\label{overall-coupling-constant}
 
-Let's consider a single TLS interacts with a single phonon mode. The
+Let's consider a single TLS interacting with a single phonon mode. The
 Hamiltonian can be written as:
 
 \[
@@ -236,8 +236,8 @@ which can also be written as:
 \frac{U}{\hbar \omega_A} = \sqrt{\frac{2}{N}} \sqrt{\frac{\hbar \omega_A}{M c^2}} \frac{\Delta E}{\hbar \omega_A} \times 10^{-3}
 \]
 
-\subsection{Example for palladium with acoustic
-phonons}\label{example-for-palladium-with-acoustic-phonons}
+\subsection{Example for a 24MeV palladium transition with acoustic
+phonons}\label{example-for-a-24mev-palladium-transition-with-acoustic-phonons}
 
 \begin{itemize}
 \tightlist
@@ -261,15 +261,21 @@ phonons}\label{example-for-palladium-with-acoustic-phonons}
 
 \subsection{Dicke enhancement}\label{dicke-enhancement}
 
-For an ensemble of \(N\) nuclei interacting collectively with a phonon
-field, coupling is enhanced by \(\sqrt{N}\), leading to:
+\emph{For more detail on the Dicke model, see the
+\href{https://github.com/project-ida/notes/blob/main/pdf/Dicke\%20model.pdf}{notes}
+I made on the subject.}
 
-\[
+For an ensemble of \(N\) nuclei interacting collectively with a phonon
+field, coupling is enhanced by \(\sqrt{N}\), leading to: \[
 \frac{U}{\hbar \omega_A} \sim 10^{3}
 \]
 
 Based on this, we can be far into the ``deep strong coupling'' regime
 where \(U/\hbar \omega_A > 1\).
+
+\emph{For more detail on the Deep strong coupling, see the
+\href{https://github.com/project-ida/notes/blob/main/pdf/Deep\%20strong\%20coupling.pdf}{notes}
+I made on the subject.}
 
 \section{Electric dipole coupling (E1
 transitions)}\label{electric-dipole-coupling-e1-transitions}
@@ -421,8 +427,9 @@ with a single phonon mode:
 H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(a^{\dagger}a +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
 \]
 
-then a \(d \cdot E\) coupling constant \(U\) can be defined by combining
-Eq. \(\ref{eq:E}\) (without the \(\sqrt{n}\)) with Eq. \(\ref{eq:d}\):
+then the \(d \cdot E\) coupling constant \(U\) can be defined by
+combining Eq. \(\ref{eq:E}\) (without the \(\sqrt{n}\)) with Eq.
+\(\ref{eq:d}\):
 
 \[
 \frac{U}{\hbar \omega_A} = \frac{1}{\hbar \omega_A} \frac{\omega_A \sqrt{2M \hbar \omega_A}}{Ze \sqrt{N}} \times 2 \times 10^{-3} A^{1/3} e R_0
@@ -447,12 +454,8 @@ which can also be written as:
 \frac{U}{\hbar \omega_A} = \frac{\sqrt{2}}{Z \sqrt{N}} \sqrt{\frac{M c^2}{E_L}} \sqrt{\frac{\hbar \omega_A}{E_L}} A^{1/3} \times 2 \times 10^{-3}
 \]
 
-Note how the expressions for \(a \cdot cp\) and \(d \cdot E\) have an
-interesting reciprocal relationship if we see that \(E_L\) plays the
-role of \(\Delta E\).
-
-\subsection{Example of Pd with Acoustic
-Phonons}\label{example-of-pd-with-acoustic-phonons}
+\subsection{Example for a 24MeV palladium transition with acoustic
+phonons}\label{example-for-a-24mev-palladium-transition-with-acoustic-phonons-1}
 
 Given:
 
@@ -502,15 +505,17 @@ Approximating:
 
 \subsection{Dicke enhancement}\label{dicke-enhancement-1}
 
-For an ensemble of \(N\) nuclei interacting collectively with a phonon
-field, coupling is enhanced by \(\sqrt{N}\), leading to:
+\emph{For more detail on the Dicke model, see the
+\href{https://github.com/project-ida/notes/blob/main/pdf/Dicke\%20model.pdf}{notes}
+I made on the subject.}
 
-\[
+For an ensemble of \(N\) nuclei interacting collectively with a phonon
+field, coupling is enhanced by \(\sqrt{N}\), leading to: \[
 \frac{U}{\hbar \omega_A} \sim 10^{-12}
 \]
 
-and so even with Dicke enhancement, dipole coupling remains in the weak
-coupling regime.
+and so even with Dicke enhancement, electric dipole coupling from
+phonons remains in the weak coupling regime.
 
 \section{Magnetic dipole coupling (M1
 transitions)}\label{magnetic-dipole-coupling-m1-transitions}
@@ -519,8 +524,8 @@ transitions)}\label{magnetic-dipole-coupling-m1-transitions}
 \(\mu\cdot B\)}{B in \textbackslash mu\textbackslash cdot B}}\label{b-in-mucdot-b}
 
 We assume there is an externally driven oscillatory magnetic field \(B\)
-with frequency \(\omega\) in some volume V. Since field energy density
-\(\sim \frac{1}{\mu_0}B^2\) then: \[
+with frequency \(\omega\) in some volume \(V\). Since field energy
+density \(\sim \frac{1}{\mu_0}B^2\) then: \[
 \frac{1}{\mu_0} B^2 V = n\hbar\omega
 \] where \(n\) is the field occupation number.
 
@@ -609,7 +614,7 @@ convenient for numerical evaluation} but they obscure the physical
 constants.
 
 The last term can be related to the reduced Compton wavelength
-\(\bar\lambda_c = \hbar / m c\):
+\(\bar\lambda_c = \hbar / m_p c\):
 
 \[
 \gamma_{\text{rad}}  =  10\frac{2(L+1)}{L [(2L+1)!!]^2} \alpha (kR)^{2L} \omega \left( \frac{3}{l+3} \right)^2 \left( \frac{\bar\lambda_c}{R} \right)^2
@@ -672,7 +677,7 @@ the nuclear magneton.
 constant}\label{overall-coupling-constant-2}
 
 If we again use this simple Hamiltonian in which a single TLS interacts
-with a single mode but this time it's not a phonon mode but a magnon
+with a single mode but this time it's not a phonon mode but a photon
 mode:
 
 \[
@@ -701,9 +706,24 @@ a volume \(V = 0.001 \ \rm m^{-3}\)
 \begin{aligned}
 U &\approx 0.02 \times 5\times 10^{-27}\times \sqrt{\frac{4\pi\times 10^{-7}\times 4\times 10^{-9}\times 1.6\times 10^{-19}}{0.001}} \\
 \frac{U}{\hbar\omega} &\approx 0.02 \times 5\times 10^{-27}\times\sqrt{\frac{4\pi\times 10^{-7} }{0.001 \times 4\times 10^{-9}\times 1.6\times 10^{-19}}} \\
-\frac{U}{\hbar\omega} &\approx 2.8\times10^{-16}
+\frac{U}{\hbar\omega} &\approx 3\times10^{-16}
 \end{aligned}
 \]
+
+\subsection{Dicke enhancement}\label{dicke-enhancement-2}
+
+\emph{For more detail on the Dicke model, see the
+\href{https://github.com/project-ida/notes/blob/main/pdf/Dicke\%20model.pdf}{notes}
+I made on the subject.}
+
+For an ensemble of \(N\sim 10^{18}\) nuclei interacting collectively
+with this low frequency magnetic field, coupling is enhanced by
+\(\sqrt{N}\), leading to: \[
+\frac{U}{\hbar \omega_A} \sim 3 \times 10^{-7}
+\]
+
+and so even with Dicke enhancement, magnetic dipole coupling remains in
+the weak coupling regime.
 
 \printbibliography
 
