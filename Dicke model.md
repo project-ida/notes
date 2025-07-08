@@ -76,6 +76,7 @@ and noting that $i$ in $\sigma_i$ means that this operator only acts on TLS numb
 When written in this way, states can now be described in terms of 3 numbers $|n, j, m\rangle$ where $j$ describes the total pseudo angular momentum number (which is conserved) and $m$ describes the z component of the total pseudo angular momentum (which can change). This notation allows us to conveniently describe situations where excitations are "delocalised" among the TLS. A delocalised excitation means that the excitation is shared among many TLS in such a way that you don't know which TLS holds the excitation at any moment.
 
 By far the most significant kind of delocalised states are called "Dicke states" which have the largest $j=j_{\max} = N/2$. Dicke states are symmetric in the sense that if you swap any of the TLS around, the state remains unchanged. For example, consider a single excitation among 4 TLS - the Dicke state looks like:
+
 $$
 \Psi = \frac{1}{\sqrt{4}}\left(| n, +, -, -, - \rangle + | n, -, +, -, - \rangle + | n, -, -, +, - \rangle + | n, -, -, -, + \rangle \right)
 $$
