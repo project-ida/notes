@@ -107,6 +107,7 @@ Dicke states with $j=j_{\max}$ are significant because of the acceleration prope
 Let's operate using $J_-$ on some states. This represents a single de-excitation of the combined TLS.
 
 For the case with **all TLS excited** , $m=N/2$:
+
 $$
 J_- |n, N/2, N/2\rangle  = \sqrt{N} |n, N/2, N/2 - 1\rangle
 $$
