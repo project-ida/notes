@@ -126,7 +126,7 @@ For this singe de-excitation the coupling term also gets enhanced by  $\sqrt{N}$
 For the case of **50% excitation**, $m=0$:
 
 $$
-J_- |n, N/2, 0 \rangle  = \sqrt{N^2 + N}|n, N/2, -1\rangle
+J_- |n, N/2, 0 \rangle  = \frac{1}{2}\sqrt{N^2 + 2N}|n, N/2, -1\rangle
 $$
 
 For the first de-excitation, the coupling terms gets enhanced by  $\sim\sqrt{N^2}$ for large $N$. In other words, the rate of emission  (which go as the square of the coupling) to be enhanced by $N^2$  - this is where the super in superradiance comes from.
