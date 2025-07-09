@@ -6,16 +6,16 @@ author: "Matt Lilley"
 
 Coupling refers to the interaction between two systems, where the total energy is not a simple sum of the energies of each system. Instead, the total energy also depends on the combined states of both, with each system influencing the other in ways that cannot be separated. We often express the ideas through a Lagrangian or Hamiltonian.
 
-The aim of these notes is to build some intuition for a quantum systems that have extremely strong coupling. In the [quantum optics literature](https://www.nature.com/articles/s42254-018-0006-2), the use the terms:
+The aim of these notes is to build some intuition for quantum systems that have extremely strong coupling. In the [quantum optics literature](https://www.nature.com/articles/s42254-018-0006-2), the terms:
 
 - Weak
 - Strong
 - Ultra strong
 - Deep strong
 
-to describe the different regimes. 
+are used to describe the different regimes. 
 
-We'll begin with a classical example and use the quantum optics language above. We choose the example of coupled pendulums because it turns out each quantum state with a well defined energy behaves like it's own pendulum (see e.g. [Briggs et.al](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.85.052111)). 
+We will begin with a classical example and use the quantum optics language above. We choose the example of coupled pendulums because it turns out each quantum state with a well-defined energy behaves like its own pendulum (see e.g. [Briggs et.al](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.85.052111)). 
 
 # Coupled pendulums
 
@@ -25,7 +25,7 @@ $$
 H_{\rm pen} = \frac{m l^2}{2} \dot{\theta}_1^2 + \frac{m g l}{2} \theta_1^2 + \frac{m l^2}{2} \dot{\theta}_2^2 + \frac{m g l}{2} \theta_2^2 + \frac{1}{2} k l^2(\theta_1 - \theta_2)^2
 $$
 
-The first four terms are the simple sum of each individual pendulum. The third term arrises due to the coupling.
+The first four terms are the simple sum of each individual pendulum. The last term arises due to the coupling.
 
 More abstractly, we can write:
 
@@ -45,36 +45,36 @@ The system behaves quite differently depending on the strength of the coupling w
 
 In reality, there is always dissipation which cannot be properly captured in a Hamiltonian description. We can however define a dissipation rate $\gamma_{\rm diss}$ whose magnitude also changes the system behaviour.
 
-When $\omega_{\rm coupling} \ll \gamma_{\rm diss} \ll \omega_1,\omega_2$, the coupling is described as weak.
+The coupling is considered weak when $\omega_{\rm coupling} \ll \gamma_{\rm diss} \ll \omega_1,\omega_2$.
 
 There are very small changes in the natural frequencies of the system as compared to the uncoupled case:
 
 - $\omega_1 \rightarrow \omega_+ = \sqrt{g/l}$
 - $\omega_2 \rightarrow \omega_- = \sqrt{g/l + 2k/m}$
 
-The energy does not however move back and forwards between the pendulums because the large dissipation sucks out the energy before any transfer can occur.
+The energy does not however move back and forwards between the pendulums because the large dissipation removes the energy before any transfer can occur.
 
 ## Strong coupling
 
-When the coupling is "strong" in the sense that $\gamma_{\rm diss} \ll \omega_{\rm coupling} \ll \omega_1,\omega_2$,  dissipation is small enough to allow energy to be slowly [exchanged between the two pendulums](https://www.youtube.com/watch?v=CjJVBvDNxcE&t=57s). The motion is characterised by individual swings happening with a frequency $\approx \sqrt{g/l}$ where the amplitude of those swings gradually undulates on a timescale characterised by $\omega_{\rm exchange} =  (k/m) / \omega_+$. This exchange happens most effectively when the pendulums have the same length, so that their natural frequencies are the same .
+When the coupling is "strong" in the sense that $\gamma_{\rm diss} \ll \omega_{\rm coupling} \ll \omega_1,\omega_2$,  dissipation is small enough to allow energy to be slowly [exchanged](https://www.youtube.com/watch?v=CjJVBvDNxcE&t=57s) between the two pendulums. The motion is characterised by individual swings happening with a frequency $\approx \sqrt{g/l}$ where the amplitude of those swings gradually undulates on a timescale characterised by $\omega_{\rm exchange} =  (k/m) / \omega_+$. This exchange happens most effectively when the pendulums have the same length, so that their natural frequencies are the same.
 
 Strong coupling allows us to still conceptually consider the pendulums as having well defined identities in the sense that they have their own natural frequencies. As the coupling becomes larger, this is no longer the case.
 
 ## Ultra strong coupling
 
-When the coupling is "ultra strong" in the sense that $\gamma_{\rm diss} \ll \omega_{\rm coupling} \sim 0.1\times  \omega_1,\omega_2$, energy exchange happens on the time scale of a single swing of one of the pendulums.  The two natural natural frequencies can be noticeably discerned, $\omega_+ = \sqrt{g/l}$  when both pendulums move "in phase" (the spring is not stretched) with one another and $\omega_- = \sqrt{g/l + 2k/m}$ when the pendulums move "out of phase" (the spring is periodically compressed and expanded)
+When the coupling is "ultra strong" in the sense that $\gamma_{\rm diss} \ll \omega_{\rm coupling} \sim 0.1\times  \omega_1,\omega_2$, energy exchange happens on the time scale of a single swing of one of the pendulums.  The two natural frequencies can be noticeably discerned, $\omega_+ = \sqrt{g/l}$  when both pendulums move "in phase" (the spring is not stretched) with one another and $\omega_- = \sqrt{g/l + 2k/m}$ when the pendulums move "out of phase" (the spring is periodically compressed and expanded)
 
 The coupling is getting strong enough so that more energy can be exchanged between pendulums of different lengths.
 
-This exact boundary for this regime is somewhat artificial - there is nothing particularly special about the value $0.1 \omega_{\rm 1}, \omega_2$. This value was first used as part of the quantum optics literature.
+This exact boundary for this regime is somewhat artificial; there is nothing particularly special about the value $0.1 \omega_{\rm 1}, \omega_2$. This value was first used as part of the quantum optics literature.
 
 ## Deep strong coupling
 
-When $\gamma_{\rm diss} \ll \omega_1,\omega_2 \lesssim \omega_{\rm coupling}$ , the coupling begins to dominate over everything else and we enter into a regime called "Deep strong coupling".  Energy transfer between the two pendulums is so fast that it's almost instantaneous and so it's not possible to move one pendulum without the other - they act as a single rigid body.
+When $\gamma_{\rm diss} \ll \omega_1,\omega_2 \lesssim \omega_{\rm coupling}$, the coupling begins to dominate over everything else and we enter into a regime called "Deep strong coupling".  Energy transfer between the two pendulums is so fast that it is almost instantaneous and so it is not possible to move one pendulum without the other - they act as a single rigid body.
 
 # Rabi model
 
-A canonical quantum example is a single two level system (TLS) interacting with a a single mode (i.e. single frequency/wavelength) of a quantised field. This is often called the Rabi model and its Hamiltonian can be written as:
+A canonical quantum example is a single two level system (TLS) interacting with a single mode (i.e. single frequency/wavelength) of a quantised field. This is often called the Rabi model and its Hamiltonian can be written as:
 $$
 H_{\rm Rabi} = \frac{\Delta E}{2} \sigma_z + \hbar\omega\left(a^{\dagger}a +\frac{1}{2}\right) + U\left( a^{\dagger} + a \right)(\sigma_+ + \sigma_-)
 \label{eq:rabiH}
@@ -82,11 +82,11 @@ $$
 
 where $\Delta E$ is the transition energy between the 2 levels of the TLS, $\hbar\omega$ is the energy of each quantum of the field, and $U$ is the coupling constant between the TLS and the field. The $\sigma$ operators are the [Pauli spin matrices](https://ocw.mit.edu/courses/5-61-physical-chemistry-fall-2007/3b1fb40c61e7f939861b190bedbc57a7_lecture24.pdf) that act on the TLS, where $\sigma_+$ and $\sigma_-$ act as raising and lowering operators. The $a^{\dagger}$, $a$ are the field creation and annihilation operators respectively.
 
-It's worth noting that we're using the Pauli spin matrices as a mathematical tool to describe two levels. Just keep in mind that we're not really talking about spin angular momentum here.
+It is worth noting that we are using the Pauli spin matrices as a mathematical tool to describe two levels. Just keep in mind that we are not really talking about spin angular momentum here.
 
 Although a TLS has just 2 states (denoted $|\pm\rangle$), the quantised field has infinitely many states (denoted by the number of quanta $|n\rangle$). The combined state of the system (denoted $|n, \pm\rangle$) therefore has infinitely many states and so conceptually the system behaves like infinitely many pendulums coupled together. The frequency of these conceptual pendulums is determined by the energy of the states.
 
-Much like the classical example, the dynamics depend on the relative sizes of the different terms in the Hamiltonian. For the quantum case however, it's not enough just to compare the various constants $U, \hbar \omega, \Delta E$, we must also consider how many field quanta $n$ we have. This is because of how the field operators work:
+Much like the classical example, the dynamics depend on the relative sizes of the different terms in the Hamiltonian. For the quantum case however, it is not enough to just compare the various constants $U, \hbar \omega, \Delta E$. We must also consider how many field quanta $n$ we have. This is because of how the field operators work:
 
 $$
 a^{\dagger} |n,\pm\rangle = \sqrt{n+1}|n+1,\pm\rangle \\
@@ -115,7 +115,7 @@ If we define $\hbar\gamma_{\rm diss}$  as a characteristic energy associated wit
 
 ## Strong coupling
 
-As in the classical case, when the coupling is strong in the sense that $\hbar\gamma_{\rm diss} \ll \sqrt{n}U \ll \Delta E , \hbar \omega$, there is time for slow exchange between the different quantum states (remember each state is like it's own pendulum).  Unlike the classical case, where it's energy that's exchanged, in the quantum case it's state occupation probability $|\psi|^2$ that's exchanged. 
+As in the classical case, when the coupling is strong in the sense that $\hbar\gamma_{\rm diss} \ll \sqrt{n}U \ll \Delta E , \hbar \omega$, there is time for slow exchange between the different quantum states (remember each state is like it's own pendulum).  Unlike the classical case, where it is energy that is exchanged, in the quantum case it is state occupation probability $|\psi|^2$ that is exchanged. 
 
 In order for exchange to occur effectively, the quantum states need to have the same energy. This is equivalent to the conceptual pendulums having the same length. Two such states are often described as "resonant" with one another. Whether or not the system has any resonances depends on the relationship between $\hbar \omega$ and $\Delta E$.
 
