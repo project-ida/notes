@@ -357,7 +357,7 @@ $$
 N \gtrsim 4 \times 10^{11}.
 $$
 
-Both the $\rm Pd$ and $\rm ^{57}Fe$ numbers are well within practical limits given that solid number density is about $5\times 10^{28} \, \rm m^{-3}$
+Both the $\rm Pd$ and $\rm ^{57}Fe$ numbers are well within practical limits given that solid number density is about $5\times 10^{28} \ \rm m^{-3}$
 
 
 
