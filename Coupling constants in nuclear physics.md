@@ -90,7 +90,7 @@ The final value of $a$ depends on both the nuclear transition type and the speci
 
 ## Overall coupling constant
 
-Let's consider a single TLS interacting with a single phonon mode. The Hamiltonian can be written as:
+Let's consider a single two level system (TLS) interacting with a single phonon mode. The Hamiltonian can be written as:
 
 $$
 H = \frac{\Delta E}{2} \sigma_z + \hbar\omega_A\left(b^{\dagger}b +\frac{1}{2}\right) + U\left( b^{\dagger} + b \right)\sigma_x
@@ -207,6 +207,7 @@ $$
 
 where:
 
+- $!!$ is the [double factorial](https://en.wikipedia.org/wiki/Double_factorial). 
 - $L$ is the multipolarity ($L=1$ for dipole, $L=2$ for quadrupole).
 - $k$ is the wavenumber of the emitted radiation.
 - $R$ is the nuclear radius, given by:
@@ -306,7 +307,7 @@ Given:
 First, let's calculate the localization energy:
 
 $$
-E_L = \frac{\hbar c}{R_0} = \frac{6.6 \times 10^{-34} \times 3 \times 10^8}{10^{-15}}
+E_L = \frac{\hbar c}{R_0} = \frac{6.6 \times 10^{-34} \text{ Js} \times 3 \times 10^8 \text{ m/s}}{10^{-15} \text{ m}}
 $$
 
 $$
@@ -401,6 +402,7 @@ $$
 
 where:
 
+- $!!$ is the [double factorial](https://en.wikipedia.org/wiki/Double_factorial). 
 - $L$ is the multipolarity ($L=1$ for dipole, $L=2$ for quadrupole).
 - $k$ is the wavenumber of the emitted radiation.
 - $m_p$ is the proton mass
