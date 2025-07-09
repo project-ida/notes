@@ -141,7 +141,10 @@ Superradiance might at first seem counterintuitive, but we can understand it fro
 Let's take the example of 2 excitations amongst 4 TLS. The initial delocalised Dicke state looks like:
 
 $$
-\Psi_i = \frac{1}{\sqrt{6}}\left(| 0, +, +, -, - \rangle + | 0, +, -, +, - \rangle + | 0, +, -, -, + \rangle + | 0, -, +, +, - \rangle + | 0, -, +, -, + \rangle + | 0, -, -, +, + \rangle \right)
+\begin{aligned}
+\Psi_i = \frac{1}{\sqrt{6}}\left(| 0, +, +, -, - \rangle + | 0, +, -, +, - \rangle + | 0, +, -, -, + \rangle \\
++ | 0, -, +, +, - \rangle + | 0, -, +, -, + \rangle + | 0, -, -, +, + \rangle \right)
+\end{aligned}
 $$
 
 We can see there are 6 different configurations for the TLS. Each of the 2 excitations in those 6 configurations could transition from $+$ to a $-$ with a release of a single field quanta. That means each of the 6 configurations has 2 emission paths that it could go in order to reach one of 4 configurations in final the state:
