@@ -131,7 +131,7 @@ If however, $\Delta E = m\hbar \omega$ where $m=3, 5, 7 ...$ then  $|n,+\rangle$
 
 ## Ultra strong coupling
 
-When the coupling becomes a sizeable fraction of the TLS and field quantum, $\hbar\gamma_{\rm diss} \ll \sqrt{n}U \sim 0.1 \times \Delta E , \hbar \omega$, non-resonant states begin to gain significant occupancy. For example, a system can start out in state $|0,+\rangle$ with 100% probability and over time a state $|1,+\rangle$ can gain a non-trivial amount of occupation probability. Although this superficially appears to violate energy conservation, the energy in the coupling is no longer negligible and so all terms in the Hamiltonian must be considered when thinking about energy conservation.
+When the coupling becomes a sizeable fraction of the TLS and field quantum, $\hbar\gamma_{\rm diss} \ll \sqrt{n}U \sim 0.1 \times \Delta E , \hbar \omega$, non-resonant states begin to gain significant occupancy. For example, a system can start out in state $|0,+\rangle$ with 100% probability and over time a state $|1,+\rangle$ can gain a non-trivial amount of occupation probability. Although this superficially appears to violate energy conservation, the energy in the coupling is no longer small and so all terms in the Hamiltonian must be considered when thinking about energy conservation.
 
 The coupling term can also accommodate energy mismatches between the TLS and the oscillator, e.g. $\Delta E/ \hbar\omega = 2.83677$ vs $\Delta E/ \hbar\omega = 3$. This makes it easier to observe the emission of multiple quanta.
 
