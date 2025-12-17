@@ -1,0 +1,503 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{hyperref}
+\usepackage{ulem}  % For underlining links
+\normalem
+
+\hypersetup{
+    colorlinks=false,         % Disable colored links (boxes will appear)
+    citebordercolor=red,      % Border color for citation links
+    linkbordercolor=red,      % Border color for internal links
+    urlbordercolor=blue,      % Border color for external links (URLs)
+    pdfborder={0 0 2}         % Specifies the border thickness: {horizontal vertical thickness}
+}
+
+
+% Only underline external links (URLs)
+\let\oldhref\href
+\renewcommand{\href}[2]{\ifx#1\urlprefix\oldhref{#1}{#2}\else\uline{\oldhref{#1}{#2}}\fi}
+
+
+\renewcommand{\[}{\begin{equation}}
+\renewcommand{\]}{\end{equation}}
+
+
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[]{biblatex}
+\addbibresource{refs.bib}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\title{Perturbation theory}
+  \date{\today}  % Default to today if no date is provided
+
+\begin{document}
+\maketitle
+
+\section{Notes on Perturbation Theory for a Two-Ensemble Dicke
+Model}\label{notes-on-perturbation-theory-for-a-two-ensemble-dicke-model}
+
+\emph{(Donors + Acceptors coupled to a single quantised mode)}
+
+These notes build up the machinery we need to do
+\textbf{effective-Hamiltonian perturbation theory} properly, including
+the appearance of \textbf{folded-diagram (derivative) terms at 4th
+order}. We keep the discussion general first, then later we will plug in
+our specific Dicke Hamiltonian and basis.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{1) The model}\label{the-model}
+
+We consider a Hamiltonian split into ``bare'' and ``interaction'' parts:
+
+\(H = H_0 + V\).
+
+A convenient Dicke-like choice is:
+
+\begin{itemize}
+\tightlist
+\item
+  Single bosonic mode: \(a, a^\dagger\) with frequency \(\omega_c\).
+\item
+  Two ensembles of two-level systems (TLS): donors \(D\) and acceptors
+  \(A\).
+\item
+  Collective spin operators (Dicke operators) for each ensemble:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(S_D^\pm, S_D^z\) for donors, size \(N_D\).
+  \item
+    \(S_A^\pm, S_A^z\) for acceptors, size \(N_A\).
+  \end{itemize}
+\end{itemize}
+
+A standard ``Rabi/Dicke'' style Hamiltonian is:
+
+\[
+H_0
+=
+\omega_c a^\dagger a
++
+\omega_0 \big(S_D^z + S_A^z\big)
+\]
+
+\[
+V
+=
+(a+a^\dagger)
+\Big[
+v_D (S_D^+ + S_D^-)
++
+v_A (S_A^+ + S_A^-)
+\Big].
+\]
+
+Here \(v_D\) and \(v_A\) are the single-particle couplings for donors
+and acceptors (not assumed equal).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{2) Choice of basis and the P/Q
+split}\label{choice-of-basis-and-the-pq-split}
+
+\subsubsection{Dicke basis (conceptual)}\label{dicke-basis-conceptual}
+
+A convenient label for basis states is:
+
+\(|N_D^*, N_A^*, n\rangle\),
+
+where: - \(N_D^*\) is the number of donor excitations in the symmetric
+Dicke ladder (\(0,1,\dots,N_D\)), - \(N_A^*\) is the number of acceptor
+excitations (\(0,1,\dots,N_A\)), - \(n\) is the photon number.
+
+The bare energies take the schematic form:
+
+\[
+E^{(0)}(N_D^*,N_A^*,n)
+=
+\omega_0 (N_D^*+N_A^*)
++
+\omega_c n
+\quad
+\text{(up to constant offsets)}.
+\]
+
+\subsubsection{The two-dimensional P
+space}\label{the-two-dimensional-p-space}
+
+We choose a ``model space'' \(P\) consisting of the two
+single-excitation states at a chosen photon sector (often \(k=0\),
+i.e.~photon number fixed to some reference \(n\)):
+
+\begin{itemize}
+\tightlist
+\item
+  Donor-like state:
+\end{itemize}
+
+\(|D\rangle \equiv |1,0,n\rangle\)
+
+\begin{itemize}
+\tightlist
+\item
+  Acceptor-like state:
+\end{itemize}
+
+\(|A\rangle \equiv |0,1,n\rangle\)
+
+So \(P\) is 2D and is spanned by \(\{|D\rangle,|A\rangle\}\). Let \(Q\)
+be the complement:
+
+\(Q = 1 - P\).
+
+We will write operator blocks like: - \(H_{PP} \equiv PHP\) -
+\(H_{PQ} \equiv PHQ\) - \(H_{QP} \equiv QHP\) - \(H_{QQ} \equiv QHQ\)
+
+and similarly for \(H_0\) and \(V\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{3) Exact elimination of Q space: Bloch--Horowitz effective
+Hamiltonian}\label{exact-elimination-of-q-space-blochhorowitz-effective-hamiltonian}
+
+Start from the Schrödinger equation:
+
+\(H|\Psi\rangle = E|\Psi\rangle\).
+
+Decompose the state:
+
+\(|\Psi\rangle = |\psi_P\rangle + |\psi_Q\rangle\),
+
+where \(|\psi_P\rangle = P|\Psi\rangle\) and
+\(|\psi_Q\rangle = Q|\Psi\rangle\).
+
+Projecting onto \(P\) and \(Q\) gives the coupled block equations:
+
+\[
+(H_{PP} - E)\,|\psi_P\rangle + H_{PQ}\,|\psi_Q\rangle = 0
+\]
+
+\[
+H_{QP}\,|\psi_P\rangle + (H_{QQ}-E)\,|\psi_Q\rangle = 0.
+\]
+
+Assuming \((E-H_{QQ})\) is invertible on \(Q\), solve the second
+equation:
+
+\[
+|\psi_Q\rangle
+=
+(E-H_{QQ})^{-1} H_{QP}\,|\psi_P\rangle.
+\]
+
+Insert into the \(P\) equation to obtain the \textbf{exact
+energy-dependent effective Hamiltonian}:
+
+\[
+H_{\mathrm{eff}}(E)
+=
+H_{PP}
++
+H_{PQ}\,(E-H_{QQ})^{-1}\,H_{QP}.
+\]
+
+This is often called the \textbf{Bloch--Horowitz (BH)} or
+\textbf{Feshbach} effective Hamiltonian.
+
+\textbf{Key point:} \(H_{\mathrm{eff}}(E)\) depends on \(E\), so the
+eigenvalue problem is nonlinear:
+
+\[
+H_{\mathrm{eff}}(E)\,|\psi_P\rangle
+=
+E\,|\psi_P\rangle.
+\]
+
+Solving this self-consistently reproduces the exact full-space
+eigenvalues associated with the chosen \(P\) sector.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{4) Perturbative expansion: resolvent and ``unfolded''
+series}\label{perturbative-expansion-resolvent-and-unfolded-series}
+
+We now expand in powers of \(V\).
+
+Write:
+
+\(H = H_0 + V\),
+
+and correspondingly:
+
+\(H_{QQ} = (H_0)_{QQ} + V_{QQ}\), etc.
+
+Define an ``unperturbed'' \(Q\)-space resolvent:
+
+\[
+G_0(E)
+\equiv
+(E-(H_0)_{QQ})^{-1}.
+\]
+
+Then we expand the full resolvent:
+
+\[
+(E-H_{QQ})^{-1}
+=
+\big(E-(H_0)_{QQ}-V_{QQ}\big)^{-1}
+=
+G_0(E) + G_0(E)V_{QQ}G_0(E) + G_0(E)V_{QQ}G_0(E)V_{QQ}G_0(E)+\cdots
+\]
+
+Insert into BH:
+
+\[
+H_{\mathrm{eff}}(E)
+=
+H_{PP}
++
+V_{PQ}G_0(E)V_{QP}
++
+V_{PQ}G_0(E)V_{QQ}G_0(E)V_{QP}
++
+V_{PQ}G_0(E)V_{QQ}G_0(E)V_{QQ}G_0(E)V_{QP}
++\cdots
+\]
+
+This produces an expansion in powers of \(V\):
+
+\begin{itemize}
+\tightlist
+\item
+  2nd order: \(V_{PQ}G_0(E)V_{QP}\)
+\item
+  3rd order: \(V_{PQ}G_0(E)V_{QQ}G_0(E)V_{QP}\)
+\item
+  4th order: \(V_{PQ}G_0(E)V_{QQ}G_0(E)V_{QQ}G_0(E)V_{QP}\)
+\item
+  etc.
+\end{itemize}
+
+If we evaluate these terms at a fixed reference energy \(E=E_0\)
+(typically the degenerate bare energy of the \(P\) states), we get what
+we will call the \textbf{unfolded} contributions (no intermediate return
+to \(P\) inside the resolvent expansion).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{5) Why energy dependence matters: self-consistency vs
+energy-independent
+expansions}\label{why-energy-dependence-matters-self-consistency-vs-energy-independent-expansions}
+
+\subsubsection{Self-consistent (BH)
+viewpoint}\label{self-consistent-bh-viewpoint}
+
+In BH, you compute \(H_{\mathrm{eff}}(E)\) and solve the nonlinear
+problem
+
+\(H_{\mathrm{eff}}(E)\psi_P = E\psi_P\).
+
+This automatically includes ``folding'' effects because you never expand
+away the \(E\) dependence: it is treated exactly (within the chosen
+truncation of \(Q\)).
+
+\subsubsection{Energy-independent perturbation theory
+viewpoint}\label{energy-independent-perturbation-theory-viewpoint}
+
+Often we want an \textbf{energy-independent} effective Hamiltonian
+expanded order-by-order (Rayleigh--Schrödinger style). Then we must
+handle the fact that \(H_{\mathrm{eff}}\) depends on \(E\).
+
+This is where \textbf{folded-diagram (derivative) terms} appear.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{6) The origin of folded terms: Taylor expanding the
+self-energy}\label{the-origin-of-folded-terms-taylor-expanding-the-self-energy}
+
+Define the BH self-energy operator:
+
+\(\Sigma(E) \equiv H_{PQ}(E-H_{QQ})^{-1}H_{QP}\).
+
+Then:
+
+\(H_{\mathrm{eff}}(E) = H_{PP} + \Sigma(E)\).
+
+Choose a reference energy \(E_0\) (for our degenerate \(P\) space this
+is the common bare energy of \(|D\rangle\) and \(|A\rangle\)), and
+write:
+
+\(E = E_0 + \delta E\).
+
+Now Taylor expand:
+
+\[
+\Sigma(E)
+=
+\Sigma(E_0)
++
+\delta E\,\Sigma'(E_0)
++
+\frac{(\delta E)^2}{2}\Sigma''(E_0)
++
+\cdots
+\]
+
+Crucial power counting: - \(\Sigma(E_0)\) starts at order \(V^2\). -
+Typically \(\delta E\) is also order \(V^2\) (it is an energy shift
+generated by the interaction).
+
+Therefore the term
+
+\(\delta E\,\Sigma'(E_0)\)
+
+is of order \(V^4\).
+
+That is exactly the \textbf{leading folded contribution at 4th order}.
+
+\subsubsection{Why derivatives appear}\label{why-derivatives-appear}
+
+The derivative comes from differentiating the resolvent:
+
+\[
+\frac{d}{dE}(E-H_{QQ})^{-1}
+=
+(E-H_{QQ})^{-2}.
+\]
+
+So folded terms correspond to squared denominators in the
+intermediate-state sums. Diagrammatically, they are associated with
+intermediate returns to the model space \(P\) that would otherwise
+produce zero denominators in naive time-ordered perturbation theory.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{7) What ``folded'' means when P is
+two-dimensional}\label{what-folded-means-when-p-is-two-dimensional}
+
+Here \(P\) contains two states, \(|D\rangle\) and \(|A\rangle\).
+
+A process can ``return to P'' in the middle by landing on
+\textbf{either} state (with the correct photon sector).
+
+\begin{itemize}
+\tightlist
+\item
+  Returning early to \(|D\rangle\) corresponds to ``dressing the donor
+  leg''.
+\item
+  Returning early to \(|A\rangle\) corresponds to ``dressing the
+  acceptor leg''.
+\end{itemize}
+
+This is why, in a 2D \(P\) space, the folded correction is naturally a
+\textbf{matrix product} structure (schematically):
+
+\[
+H_{\mathrm{eff}}^{(\le 4)}
+\approx
+H_{PP}
++
+\Sigma^{(2)}(E_0)
++
+\Sigma^{(4)}_{\mathrm{unfolded}}(E_0)
++
+\Sigma^{(2)\prime}(E_0)\,\Sigma^{(2)}(E_0)
+\quad
+\text{(up to convention-dependent symmetrisation)}.
+\]
+
+When we look specifically at the \textbf{off-diagonal element} \(AD\),
+the folded term contains contributions corresponding to ``hit \(D\)
+early'' and ``hit \(A\) early'':
+
+\begin{itemize}
+\tightlist
+\item
+  ``hit \(D\) early'' dressing contributes via the \(P\)-index \(p=D\)
+\item
+  ``hit \(A\) early'' dressing contributes via the \(P\)-index \(p=A\)
+\end{itemize}
+
+This is exactly how ``getting to the end point early'' enters
+analytically: it is one of the allowed intermediate \(P\) states in the
+folded correction.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{8) Stop point for the general
+formalism}\label{stop-point-for-the-general-formalism}
+
+At this stage we have:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A clear \(P/Q\) reduction to an exact \(H_{\mathrm{eff}}(E)\)
+  (BH/Feshbach).
+\item
+  A perturbative expansion of \(H_{\mathrm{eff}}(E)\) in powers of \(V\)
+  that yields ``unfolded'' contributions at fixed \(E_0\).
+\item
+  A Taylor expansion in \(E\) showing that, at 4th order, we must
+  include derivative terms (folded diagrams) because \(\delta E\) is
+  itself order \(V^2\).
+\end{enumerate}
+
+Next step (in our Dicke model): - Choose the explicit Dicke basis states
+and compute \(\Sigma^{(2)}_{DD}(E_0)\), \(\Sigma^{(2)}_{AA}(E_0)\),
+\(\Sigma^{(2)}_{AD}(E_0)\) keeping full \((n,n+1)\) dependence. - Then
+compute \(\Sigma^{(2)\prime}(E_0)\) and assemble the 4th-order folded
+correction. - Compare ``static at \(E_0\)'' vs ``self-consistent BH''
+and show the cancellations we observed numerically.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\printbibliography
+
+
+\end{document}
