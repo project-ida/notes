@@ -1,0 +1,725 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{hyperref}
+\usepackage{ulem}  % For underlining links
+\normalem
+
+\hypersetup{
+    colorlinks=false,         % Disable colored links (boxes will appear)
+    citebordercolor=red,      % Border color for citation links
+    linkbordercolor=red,      % Border color for internal links
+    urlbordercolor=blue,      % Border color for external links (URLs)
+    pdfborder={0 0 2}         % Specifies the border thickness: {horizontal vertical thickness}
+}
+
+
+% Only underline external links (URLs)
+\let\oldhref\href
+\renewcommand{\href}[2]{\ifx#1\urlprefix\oldhref{#1}{#2}\else\uline{\oldhref{#1}{#2}}\fi}
+
+
+\renewcommand{\[}{\begin{equation}}
+\renewcommand{\]}{\end{equation}}
+
+
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[]{biblatex}
+\addbibresource{refs.bib}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\title{Phase in electromagnetic coupling}
+  \date{\today}  % Default to today if no date is provided
+
+\begin{document}
+\maketitle
+
+\section{Phase in Electomagnetic
+coupling}\label{phase-in-electomagnetic-coupling}
+
+These notes build up a clean ``mental model'' for how phases arise in
+light--matter coupling when two \textbf{identical} two-level systems
+(TLS) interact with a \textbf{single quantised electromagnetic mode},
+including both \textbf{electric} and \textbf{magnetic} dipole
+contributions. The focus is on:
+
+\begin{itemize}
+\tightlist
+\item
+  how we write \(H_{\mathrm{int}}\) from general \(E\) and \(B\)
+  couplings,
+\item
+  how this reduces to coupling to a \textbf{single oscillator
+  quadrature},
+\item
+  where the \textbf{phase factors} come from,
+\item
+  how phases can be \textbf{gauged away} (factored out),
+\item
+  and when a \textbf{relative phase difference} between donor/acceptor
+  is physically meaningful.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{1. The setup: two identical TLS and a single
+mode}\label{the-setup-two-identical-tls-and-a-single-mode}
+
+We have two identical TLS labelled \(j \in \{D, A\}\) (donor/acceptor),
+transition frequency \(\omega_0\), and a single bosonic mode
+(e.g.~cavity/waveguide mode) with frequency \(\omega_c\):
+
+\[
+H_0
+=
+\hbar \omega_c a^\dagger a
++
+\sum_{j=D,A}\frac{\hbar \omega_0}{2}\,\sigma_z^{(j)}.
+\label{eq:H0}
+\]
+
+We will mostly care about the \textbf{interaction} Hamiltonian.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{\texorpdfstring{2. General dipole interaction with \(E\) and
+\(B\)}{2. General dipole interaction with E and B}}\label{general-dipole-interaction-with-e-and-b}
+
+In the dipole approximation (TLS size \(\ll \lambda\)), the interaction
+for TLS \(j\) is:
+
+\[
+H_{\mathrm{int}}^{(j)}
+=
+-\hat{\mathbf d}^{(j)}\cdot \hat{\mathbf E}(\mathbf r_j)
+-\hat{\boldsymbol\mu}^{(j)}\cdot \hat{\mathbf B}(\mathbf r_j),
+\label{eq:Hint_general}
+\]
+
+where:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\hat{\mathbf d}^{(j)}\) is the electric dipole operator of TLS
+  \(j\),
+\item
+  \(\hat{\boldsymbol\mu}^{(j)}\) is the magnetic dipole operator,
+\item
+  \(\mathbf r_j\) is the TLS position.
+\end{itemize}
+
+Total interaction is:
+
+\[
+H_{\mathrm{int}}=\sum_{j=D,A} H_{\mathrm{int}}^{(j)}.
+\label{eq:Hint_sum}
+\]
+
+\subsubsection{2.1 Identical TLS
+operators}\label{identical-tls-operators}
+
+For identical TLS, the transition operators have the same matrix
+elements, but geometry/projections can differ with position/orientation.
+
+A common simplification is to take:
+
+\[
+\hat{\mathbf d}^{(j)} = \mathbf d\,(\sigma_+^{(j)}+\sigma_-^{(j)}) = \mathbf d\,\sigma_x^{(j)},
+\qquad
+\hat{\boldsymbol\mu}^{(j)} = \boldsymbol\mu\,(\sigma_+^{(j)}+\sigma_-^{(j)}) = \boldsymbol\mu\,\sigma_x^{(j)}.
+\label{eq:dipole_ops}
+\]
+
+More generally, \(\mathbf d\) and \(\boldsymbol\mu\) can be complex
+vectors, but the structural results below remain the same.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{3. One quantised mode: field operators and complex mode
+functions}\label{one-quantised-mode-field-operators-and-complex-mode-functions}
+
+For a \textbf{single mode}, the electric and magnetic field operators at
+position \(\mathbf r\) can always be written as:
+
+\[
+\hat{\mathbf E}(\mathbf r)
+=
+\mathbf E_{\mathrm{zpf}}(\mathbf r)\,a + \mathbf E_{\mathrm{zpf}}^*(\mathbf r)\,a^\dagger,
+\qquad
+\hat{\mathbf B}(\mathbf r)
+=
+\mathbf B_{\mathrm{zpf}}(\mathbf r)\,a + \mathbf B_{\mathrm{zpf}}^*(\mathbf r)\,a^\dagger.
+\label{eq:fields_single_mode}
+\]
+
+Here \(\mathbf E_{\mathrm{zpf}}(\mathbf r)\) and
+\(\mathbf B_{\mathrm{zpf}}(\mathbf r)\) are \textbf{complex
+vector-valued mode amplitudes} (including polarisation and spatial
+dependence), and ``zpf'' means ``zero-point field''.
+
+A travelling-wave-like mode often has:
+
+\[
+\mathbf E_{\mathrm{zpf}}(\mathbf r)\propto e^{i\mathbf k\cdot\mathbf r},\qquad
+\mathbf B_{\mathrm{zpf}}(\mathbf r)\propto e^{i\mathbf k\cdot\mathbf r}.
+\label{eq:travelling_mode_phase}
+\]
+
+A lossless standing-wave cavity mode can often be chosen real up to sign
+(so phases are \(0\) or \(\pi\)).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{\texorpdfstring{4. The simplest case: \textbf{magnetic
+dipole only}
+(B-only)}{4. The simplest case: magnetic dipole only (B-only)}}\label{the-simplest-case-magnetic-dipole-only-b-only}
+
+Assume \(\mathbf d = 0\) and only magnetic coupling:
+
+\[
+H_{\mathrm{int}}^{(j)}
+=
+-\hat{\boldsymbol\mu}^{(j)}\cdot \hat{\mathbf B}(\mathbf r_j).
+\label{eq:Hint_Bonly_start}
+\]
+
+Insert Eqs. \(\ref{eq:dipole_ops}\) and \(\ref{eq:fields_single_mode}\):
+
+\[
+H_{\mathrm{int}}^{(j)}
+=
+-\sigma_x^{(j)}\Big[
+\boldsymbol\mu\cdot \mathbf B_{\mathrm{zpf}}(\mathbf r_j)\,a
++
+\boldsymbol\mu\cdot \mathbf B_{\mathrm{zpf}}^*(\mathbf r_j)\,a^\dagger
+\Big].
+\label{eq:Hint_Bonly_expand}
+\]
+
+Define the complex scalar coupling coefficient:
+
+\[
+g_j \equiv -\frac{1}{\hbar}\,\boldsymbol\mu\cdot \mathbf B_{\mathrm{zpf}}(\mathbf r_j),
+\qquad
+g_j^* = -\frac{1}{\hbar}\,\boldsymbol\mu\cdot \mathbf B_{\mathrm{zpf}}^*(\mathbf r_j).
+\label{eq:gj_def}
+\]
+
+Then:
+
+\[
+H_{\mathrm{int}}^{(j)}
+=
+\hbar\,\sigma_x^{(j)}\big(g_j a + g_j^* a^\dagger\big).
+\label{eq:Hint_Bonly_g}
+\]
+
+\subsubsection{4.1 Writing the phase
+explicitly}\label{writing-the-phase-explicitly}
+
+Write \(g_j\) in polar form:
+
+\[
+g_j = |g_j|e^{i\theta_j}.
+\label{eq:gj_polar}
+\]
+
+Then:
+
+\[
+g_j a + g_j^* a^\dagger
+=
+|g_j|\big(e^{i\theta_j}a + e^{-i\theta_j}a^\dagger\big),
+\label{eq:phase_factor_form}
+\]
+
+so:
+
+\[
+H_{\mathrm{int}}^{(j)}
+=
+\hbar |g_j|\,\sigma_x^{(j)}\big(e^{i\theta_j}a + e^{-i\theta_j}a^\dagger\big).
+\label{eq:Hint_Bonly_phase}
+\]
+
+\subsubsection{\texorpdfstring{4.2 Where does \(\theta_j\) come
+from?}{4.2 Where does \textbackslash theta\_j come from?}}\label{where-does-theta_j-come-from}
+
+It is simply:
+
+\[
+\theta_j = \arg\!\big(\boldsymbol\mu\cdot \mathbf B_{\mathrm{zpf}}(\mathbf r_j)\big).
+\label{eq:theta_origin}
+\]
+
+For a travelling wave with
+\(\mathbf B_{\mathrm{zpf}}(\mathbf r)\propto e^{i\mathbf k\cdot\mathbf r}\)
+and fixed polarisation,
+
+\[
+\theta_j \simeq \mathbf k\cdot \mathbf r_j + \text{(constant)}.
+\label{eq:theta_travelling}
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{5. Factoring out a global phase (why only relative phase
+matters)}\label{factoring-out-a-global-phase-why-only-relative-phase-matters}
+
+The free Hamiltonian \(\hbar\omega_c a^\dagger a\) is invariant under:
+
+\[
+a \to a\,e^{-i\chi},
+\qquad
+a^\dagger \to a^\dagger e^{i\chi}.
+\label{eq:mode_rephase}
+\]
+
+This is a ``phase convention'' for the mode. Use it to make one
+emitter's phase vanish.
+
+Take \(\chi=\theta_D\). Then donor's factor becomes:
+
+\[
+e^{i\theta_D}a + e^{-i\theta_D}a^\dagger
+\to
+a + a^\dagger.
+\label{eq:donor_phase_removed}
+\]
+
+Acceptor keeps only the \textbf{relative phase}:
+
+\[
+\Delta\phi \equiv \theta_A-\theta_D.
+\label{eq:delta_phi_def}
+\]
+
+So the two-emitter B-only interaction can be written as:
+
+\[
+H_{\mathrm{int}}
+=
+\hbar |g_D|\sigma_x^{(D)}(a+a^\dagger)
++
+\hbar |g_A|\sigma_x^{(A)}\big(e^{i\Delta\phi}a+e^{-i\Delta\phi}a^\dagger\big).
+\label{eq:Hint_Bonly_final}
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{\texorpdfstring{6. When do you get a \textbf{nontrivial}
+relative phase
+\(\Delta\phi\)?}{6. When do you get a nontrivial relative phase \textbackslash Delta\textbackslash phi?}}\label{when-do-you-get-a-nontrivial-relative-phase-deltaphi}
+
+\subsubsection{6.1 Travelling-wave / running-wave
+mode}\label{travelling-wave-running-wave-mode}
+
+If
+\(\mathbf B_{\mathrm{zpf}}(\mathbf r)\propto e^{i\mathbf k\cdot\mathbf r}\)
+then:
+
+\[
+\Delta\phi = \mathbf k\cdot(\mathbf r_A-\mathbf r_D).
+\label{eq:delta_phi_kdr}
+\]
+
+In 1D, \(\Delta\phi = k(x_A-x_D)\), and \(\Delta\phi=\pi/2\) corresponds
+to separation \(\Delta x=\lambda/4\).
+
+\subsubsection{6.2 Ideal standing-wave cavity
+mode}\label{ideal-standing-wave-cavity-mode}
+
+If the mode function can be chosen real everywhere, then \(g_j\) is real
+up to a sign, so:
+
+\begin{itemize}
+\tightlist
+\item
+  phases are typically \(0\) or \(\pi\),
+\item
+  you cannot get a continuous \(\Delta\phi\) unless you use a
+  running-wave basis or the mode is intrinsically complex (lossy/open
+  cavity, quasi-normal mode, etc.).
+\end{itemize}
+
+\subsubsection{6.3 Extra ways to get complex spatial
+phase}\label{extra-ways-to-get-complex-spatial-phase}
+
+Even for ``one mode'', \(\mathbf B_{\mathrm{zpf}}(\mathbf r)\) can be
+intrinsically complex in:
+
+\begin{itemize}
+\tightlist
+\item
+  leaky/open cavities (quasi-normal modes),
+\item
+  waveguides/rings (naturally travelling-wave eigenmodes),
+\item
+  strongly confined/evanescent structures where phase varies over
+  shorter effective wavelengths.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{7. Quadratures: what they are and why they
+appear}\label{quadratures-what-they-are-and-why-they-appear}
+
+For one harmonic oscillator mode, define quadratures:
+
+\[
+X \equiv a+a^\dagger,
+\qquad
+P \equiv i(a^\dagger-a).
+\label{eq:XP_def}
+\]
+
+A useful identity is:
+
+\[
+e^{i\phi}a + e^{-i\phi}a^\dagger
+=
+X\cos\phi + P\sin\phi.
+\label{eq:quadrature_identity}
+\]
+
+So the ``phase factor'' form is exactly ``a rotated quadrature'':
+
+\[
+X_\phi \equiv X\cos\phi + P\sin\phi.
+\label{eq:rotated_quadrature}
+\]
+
+\subsubsection{7.1 Important conceptual
+separation}\label{important-conceptual-separation}
+
+\begin{itemize}
+\tightlist
+\item
+  In the travelling-wave B-only case, \(\Delta\phi\) comes from the
+  \textbf{complex mode function} \(e^{ikx}\).
+\item
+  Rewriting it as quadratures via Eq. \(\ref{eq:quadrature_identity}\)
+  is \textbf{pure algebra}, not new physics.
+\item
+  It does \textbf{not} mean the acceptor is coupling to \(E\) instead of
+  \(B\).
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{\texorpdfstring{8. Coupling to both \(E\) and \(B\) at a
+single point: how a quadrature angle arises \emph{without spatial
+separation}}{8. Coupling to both E and B at a single point: how a quadrature angle arises without spatial separation}}\label{coupling-to-both-e-and-b-at-a-single-point-how-a-quadrature-angle-arises-without-spatial-separation}
+
+Now allow both dipoles:
+
+\[
+H_{\mathrm{int}}^{(j)}=
+-\hat{\mathbf d}^{(j)}\cdot \hat{\mathbf E}(\mathbf r_j)
+-\hat{\boldsymbol\mu}^{(j)}\cdot \hat{\mathbf B}(\mathbf r_j).
+\label{eq:Hint_EB_start}
+\]
+
+At a single point, in many common quantisation conventions (notably
+those built from \(\mathbf A\)), one finds that for a single mode:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\hat{\mathbf B}(\mathbf r)\) is proportional to one quadrature
+  (often \(X\)),
+\item
+  \(\hat{\mathbf E}(\mathbf r)\) is proportional to the orthogonal
+  quadrature (often \(P\)).
+\end{itemize}
+
+A toy model is:
+
+\[
+\hat{\mathbf B}(\mathbf r_j)=\mathbf B_{\mathrm{zpf}}(\mathbf r_j)\,X,
+\qquad
+\hat{\mathbf E}(\mathbf r_j)=\mathbf E_{\mathrm{zpf}}(\mathbf r_j)\,P.
+\label{eq:EB_as_quadratures}
+\]
+
+Project onto dipoles and define real scalar couplings:
+
+\[
+g_{B,j}\equiv \boldsymbol\mu\cdot \mathbf B_{\mathrm{zpf}}(\mathbf r_j),\qquad
+g_{E,j}\equiv \mathbf d\cdot \mathbf E_{\mathrm{zpf}}(\mathbf r_j).
+\label{eq:gE_gB_def}
+\]
+
+Then for TLS \(j\):
+
+\[
+H_{\mathrm{int}}^{(j)} = -\sigma_x^{(j)}\big(g_{B,j}X + g_{E,j}P\big).
+\label{eq:Hint_EB_XP}
+\]
+
+Now combine into one rotated quadrature using:
+
+\[
+V_j = \sqrt{g_{B,j}^2+g_{E,j}^2},\qquad
+\phi_j=\arctan\!\left(\frac{g_{E,j}}{g_{B,j}}\right),
+\label{eq:V_phi_def}
+\]
+
+giving:
+
+\[
+g_{B,j}X + g_{E,j}P
+=
+V_j\big(X\cos\phi_j + P\sin\phi_j\big)
+=
+V_j\big(e^{i\phi_j}a + e^{-i\phi_j}a^\dagger\big).
+\label{eq:EB_to_phase}
+\]
+
+So:
+
+\[
+H_{\mathrm{int}}^{(j)}
+=
+- V_j\,\sigma_x^{(j)}\big(e^{i\phi_j}a + e^{-i\phi_j}a^\dagger\big).
+\label{eq:Hint_EB_phase}
+\]
+
+\subsubsection{\texorpdfstring{8.1 What is the meaning of \(\phi_j\)
+here?}{8.1 What is the meaning of \textbackslash phi\_j here?}}\label{what-is-the-meaning-of-phi_j-here}
+
+It is the \textbf{quadrature angle} selected by the ratio of electric to
+magnetic coupling at that point:
+
+\begin{itemize}
+\tightlist
+\item
+  \(g_{E,j}=0 \Rightarrow \phi_j=0\) (pure \(X\) coupling),
+\item
+  \(g_{B,j}=0 \Rightarrow \phi_j=\pi/2\) (pure \(P\) coupling),
+\item
+  both nonzero \(\Rightarrow\) rotated quadrature.
+\end{itemize}
+
+\subsubsection{\texorpdfstring{8.2 Does this produce a \emph{relative}
+phase between two identical
+TLS?}{8.2 Does this produce a relative phase between two identical TLS?}}\label{does-this-produce-a-relative-phase-between-two-identical-tls}
+
+If the TLS are identical and sit in identical conditions, they have the
+same \(g_{E}/g_{B}\), hence the same \(\phi_j\). In that case, a global
+rephasing can remove the common phase from both simultaneously.
+
+A relative phase arises only if:
+
+\[
+\phi_A \neq \phi_D,
+\label{eq:relative_phase_condition}
+\]
+
+which requires a difference in:
+
+\begin{itemize}
+\tightlist
+\item
+  position-dependent field ratios
+  \(E_{\mathrm{zpf}}(\mathbf r)/B_{\mathrm{zpf}}(\mathbf r)\),
+\item
+  orientation/projection of dipoles on local polarisation,
+\item
+  or (more exotic) intrinsic complex relative phase between electric and
+  magnetic transition moments.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{9. Combining both mechanisms (general
+picture)}\label{combining-both-mechanisms-general-picture}
+
+In the most general single-mode case, each emitter's interaction can be
+written as:
+
+\[
+H_{\mathrm{int}}^{(j)}
+=
+\hbar\,\sigma_x^{(j)}\Big(\alpha_j a + \alpha_j^* a^\dagger\Big),
+\label{eq:alpha_general}
+\]
+
+where the complex coefficient \(\alpha_j\) contains \emph{everything}:
+
+\begin{itemize}
+\tightlist
+\item
+  electric contribution via \(\mathbf E_{\mathrm{zpf}}(\mathbf r_j)\)
+  and \(\mathbf d\),
+\item
+  magnetic contribution via \(\mathbf B_{\mathrm{zpf}}(\mathbf r_j)\)
+  and \(\boldsymbol\mu\),
+\item
+  spatial dependence (e.g.~\(e^{i\mathbf k\cdot\mathbf r_j}\)),
+\item
+  polarisation/projection factors.
+\end{itemize}
+
+Write \(\alpha_j = |\alpha_j|e^{i\theta_j}\) and you get:
+
+\[
+H_{\mathrm{int}}^{(j)}
+=
+\hbar|\alpha_j|\sigma_x^{(j)}\big(e^{i\theta_j}a + e^{-i\theta_j}a^\dagger\big).
+\label{eq:alpha_phase}
+\]
+
+Then only the \textbf{relative phase} \(\Delta\phi=\theta_A-\theta_D\)
+survives after choosing the mode phase convention.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{10. What is physically observable about these
+phases?}\label{what-is-physically-observable-about-these-phases}
+
+\subsubsection{10.1 Global phase is not observable in the single-mode
+Hamiltonian}\label{global-phase-is-not-observable-in-the-single-mode-hamiltonian}
+
+You can always choose the phase of \(a\) to remove one emitter's phase
+entirely. That's why the literature often writes the donor with
+\((a+a^\dagger)\) and puts the phase on the acceptor.
+
+\subsubsection{10.2 Relative phase becomes meaningful when there is
+interference}\label{relative-phase-becomes-meaningful-when-there-is-interference}
+
+A relative phase matters when the physics compares ``paths'' or
+``collective combinations'', e.g.:
+
+\begin{itemize}
+\tightlist
+\item
+  superradiant vs subradiant (bright/dark) collective states in
+  two-emitter coupling,
+\item
+  direct donor--acceptor coupling terms,
+\item
+  multiple modes / continuum (propagation and retardation),
+\item
+  coherent drives with a fixed phase reference.
+\end{itemize}
+
+Even in a single-mode model, the relative phase influences which
+collective TLS superposition couples most strongly to the field.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{11. Summary ``rules of
+thumb''}\label{summary-rules-of-thumb}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Single travelling wave}: \(E\) and \(B\) are in phase in time
+  for that wave.
+\item
+  \textbf{Standing wave}: locally, \(E\) and \(B\) are often \(\pi/2\)
+  out of phase in time (energy sloshing).
+\item
+  \textbf{B-only coupling}: phases arise from the complex spatial mode
+  function \(u(\mathbf r)\) (e.g.~\(e^{ikx}\)).
+\item
+  \textbf{E + B coupling}: even at one point, the TLS couples to a
+  linear combination of quadratures; this is a ``quadrature rotation''
+  with angle \(\phi=\arctan(g_E/g_B)\).
+\item
+  \textbf{Global phase} can be removed by redefining \(a\); only
+  \textbf{relative phase} between emitters or channels matters.
+\item
+  \textbf{Relative phase difference} requires emitters to experience
+  different complex coefficients: either different spatial phase
+  (travelling wave) or different \(g_E/g_B\) ratio (varying
+  geometry/orientation/field ratios).
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{12. Minimal ``canonical forms'' to
+remember}\label{minimal-canonical-forms-to-remember}
+
+\subsubsection{12.1 B-only (travelling
+wave)}\label{b-only-travelling-wave}
+
+\[
+H_{\mathrm{int}}
+=
+\hbar\sum_{j=D,A}\sigma_x^{(j)}\big(g_0 e^{i\mathbf k\cdot\mathbf r_j}a + g_0 e^{-i\mathbf k\cdot\mathbf r_j}a^\dagger\big).
+\label{eq:canonical_Bonly}
+\]
+
+After gauging away the donor phase:
+
+\[
+H_{\mathrm{int}}
+=
+\hbar g_0\sigma_x^{(D)}(a+a^\dagger)
++
+\hbar g_0\sigma_x^{(A)}\big(e^{i\Delta\phi}a+e^{-i\Delta\phi}a^\dagger\big),
+\quad
+\Delta\phi=\mathbf k\cdot(\mathbf r_A-\mathbf r_D).
+\label{eq:canonical_Bonly_relative}
+\]
+
+\subsubsection{12.2 E + B at one point (quadrature
+rotation)}\label{e-b-at-one-point-quadrature-rotation}
+
+\[
+H_{\mathrm{int}}^{(j)} = -\sigma_x^{(j)}\big(g_{B,j}X + g_{E,j}P\big)
+= -V_j\sigma_x^{(j)}\big(e^{i\phi_j}a+e^{-i\phi_j}a^\dagger\big),
+\quad
+\phi_j=\arctan\!\left(\frac{g_{E,j}}{g_{B,j}}\right).
+\label{eq:canonical_EB_rotation}
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\printbibliography
+
+
+\end{document}
