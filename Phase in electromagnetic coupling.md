@@ -367,7 +367,7 @@ This is a genuine $\pi/2$ time shift.
 - Yes: $\sin(\omega t)=\cos(\omega t-\pi/2)$.
 - But you must compare **two signals with the same argument** at the same location/time origin.
 
-In a travelling wave, you can write both $E$ and $B$ using $\cos(kx-\omega t)$ (or both using $\sin$) consistently; switching cos↔sin for one but not the other would correspond to shifting reference phase for one field only, which is not the physical plane-wave relation.
+In a travelling wave, you can write both $E$ and $B$ using $\cos(kx-\omega t)$ (or both using $\sin$) consistently; switching $\cos \leftrightarrow \sin$ for one but not the other would correspond to shifting reference phase for one field only, which is not the physical plane-wave relation.
 
 ---
 
