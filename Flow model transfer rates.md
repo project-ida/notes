@@ -81,7 +81,9 @@ The asymmetry factor $\left|1 - \eta_{D_2/^4\mathrm{He}}\eta_{P_d}\right|$ arris
 $$
 \left|1 - \eta_{D_2/^4\mathrm{He}}\eta_{P_d}\right| \approx \frac{1}{80}
 $$
+
 Substituting back into Eq. $\ref{eq:gamma_direct}$ rate we get:
+
 $$
 \Gamma_{D_2/^4He}^{(0)} \sim 1.6 \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
 \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  } \sqrt{\frac{N_{D_2}}{N}} \sqrt{N_{^4 He}} F(g)^4
@@ -91,6 +93,7 @@ $$
 Technically we should have  $F(g_1)F(g_2)F(g_3)F(g_4)$ instead of $F(g)^4$ to allow for the possibility of four different $\rm Pd$ transitions. We will however treat them in an averaged sense for now so that $\epsilon  \approx 24 \, \rm MeV / 4$ ; Peter uses $\epsilon = \ 6.75 \, \rm MeV$.
 
 To get an expression for $g$ , we need to express the matrix element in terms of acoustic phonon mode energy $E_A = P_{diss}\tau_A$
+
 $$
 \begin{equation}
 \begin{aligned}
@@ -119,7 +122,6 @@ This $\bar\Upsilon$ needs to be divided by four - the number of transitions. We 
 $$
 \frac{|\langle \mathrm{Pd}^* | a_z | \mathrm{Pd} \rangle| \sqrt{M_{Pd}c^2}}{\epsilon} = \sqrt{\frac{\bar \Upsilon}{4 \epsilon}} \approx \sqrt{\frac{8.7 \times 10^{-8}}{4\times6.75 \times 10^6 \times 1.6\times 10^{-19}\, \rm J}} \approx 142
 $$
-
 
 This gives
 
@@ -161,9 +163,7 @@ $$
 g = 3.8\sqrt{\frac{P_{diss}}{1 \, \rm W}}
 $$
 
-
 For $P_{diss} \lesssim 1 \, \rm mW$ we are in the perturbative regime where Eq. $\ref{eq:gamma_direct3}$ can be used. Let's look at transfer rates for $1\, \rm mW$ and $1\, \rm \mu W$
-
 
 $$
 \Gamma_{D_2/^4He}^{(0)}\, (1 \, \rm mW) \approx 5\times 10^{-7} \, \rm s^{-1}
@@ -223,6 +223,7 @@ $$
 \left( \frac{f_A}{1\,\mathrm{MHz}} \right)^{1/6}
 \;\mathrm{meV}
 \end{aligned}
+\label{eq:dela_eps}
 \end{equation}
 $$
 
@@ -230,7 +231,6 @@ I don't know exactly what to put for $|e^{(A)}|$ (which I think it the polarisat
 $$
 \delta \epsilon\approx 11 \, \rm meV
 $$
-
 
 This gives us an transfer rate of
 $$
@@ -260,50 +260,82 @@ The asymmetry factor $\left|1 - \eta_{D_2/(3+1)/^4\mathrm{He}}\eta_{P_d}\right|$
 $$
 \left|1 - \eta_{D_2/(3+1)/^4\mathrm{He}}\eta_{P_d}\right| \approx 0.57
 $$
+
 Substituting back into Eq. $\ref{eq:gamma_indirect}$ rate we get:
+
 $$
 \Gamma_{D_2/(3+1)/^4He}^{(0)} \sim 245 \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
 \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  } \sqrt{\frac{N_{D_2}}{N}} \sqrt{N_{^4 He}} F(g)^4
 \label{eq:gamma_indirect2}
 $$
 By comparing the indirect transfer rate Eq. $\ref{eq:gamma_indirect2}$ with the direct one in Eq. $\ref{eq:gamma_direct2}$ we can see immediately that the transfer rate via the indirect pathway is going to yield larger rates according to
+
 $$
 \Gamma_{D_2/(3+1)/^4He}^{(0)} \approx 150 \,\Gamma_{D_2/^4He}^{(0)}
 \label{eq:direct_vs_indirect}
 $$
+
 This factor of 150 is not large enough to yield observable fusion reactions, so we still need to lean on the idea of having multiple receivers.
 
 ### Multiple transitions, multiple receivers
 
 As in the direct fusion transitions section, we will now consider the excitation transfer from $\rm D_2$ to many receiver states made up of four $\rm Pd$ transitions. Because we have many accessible states due to energy exchange with the acoustic phonons the rate goes up according to:
+
 $$
 \Gamma_{D_2/(3+1)/^4He} \sim \Gamma_{D_2/(3+1)/^4He}^{(0)} \, \rho \,\delta \epsilon
 $$
+
 By using the results from the direct transitions section (Eq. $\ref{eq:gamma_direct_energyx2}$) along with Eq. $\ref{eq:direct_vs_indirect}$, we can write down immediately the transfer rate
+
 $$
 \Gamma_{D_2/(3+1)/^4He}  \approx 150 \,\Gamma_{D_2/^4He}^{(0)} \times 6.8\times 10^5 \approx 150\times 2200 \approx 3.3\times 10^5 \, \rm s^{-1}
 \label{eq:indirect_with_energy_exchange}
 $$
-This rate is about 2000 times smaller than the $10^9 \, \rm s^{-1}$ that we estimated in the SI.
 
+This rate is about 2000 times smaller than the $10^9 \, \rm s^{-1}$ that we estimated in the SI. 
 
+It is worth noting that we have assumed here that we are still only working with acoustic phonons. It can be argued that if the indirect fusion channel is open then we have both acoustic and optical phonons. The amount of energy exchanged in that case would be larger that predicted by Eq. $\ref{eq:dela_eps}$ because we should also add the following to $\delta \epsilon$
+
+$$
+\begin{equation}
+\begin{aligned}
+\hbar \omega_0 \, \Delta n_{00}
+&= \hbar \omega_0
+\left( 2 n_j \,\bar{\Upsilon}_j \, |e^{(O)}|^2 \, n_O \right)^{1/3} \\
+&= 0.12 \, |e^{(O)}|^{2/3} \, (n_j)^{1/3}
+\left( \frac{P_D^{(O)}}{1\,\mathrm{W}} \right)^{1/3}
+\left( \frac{f_O}{1\,\mathrm{MHz}} \right)^{1/6}
+\;\mathrm{eV}
+\end{aligned}
+\label{eq:hbar_omega0_delta_n00}
+\end{equation}
+$$
+
+Note here the units of $\rm eV$ as opposed to $\rm meV$ and recall that the frequency of optical phonons is $\sim \rm THz$ so the energy exchange potential of the optical phonons is much larger than the acoustic ones.
 
 ## Incoherent transitions
 
 So far in this document we've been assuming coherence - this is baked into the form of Eqs. $\ref{eq:coherent_rate}$ and $\ref{eq:mutiple_trans}$.  Specifically, for coherent transfer between initial state $i$ and final state $f$ we have
+
 $$
 \Gamma_{coherent} \sim {2 \over \hbar} |V_{fi}|
 $$
+
 Whereas for incoherent transfer we must use
+
 $$
 \Gamma_{incoherent} ~=~ {2 \pi \over \hbar} |V_{fi}|^2 \rho
 $$
+
 If we've already got a coherent rate, we can turn it into an incoherent one in the following way
+
 $$
 \Gamma_{incoherent} = {2 \pi \over \hbar} |V_{fi}|^2 \rho =\Gamma_{coherent}^2\frac{\hbar\pi}{2}\rho
 \label{eq:gamma_incoherent}
 $$
+
 For the density of states here we look for the energy line width for a $\sim 6 \, \rm MeV$ transition from $\rm Pd$. We can work with the following estimate for the radiative decay rate of an M2 transition that we used in the SI
+
 $$
 \Gamma_{M2}
 ~\sim~
@@ -311,23 +343,33 @@ $$
 ~O_{\rm Pd}^2 
 ~{\rm s}^{-1}
 $$
+
 This is Weisskopf modified to include a hinderance factor $O_{Pd}$ which we estimate to be 0.01. For $\epsilon \approx 6MeV$ and $A\approx 106$ we have 
+
 $$
 \Gamma_{M2} \sim 3.8 \times 10^8 \, \rm s^{-1}
 $$
+
 Corresponding to a state lifetime of 
+
 $$
 \tau_{M2} = \frac{1}{\Gamma_{M2}} \sim 2.6 \, \rm ns
 $$
+
 And a density of states of 
+
 $$
 \rho \sim \frac{1}{h\Gamma_{M2}}
 $$
+
 Substituting into Eq. $\ref{eq:gamma_incoherent}$ gives
+
 $$
 \Gamma_{incoherent} = \Gamma_{coherent}^2\frac{\hbar\pi}{2}\rho = \Gamma_{coherent}^2 \frac{1}{4\Gamma_{M2}} \approx \frac{\Gamma_{coherent}^2}{1.5\times 10^9}
 $$
+
 Now we can substitute $\Gamma_{coherent}$ from Eq. $\ref{eq:indirect_with_energy_exchange}$ to give us
+
 $$
 \Gamma_{D_2/(3+1)/^4He \,incoherent} \sim \frac{(3.3\times 10^5)^2}{1.5\times 10^9} \approx 73 \, \rm s^{-1}
 $$
