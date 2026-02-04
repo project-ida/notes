@@ -10,6 +10,7 @@ If we assume there exists a single $\rm Pd$ transition that can accommodate the 
 
 $$
 \Gamma_{transfer} = {2 \over \hbar} |1 - \eta| {\mathcal{U} \mathcal{V} \over \Delta Mc^2}
+\label{eq:coherent_rate}
 $$
 
 where the Dicke enhanced $a\cdot cP$ matrix elements for the  $\rm D_2$ and $\rm Pd$ transitions are
@@ -145,7 +146,7 @@ Substituting back into Eq. $\ref{eq:gamma_direct2}$ gives:
 
 $$
 \Gamma_{D_2/^4He}^{(0)} \sim 6.4 \times 10^5  \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3.75}
-\left(\frac{P_D}{1\,\mathrm{W}}  \right)^{2.5} \sqrt{\frac{N_{D_2}}{N}} \left(\frac{N_{\mathrm{Pd}}}{N}\right)^2\sqrt{N_{^4 He}}
+\left(\frac{P_{diss}}{1\,\mathrm{W}}  \right)^{2.5} \sqrt{\frac{N_{D_2}}{N}} \left(\frac{N_{\mathrm{Pd}}}{N}\right)^2\sqrt{N_{^4 He}}
 \label{eq:gamma_direct3}
 $$
 
@@ -154,7 +155,7 @@ $$
 f_A \sim 5 \, \rm MHz, \quad \frac{N_{D_2}}{N} \sim 0.25 \times \frac{1}{9}, \quad \frac{N_{{Pd}}}{N} \sim 0.25
 $$
 
-The acoustic mode lifetime is $\tau_A\approx \, \rm 3ms$  and so
+The acoustic mode lifetime is $\tau_A\approx \, \rm 3 \, \rm ms$  and so
 
 $$
 g = 3.8\sqrt{\frac{P_{diss}}{1 \, \rm W}}
@@ -208,7 +209,7 @@ $$
 
 which works out at one state every $26 \, \rm neV$.
 
-For the energy exchanged with acoustic phonons, Peter ha calculated this to be:
+For the energy exchanged with acoustic phonons, Peter has calculated this to be:
 
 $$
 \begin{equation}
@@ -220,21 +221,20 @@ $$
 &= 8.4 \, |e^{(A)}|^{2/3} \, (n_j)^{1/3}
 \left( \frac{P_{diss}^{(A)}}{1\,\mathrm{W}} \right)^{1/3}
 \left( \frac{f_A}{1\,\mathrm{MHz}} \right)^{1/6}
-\;\mathrm{meV}.
+\;\mathrm{meV}
 \end{aligned}
 \end{equation}
 $$
 
-I don't know exactly what to put for $|e^{(A)}|$ (which I think it the polarisation vector). I'm going to set it equal to one for now. $n_j$ is the number of transitions which is four for us.  Using the SI parameters for power and frequency we have:
-
+I don't know exactly what to put for $|e^{(A)}|$ (which I think it the polarisation vector). I'm going to set it equal to one for now. $n_j$ is the number of transitions which is four for us.  Using the SI parameters for power  and frequency and also reducing the $\bar\Upsilon_j$ by 4 as we did earlier we have:
 $$
-\delta \epsilon\approx 17 \, \rm meV
+\delta \epsilon\approx 11 \, \rm meV
 $$
 
 
 This gives us an transfer rate of
 $$
-\Gamma_{D_2/^4He} \sim \Gamma_{D_2/^4He}^{(0)}  \times 6.8\times 10^5 \sim 3400 \, s^{-1}
+\Gamma_{D_2/^4He} \sim \Gamma_{D_2/^4He}^{(0)}  \times 4.4\times 10^5 \sim 2200 \, s^{-1}
 \label{eq:gamma_direct_energyx2}
 $$
 
@@ -281,6 +281,53 @@ $$
 $$
 By using the results from the direct transitions section (Eq. $\ref{eq:gamma_direct_energyx2}$) along with Eq. $\ref{eq:direct_vs_indirect}$, we can write down immediately the transfer rate
 $$
-\Gamma_{D_2/(3+1)/^4He}  \approx 150 \,\Gamma_{D_2/^4He}^{(0)} \times 6.8\times 10^5 \approx 150\times 3400 \approx 5\times 10^5 \, \rm s^{-1}
+\Gamma_{D_2/(3+1)/^4He}  \approx 150 \,\Gamma_{D_2/^4He}^{(0)} \times 6.8\times 10^5 \approx 150\times 2200 \approx 3.3\times 10^5 \, \rm s^{-1}
+\label{eq:indirect_with_energy_exchange}
 $$
 This rate is about 2000 times smaller than the $10^9 \, \rm s^{-1}$ that we estimated in the SI.
+
+
+
+## Incoherent transitions
+
+So far in this document we've been assuming coherence - this is baked into the form of Eqs. $\ref{eq:coherent_rate}$ and $\ref{eq:mutiple_trans}$.  Specifically, for coherent transfer between initial state $i$ and final state $f$ we have
+$$
+\Gamma_{coherent} \sim {2 \over \hbar} |V_{fi}|
+$$
+Whereas for incoherent transfer we must use
+$$
+\Gamma_{incoherent} ~=~ {2 \pi \over \hbar} |V_{fi}|^2 \rho
+$$
+If we've already got a coherent rate, we can turn it into an incoherent one in the following way
+$$
+\Gamma_{incoherent} = {2 \pi \over \hbar} |V_{fi}|^2 \rho =\Gamma_{coherent}^2\frac{\hbar\pi}{2}\rho
+\label{eq:gamma_incoherent}
+$$
+For the density of states here we look for the energy line width for a $\sim 6 \, \rm MeV$ transition from $\rm Pd$. We can work with the following estimate for the radiative decay rate of an M2 transition that we used in the SI
+$$
+\Gamma_{M2}
+~\sim~
+2.2 \times 10^7 ~A^{2/3}~\left({\epsilon \over 1~{\rm MeV}} \right )^5
+~O_{\rm Pd}^2 
+~{\rm s}^{-1}
+$$
+This is Weisskopf modified to include a hinderance factor $O_{Pd}$ which we estimate to be 0.01. For $\epsilon \approx 6MeV$ and $A\approx 106$ we have 
+$$
+\Gamma_{M2} \sim 3.8 \times 10^8 \, \rm s^{-1}
+$$
+Corresponding to a state lifetime of 
+$$
+\tau_{M2} = \frac{1}{\Gamma_{M2}} \sim 2.6 \, \rm ns
+$$
+And a density of states of 
+$$
+\rho \sim \frac{1}{h\Gamma_{M2}}
+$$
+Substituting into Eq. $\ref{eq:gamma_incoherent}$ gives
+$$
+\Gamma_{incoherent} = \Gamma_{coherent}^2\frac{\hbar\pi}{2}\rho = \Gamma_{coherent}^2 \frac{1}{4\Gamma_{M2}} \approx \frac{\Gamma_{coherent}^2}{1.5\times 10^9}
+$$
+Now we can substitute $\Gamma_{coherent}$ from Eq. $\ref{eq:indirect_with_energy_exchange}$ to give us
+$$
+\Gamma_{D_2/(3+1)/^4He \,incoherent} \sim \frac{(3.3\times 10^5)^2}{1.5\times 10^9} \approx 73 \, \rm s^{-1}
+$$
