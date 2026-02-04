@@ -292,7 +292,7 @@ $$
 \label{eq:indirect_with_energy_exchange}
 $$
 
-This rate is about 2000 times smaller than the $10^9 \, \rm s^{-1}$ that we estimated in the SI. 
+This rate is about 6000 times smaller than the $10^9 \, \rm s^{-1}$ that we estimated in the SI. 
 
 It is worth noting that we have assumed here that we are still only working with acoustic phonons. It can be argued that if the indirect fusion channel is open then we have both acoustic and optical phonons. The amount of energy exchanged in that case would be larger that predicted by Eq. $\ref{eq:dela_eps}$ because we should also add the following to $\delta \epsilon$
 
