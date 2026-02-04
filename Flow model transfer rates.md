@@ -184,7 +184,7 @@ $$
 Using $P_{diss}\sim 1 \, \rm W$ from the SI and setting $N_{^4He}=1$ for now, we get a rate of
 
 $$
-\Gamma_{D_2/^4He}^{(0)}\, (1 \, \rm W)\approx 2\times 10^{-3} \, s^{-1}
+\Gamma_{D_2/^4He}^{(0)}\, (1 \, \rm W)\approx 5\times 10^{-3} \, s^{-1}
 $$
 
 ### Multiple transitions, multiple receivers
@@ -234,7 +234,7 @@ $$
 
 This gives us an transfer rate of
 $$
-\Gamma_{D_2/^4He} \sim \Gamma_{D_2/^4He}^{(0)}  \times 6.8\times 10^5 \sim 1400 \, s^{-1}
+\Gamma_{D_2/^4He} \sim \Gamma_{D_2/^4He}^{(0)}  \times 6.8\times 10^5 \sim 3400 \, s^{-1}
 \label{eq:gamma_direct_energyx2}
 $$
 
@@ -281,6 +281,6 @@ $$
 $$
 By using the results from the direct transitions section (Eq. $\ref{eq:gamma_direct_energyx2}$) along with Eq. $\ref{eq:direct_vs_indirect}$, we can write down immediately the transfer rate
 $$
-\Gamma_{D_2/(3+1)/^4He}  \approx 150 \,\Gamma_{D_2/^4He}^{(0)} \times 6.8\times 10^5 \approx 150\times 1400 \approx 2\times 10^5 \, \rm s^{-1}
+\Gamma_{D_2/(3+1)/^4He}  \approx 150 \,\Gamma_{D_2/^4He}^{(0)} \times 6.8\times 10^5 \approx 150\times 3400 \approx 5\times 10^5 \, \rm s^{-1}
 $$
-This rate is about 4 orders of magnitude smaller than we estimated in the SI.
+This rate is about 2000 times smaller than the $10^9 \, \rm s^{-1}$ that we estimated in the SI.
