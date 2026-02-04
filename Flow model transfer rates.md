@@ -1,6 +1,6 @@
 # Flow model transfer rates
 
-During start-up when the power associated with fusion events is low, we expect to only have excitation transfer via "direct" fusion transitions that go from $\rm D_2 \rightarrow ^4He$. As things get going, contributions from "indirect" fusion transitions starts to dominate - this is when $\rm D_2 \rightarrow (3+1) \rightarrow ^4He$. We represent the transfer rates as $\Gamma_{D_2/He}$ for direct and $\Gamma_{D_2/3+1/He}$ for indirect.
+During start-up when the power associated with fusion events is low, we expect to only have excitation transfer via "direct" fusion transitions that go from $\rm D_2 \rightarrow ^4He$. As things get going, contributions from "indirect" fusion transitions starts to dominate - this is when $\rm D_2 \rightarrow (3+1) \rightarrow ^4He$. We represent the transfer rates as $\Gamma_{D_2/^4He}$ for direct and $\Gamma_{D_2/(3+1)/^4He}$ for indirect.
 
 ## Reminder from the SI
 
@@ -67,7 +67,7 @@ $$
 We will consider the excitation transfer from $\rm D_2$ to a single receiver state made up of four $\rm Pd$ transitions. The transfer rate has been calculated by Peter to be:
 
 $$
-\Gamma_{D_2/He}^{(0)} \sim 1.3 \times 10^2 \,
+\Gamma_{D_2/^4He}^{(0)} \sim 1.3 \times 10^2 \,
 \left|1 - \eta_{D_2/^4\mathrm{He}}\eta_{P_d}\right|  \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
 \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  } \sqrt{\frac{N_{D_2}}{N}} \sqrt{N_{^4 He}} F(g)^4
 \label{eq:gamma_direct}
@@ -75,14 +75,14 @@ $$
 
 > Note that we're not sure on the helium Dicke factor yet.
 
-The asymmetry factor $\left|1 - \eta_{D_2/^4\mathrm{He}}\eta_{P_d}\right|$ arrises due to fusion loss and for this "direct" fusion transition Pete calculated this to be:
+The asymmetry factor $\left|1 - \eta_{D_2/^4\mathrm{He}}\eta_{P_d}\right|$ arrises due to fusion loss and for this "direct" fusion transition Peter calculated this to be:
 
 $$
 \left|1 - \eta_{D_2/^4\mathrm{He}}\eta_{P_d}\right| \approx \frac{1}{80}
 $$
 Substituting back into Eq. $\ref{eq:gamma_direct}$ rate we get:
 $$
-\Gamma_{D_2/He}^{(0)} \sim 1.6 \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
+\Gamma_{D_2/^4He}^{(0)} \sim 1.6 \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
 \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  } \sqrt{\frac{N_{D_2}}{N}} \sqrt{N_{^4 He}} F(g)^4
 \label{eq:gamma_direct2}
 $$
@@ -144,7 +144,7 @@ $$
 Substituting back into Eq. $\ref{eq:gamma_direct2}$ gives:
 
 $$
-\Gamma_{D_2/He}^{(0)} \sim 6.4 \times 10^5  \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3.75}
+\Gamma_{D_2/^4He}^{(0)} \sim 6.4 \times 10^5  \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3.75}
 \left(\frac{P_D}{1\,\mathrm{W}}  \right)^{2.5} \sqrt{\frac{N_{D_2}}{N}} \left(\frac{N_{\mathrm{Pd}}}{N}\right)^2\sqrt{N_{^4 He}}
 \label{eq:gamma_direct3}
 $$
@@ -165,11 +165,11 @@ For $P_{diss} \lesssim 1 \, \rm mW$ we are in the perturbative regime where Eq. 
 
 
 $$
-\Gamma_{D_2/He}^{(0)}\, (1 \, \rm mW) \approx 5\times 10^{-7} \, \rm s^{-1}
+\Gamma_{D_2/^4He}^{(0)}\, (1 \, \rm mW) \approx 5\times 10^{-7} \, \rm s^{-1}
 $$
 
 $$
-\Gamma_{D_2/He}^{(0)}\, (1 \, \rm \mu W) \approx 1.6\times 10^{-14} \, \rm s^{-1}
+\Gamma_{D_2/^4He}^{(0)}\, (1 \, \rm \mu W) \approx 1.6\times 10^{-14} \, \rm s^{-1}
 $$
 
 #### Large g
@@ -177,14 +177,14 @@ $$
 In the strong coupling regime ($g \gtrsim 1$) we have $F(g) \approx \frac{1}{2}$ and we can also get a nice expression for the transfer rate. Substituting into Eq. $\ref{eq:gamma_direct2}$ gives
 
 $$
-\Gamma_{D_2/He}^{(0)} \sim \frac{1}{10} \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
+\Gamma_{D_2/^4He}^{(0)} \sim \frac{1}{10} \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
 \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  } \sqrt{\frac{N_{D_2}}{N}} \sqrt{N_{^4 He}}
 $$
 
 Using $P_{diss}\sim 1 \, \rm W$ from the SI and setting $N_{^4He}=1$ for now, we get a rate of
 
 $$
-\Gamma_{D_2/He}^{(0)}\, (1 \, \rm W)\approx 2\times 10^{-3} \, s^{-1}
+\Gamma_{D_2/^4He}^{(0)}\, (1 \, \rm W)\approx 2\times 10^{-3} \, s^{-1}
 $$
 
 ### Multiple transitions, multiple receivers
@@ -192,7 +192,7 @@ $$
 We will now consider the excitation transfer from $\rm D_2$ to many receiver states made up of four $\rm Pd$ transitions. Whereas in the previous section we imagined just one state that was perfectly matched to the fusion energy, now we allow states that are not perfectly matched. Such "off-resonant" states can participate in the excitation transfer because the difference in energy can be made up through rapid energy exchange between the $\rm Pd$ and the phonons. Because we have many states that now can contribute to the transfer, the rate goes up according to:
 
 $$
-\Gamma_{D_2/He} \sim \Gamma_{D_2/He}^{(0)} \, \rho \,\delta \epsilon
+\Gamma_{D_2/^4He} \sim \Gamma_{D_2/He}^{(0)} \, \rho \,\delta \epsilon
 \label{eq:gamma_direct_energyx}
 $$
 
@@ -234,5 +234,53 @@ $$
 
 This gives us an transfer rate of
 $$
-\Gamma_{D_2/He} \sim \Gamma_{D_2/He}^{(0)}  \times 6.8\times 10^5 \sim 1400 \, s^{-1}
+\Gamma_{D_2/^4He} \sim \Gamma_{D_2/^4He}^{(0)}  \times 6.8\times 10^5 \sim 1400 \, s^{-1}
+\label{eq:gamma_direct_energyx2}
 $$
+
+## Indirect fusion transitions
+
+The analysis from the section on direct fusion transitions works for the indirect case too.
+
+### Multiple transitions, single receiver
+
+We will consider the excitation transfer from $\rm D_2$ to a single receiver state made up of four $\rm Pd$ transitions. The transfer rate has been calculated by Peter to be:
+
+$$
+\Gamma_{D_2/(3+1)/^4He}^{(0)} \sim 4.3 \times 10^2 \,
+\left|1 - \eta_{D_2/(3+1)/^4\mathrm{He}}\eta_{P_d}\right|  \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
+\sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  } \sqrt{\frac{N_{D_2}}{N}} \sqrt{N_{^4 He}} F(g)^4
+\label{eq:gamma_indirect}
+$$
+
+> Note that we're not sure on the helium Dicke factor yet.
+
+The asymmetry factor $\left|1 - \eta_{D_2/(3+1)/^4\mathrm{He}}\eta_{P_d}\right|$ arrises due to fusion loss and for this "indirect" fusion transition Peter calculated this to be:
+
+$$
+\left|1 - \eta_{D_2/(3+1)/^4\mathrm{He}}\eta_{P_d}\right| \approx 0.57
+$$
+Substituting back into Eq. $\ref{eq:gamma_indirect}$ rate we get:
+$$
+\Gamma_{D_2/(3+1)/^4He}^{(0)} \sim 245 \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
+\sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  } \sqrt{\frac{N_{D_2}}{N}} \sqrt{N_{^4 He}} F(g)^4
+\label{eq:gamma_indirect2}
+$$
+By comparing the indirect transfer rate Eq. $\ref{eq:gamma_indirect2}$ with the direct one in Eq. $\ref{eq:gamma_direct2}$ we can see immediately that the transfer rate via the indirect pathway is going to yield larger rates according to
+$$
+\Gamma_{D_2/(3+1)/^4He}^{(0)} \approx 150 \,\Gamma_{D_2/^4He}^{(0)}
+\label{eq:direct_vs_indirect}
+$$
+This factor of 150 is not large enough to yield observable fusion reactions, so we still need to lean on the idea of having multiple receivers.
+
+### Multiple transitions, multiple receivers
+
+As in the direct fusion transitions section, we will now consider the excitation transfer from $\rm D_2$ to many receiver states made up of four $\rm Pd$ transitions. Because we have many accessible states due to energy exchange with the acoustic phonons the rate goes up according to:
+$$
+\Gamma_{D_2/(3+1)/^4He} \sim \Gamma_{D_2/(3+1)/^4He}^{(0)} \, \rho \,\delta \epsilon
+$$
+By using the results from the direct transitions section (Eq. $\ref{eq:gamma_direct_energyx2}$) along with Eq. $\ref{eq:direct_vs_indirect}$, we can write down immediately the transfer rate
+$$
+\Gamma_{D_2/(3+1)/^4He}  \approx 150 \,\Gamma_{D_2/^4He}^{(0)} \times 6.8\times 10^5 \approx 150\times 1400 \approx 2\times 10^5 \, \rm s^{-1}
+$$
+This rate is about 4 orders of magnitude smaller than we estimated in the SI.
