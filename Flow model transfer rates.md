@@ -58,7 +58,7 @@ $$
 where
 
 $$
-F(g) \sim \frac{g}{1+2g}
+F(g) \sim \frac{g}{1+g}
 $$
 
 ## Direct fusion transitions
@@ -114,13 +114,13 @@ $$
 Now we can bring in Peter's calculation for $\Upsilon$ averaged over all the $\rm Pd$ transitions
 
 $$
-\bar \Upsilon = |\langle \mathrm{Pd}^* | a_z | \mathrm{Pd} \rangle|^2 \frac{M_{Pd}c^2}{\epsilon} \approx 8.7 \times 10^{-8}
+\bar \Upsilon = |\langle \mathrm{Pd}^* | a_z | \mathrm{Pd} \rangle|^2 \frac{M_{Pd}c^2}{\epsilon} \approx 2.2 \times 10^{-8}
 $$
 
-This $\bar\Upsilon$ needs to be divided by four - the number of transitions. We can connect $\bar \Upsilon$ to $g$ through:
+We can connect $\bar \Upsilon$ to $g$ through:
 
 $$
-\frac{|\langle \mathrm{Pd}^* | a_z | \mathrm{Pd} \rangle| \sqrt{M_{Pd}c^2}}{\epsilon} = \sqrt{\frac{\bar \Upsilon}{4 \epsilon}} \approx \sqrt{\frac{8.7 \times 10^{-8}}{4\times6.75 \times 10^6 \times 1.6\times 10^{-19}\, \rm J}} \approx 142
+\frac{|\langle \mathrm{Pd}^* | a_z | \mathrm{Pd} \rangle| \sqrt{M_{Pd}c^2}}{\epsilon} = \sqrt{\frac{\bar \Upsilon}{4 \epsilon}} \approx \sqrt{\frac{2.2 \times 10^{-8}}{\times6.75 \times 10^6 \times 1.6\times 10^{-19}\, \rm J}} \approx 142
 $$
 
 This gives
@@ -175,17 +175,17 @@ $$
 
 #### Large g
 
-In the strong coupling regime ($g \gtrsim 1$) we have $F(g) \approx \frac{1}{2}$ and we can also get a nice expression for the transfer rate. Substituting into Eq. $\ref{eq:gamma_direct2}$ gives
+In the strong coupling regime ($g \gtrsim 1$) we have $F(g) \approx 1$ and we can also get a nice expression for the transfer rate. Substituting into Eq. $\ref{eq:gamma_direct2}$ gives
 
 $$
-\Gamma_{D_2/^4He}^{(0)} \sim \frac{1}{10} \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
+\Gamma_{D_2/^4He}^{(0)} \sim 1.6 \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
 \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  } \sqrt{\frac{N_{D_2}}{N}} \sqrt{N_{^4 He}}
 $$
 
 Using $P_{diss}\sim 1 \, \rm W$ from the SI and setting $N_{^4He}=1$ for now, we get a rate of
 
 $$
-\Gamma_{D_2/^4He}^{(0)}\, (1 \, \rm W)\approx 5\times 10^{-3} \, s^{-1}
+\Gamma_{D_2/^4He}^{(0)}\, (1 \, \rm W)\approx 8\times 10^{-2} \, s^{-1}
 $$
 
 ### Multiple transitions, multiple receivers
@@ -218,7 +218,7 @@ $$
 &\approx \hbar \omega_A \, \Delta n_{AA} \\
 &= \hbar \omega_A
 \left( 2 n_j \bar{Y}_j |e^{(A)}|^2 n_A \right)^{1/3} \\
-&= 8.4 \, |e^{(A)}|^{2/3} \, (n_j)^{1/3}
+&= 5.3 \, |e^{(A)}|^{2/3} \, (n_j)^{1/3}
 \left( \frac{P_{diss}^{(A)}}{1\,\mathrm{W}} \right)^{1/3}
 \left( \frac{f_A}{1\,\mathrm{MHz}} \right)^{1/6}
 \;\mathrm{meV}
@@ -227,14 +227,14 @@ $$
 \end{equation}
 $$
 
-I don't know exactly what to put for $|e^{(A)}|$ (which I think it the polarisation vector). I'm going to set it equal to one for now. $n_j$ is the number of transitions which is four for us.  Using the SI parameters for power  and frequency and also reducing the $\bar\Upsilon_j$ by 4 as we did earlier we have:
+I don't know exactly what to put for $|e^{(A)}|$ (which I think it the polarisation vector). I'm going to set it equal to one for now. $n_j$ is the number of transitions which is four for us.  Using the SI parameters for power  and frequency we have:
 $$
 \delta \epsilon\approx 11 \, \rm meV
 $$
 
 This gives us an transfer rate of
 $$
-\Gamma_{D_2/^4He} \sim \Gamma_{D_2/^4He}^{(0)}  \times 4.4\times 10^5 \sim 2200 \, s^{-1}
+\Gamma_{D_2/^4He} \sim \Gamma_{D_2/^4He}^{(0)}  \times 4.4\times 10^5 \sim 3.5\times 10^4 \, s^{-1}
 \label{eq:gamma_direct_energyx2}
 $$
 
@@ -288,13 +288,13 @@ $$
 By using the results from the direct transitions section (Eq. $\ref{eq:gamma_direct_energyx2}$) along with Eq. $\ref{eq:direct_vs_indirect}$, we can write down immediately the transfer rate
 
 $$
-\Gamma_{D_2/(3+1)/^4He}  \approx 150 \,\Gamma_{D_2/^4He}^{(0)} \times 6.8\times 10^5 \approx 150\times 2200 \approx 3.3\times 10^5 \, \rm s^{-1}
+\Gamma_{D_2/(3+1)/^4He}  \approx 150 \,\Gamma_{D_2/^4He}^{(0)} \times 4.4\times 10^5 \approx 150\times 3.5\times 10^4 \approx 5.3\times 10^6 \, \rm s^{-1}
 \label{eq:indirect_with_energy_exchange}
 $$
 
-This rate is about 6000 times smaller than the $10^9 \, \rm s^{-1}$ that we estimated in the SI. 
+This rate is about 200 times smaller than the $10^9 \, \rm s^{-1}$ that we estimated in the SI. 
 
-It is worth noting that we have assumed here that we are still only working with acoustic phonons. It can be argued that if the indirect fusion channel is open then we have both acoustic and optical phonons. The amount of energy exchanged in that case would be larger that predicted by Eq. $\ref{eq:dela_eps}$ because we should also add the following to $\delta \epsilon$
+It is worth noting that we have assumed here that we are still only working with acoustic phonons. It can be argued that if the indirect fusion channel is open then we have both acoustic and optical phonons. The amount of energy exchanged in that case would be larger than predicted by Eq. $\ref{eq:dela_eps}$ because we should also add the following to $\delta \epsilon$
 
 $$
 \begin{equation}
@@ -356,7 +356,7 @@ $$
 \tau_{M2} = \frac{1}{\Gamma_{M2}} \sim 2.6 \, \rm ns
 $$
 
-And a density of states of 
+and a density of states of 
 
 $$
 \rho \sim \frac{1}{h\Gamma_{M2}}
@@ -371,5 +371,6 @@ $$
 Now we can substitute $\Gamma_{coherent}$ from Eq. $\ref{eq:indirect_with_energy_exchange}$ to give us
 
 $$
-\Gamma_{D_2/(3+1)/^4He \,incoherent} \sim \frac{(3.3\times 10^5)^2}{1.5\times 10^9} \approx 73 \, \rm s^{-1}
+\Gamma_{D_2/(3+1)/^4He \,incoherent} \sim \frac{(5.3\times 10^6)^2}{1.5\times 10^9} \approx 18,700 \, \rm s^{-1}
 $$
+Note that if we don't use the large $g$ approximation and instead use the actual value for $F(g)$ for these parameters then we end up with a rate more like $2,800 \, \rm s^{-1}$.
