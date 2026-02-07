@@ -108,6 +108,7 @@ g
 \sqrt{M_{Pd}c^2 P_{diss} \tau_A} }{ \epsilon}
 \sqrt{\frac{N_{\mathrm{Pd}}}{N}} .
 \end{aligned}
+\label{eq:g_to_Pdiss}
 \end{equation}
 $$
 
@@ -120,7 +121,7 @@ $$
 We can connect $\bar \Upsilon$ to $g$ through:
 
 $$
-\frac{|\langle \mathrm{Pd}^* | a_z | \mathrm{Pd} \rangle| \sqrt{M_{Pd}c^2}}{\epsilon} = \sqrt{\frac{\bar \Upsilon}{4 \epsilon}} \approx \sqrt{\frac{2.2 \times 10^{-8}}{\times6.75 \times 10^6 \times 1.6\times 10^{-19}\, \rm J}} \approx 142
+\frac{|\langle \mathrm{Pd}^* | a_z | \mathrm{Pd} \rangle| \sqrt{M_{Pd}c^2}}{\epsilon} = \sqrt{\frac{\bar \Upsilon}{\epsilon}} \approx \sqrt{\frac{2.2 \times 10^{-8}}{6.75 \times 10^6 \times 1.6\times 10^{-19}\, \rm J}} \approx 142
 $$
 
 This gives
@@ -302,7 +303,7 @@ $$
 \hbar \omega_0 \, \Delta n_{00}
 &= \hbar \omega_0
 \left( 2 n_j \,\bar{\Upsilon}_j \, |e^{(O)}|^2 \, n_O \right)^{1/3} \\
-&= 0.12 \, |e^{(O)}|^{2/3} \, (n_j)^{1/3}
+&= 0.075 \, |e^{(O)}|^{2/3} \, (n_j)^{1/3}
 \left( \frac{P_D^{(O)}}{1\,\mathrm{W}} \right)^{1/3}
 \left( \frac{f_O}{1\,\mathrm{MHz}} \right)^{1/6}
 \;\mathrm{eV}
@@ -344,7 +345,7 @@ $$
 ~{\rm s}^{-1}
 $$
 
-This is Weisskopf modified to include a hinderance factor $O_{Pd}$ which we estimate to be 0.01. For $\epsilon \approx 6MeV$ and $A\approx 106$ we have 
+This is Weisskopf modified to include a hinderance factor $O_{Pd}$ which we estimate to be 0.01. For $\epsilon \approx 6 \, \rm MeV$ and $A\approx 106$ we have 
 
 $$
 \Gamma_{M2} \sim 3.8 \times 10^8 \, \rm s^{-1}
@@ -374,3 +375,55 @@ $$
 \Gamma_{D_2/(3+1)/^4He \,incoherent} \sim \frac{(5.3\times 10^6)^2}{1.5\times 10^9} \approx 18,700 \, \rm s^{-1}
 $$
 Note that if we don't use the large $g$ approximation and instead use the actual value for $F(g)$ for these parameters then we end up with a rate more like $2,800 \, \rm s^{-1}$.
+
+## 3+1 vs other products
+
+If we successfully transfer excitation from The $\rm D_2$ donors to $\rm Pd$ receivers, then the resulting products very sensitively on the composition of the lattice. For transfer to four $\rm Pd$ transitions, we have $\sim 6 \rm \, MeV$ of nuclear energy to dissipate. If this does not go into excess heat then it can go into gamma rays or an alpha particle if there are sufficient number of low Z impurities that can eject alphas preferentially to gammas.
+
+Because the excitation transfer pathway involves the compact (3+1) state which can decay to produce the standard fusion products. We estimated the rate of (3+1) products compared to other products in the SI according to
+$$
+\frac{\Gamma_{3+1}}{\Gamma_{transfer}} = \frac{1}{2}\frac{\Gamma_{transfer}\gamma_{tunnel}}{\sqrt{\mathcal{V}^2_{3+1/^4He}/h^2 + \gamma_{tunnel}^2}}
+\label{eq:3+1vsothers}
+$$
+Where $h\gamma_{tunnel}\approx 5.95 \, \rm MeV$ is the linewidth (corresponding to $\gamma_{tunnel}\approx 1.4 \times 10^{21} \, \rm s^{-1}$) of the tunnel decay from the (3+1) state into the standard fusion products and $\mathcal{V}_{3+1/^4He}$ it the Dicke enhanced matrix element between the (3+1) state and the $\rm ^4He$ ground state 
+$$
+\mathcal{V}_{3+1/^4He}  = |\langle \rm ^4He  | a_z | {\rm 3+1} \rangle| c \sqrt{\langle P_{\rm ^4He}^2 \rangle}\sqrt{N_{\rm ^4He}}
+$$
+We can rewrite this in terms of dissipated power as we did in Eq. $\ref{eq:g_to_Pdiss}$
+$$
+\mathcal{V}_{3+1/^4He}  = |\langle \rm ^4He  | a_z | {\rm 3+1} \rangle| \sqrt{M_{^4He}c^2 P_{diss} \tau_A}   \, \sqrt{\frac{N_{\mathrm{^4He}}}{N}}
+$$
+Where $ |\langle \rm ^4He  | a_z | {\rm 3+1} \rangle| \approx 0.000315$.
+
+
+
+Given that
+$$
+\sqrt{\tau_A} =  10^{-6}\left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4} 10^{-7\times -3/4} \approx 0.178\left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
+$$
+and
+$$
+\sqrt{M_{^4He}c^2} = \sqrt{4 \times 1.67\times 10^{-27} \times (3\times 10^8)^2} \approx \sqrt{6\times 10^{-10}} \approx 2.45 \times 10^{-5}
+$$
+then
+$$
+\mathcal{V}_{3+1/^4He}  = 1.37\times 10^{-9} \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4} \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  }  \, \sqrt{\frac{N_{\mathrm{^4He}}}{N}} \, \rm J
+$$
+And 
+$$
+\frac{\mathcal{V}_{3+1/^4He}}{h} \approx 2 \times 10^{24} \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4} \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  }  \, \sqrt{\frac{N_{\mathrm{^4He}}}{N}} \, \rm s^{-1}
+$$
+In the limit that $\mathcal{V}_{3+1/^4He} \gg \gamma_{tunnel}$ then using indirect transfer rate we have
+$$
+\frac{\Gamma_{3+1}}{\Gamma_{transfer}} = \frac{1}{2}\frac{\Gamma_{transfer}\gamma_{tunnel}}{\mathcal{V}^2_{3+1/^4He}/h^2} = \frac{1}{2}\frac{245 \sqrt{\frac{N_{D_2}}{N}} \sqrt{N_{^4 He}} F(g)^4 \rho \,\delta \epsilon \times 1.4\times 10^{21}}{4 \times 10^{48} \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4} \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  }  \, \frac{N_{\mathrm{^4He}}}{N} }
+$$
+
+$$
+\approx 8.6\times 10^{-26} \rho \,\delta \epsilon\sqrt{N_{D_2}}\sqrt{\frac{N}{N_{\mathrm{^4He}}}}\left( \frac{f_A}{1\,\mathrm{MHz}} \right)^{3/4} \sqrt{ \frac{1\,\mathrm{W}}{P_{diss}}  }F(g)^4
+$$
+
+For SI parameters we have
+$$
+\frac{\Gamma_{3+1}}{\Gamma_{transfer}} \sim 0.02 F(g)^4
+$$
+Where I multipled and divided by $\sqrt{N}$ and then using $N\sim 10^{18}$ and assumed $N_{\mathrm{^4He}} \sim 1$.
