@@ -95,7 +95,6 @@ Technically we should have  $F(g_1)F(g_2)F(g_3)F(g_4)$ instead of $F(g)^4$ to al
 To get an expression for $g$ , we need to express the matrix element in terms of acoustic phonon mode energy $E_A = P_{diss}\tau_A$
 
 $$
-\begin{equation}
 \begin{aligned}
 g
 &= \frac{ |\langle \mathrm{Pd}^* | a_z | \mathrm{Pd} \rangle| \, c \,
@@ -109,7 +108,6 @@ g
 \sqrt{\frac{N_{\mathrm{Pd}}}{N}} .
 \end{aligned}
 \label{eq:g_to_Pdiss}
-\end{equation}
 $$
 
 Now we can bring in Peter's calculation for $\Upsilon$ averaged over all the $\rm Pd$ transitions
@@ -213,7 +211,6 @@ which works out at one state every $26 \, \rm neV$.
 For the energy exchanged with acoustic phonons, Peter has calculated this to be:
 
 $$
-\begin{equation}
 \begin{aligned}
 \delta \epsilon
 &\approx \hbar \omega_A \, \Delta n_{AA} \\
@@ -225,7 +222,6 @@ $$
 \;\mathrm{meV}
 \end{aligned}
 \label{eq:dela_eps}
-\end{equation}
 $$
 
 I don't know exactly what to put for $|e^{(A)}|$ (which I think it the polarisation vector). I'm going to set it equal to one for now. $n_j$ is the number of transitions which is four for us.  Using the SI parameters for power  and frequency we have:
@@ -298,7 +294,6 @@ This rate is about 200 times smaller than the $10^9 \, \rm s^{-1}$ that we estim
 It is worth noting that we have assumed here that we are still only working with acoustic phonons. It can be argued that if the indirect fusion channel is open then we have both acoustic and optical phonons. The amount of energy exchanged in that case would be larger than predicted by Eq. $\ref{eq:dela_eps}$ because we should also add the following to $\delta \epsilon$
 
 $$
-\begin{equation}
 \begin{aligned}
 \hbar \omega_0 \, \Delta n_{00}
 &= \hbar \omega_0
@@ -309,7 +304,6 @@ $$
 \;\mathrm{eV}
 \end{aligned}
 \label{eq:hbar_omega0_delta_n00}
-\end{equation}
 $$
 
 Note here the units of $\rm eV$ as opposed to $\rm meV$ and recall that the frequency of optical phonons is $\sim \rm THz$ so the energy exchange potential of the optical phonons is much larger than the acoustic ones.
@@ -374,56 +368,6 @@ Now we can substitute $\Gamma_{coherent}$ from Eq. $\ref{eq:indirect_with_energy
 $$
 \Gamma_{D_2/(3+1)/^4He \,incoherent} \sim \frac{(5.3\times 10^6)^2}{1.5\times 10^9} \approx 18,700 \, \rm s^{-1}
 $$
+
 Note that if we don't use the large $g$ approximation and instead use the actual value for $F(g)$ for these parameters then we end up with a rate more like $2,800 \, \rm s^{-1}$.
 
-## 3+1 vs other products
-
-If we successfully transfer excitation from The $\rm D_2$ donors to $\rm Pd$ receivers, then the resulting products very sensitively on the composition of the lattice. For transfer to four $\rm Pd$ transitions, we have $\sim 6 \rm \, MeV$ of nuclear energy to dissipate. If this does not go into excess heat then it can go into gamma rays or an alpha particle if there are sufficient number of low Z impurities that can eject alphas preferentially to gammas.
-
-Because the excitation transfer pathway involves the compact (3+1) state which can decay to produce the standard fusion products. We estimated the rate of (3+1) products compared to other products in the SI according to
-$$
-\frac{\Gamma_{3+1}}{\Gamma_{transfer}} = \frac{1}{2}\frac{\Gamma_{transfer}\gamma_{tunnel}}{\sqrt{\mathcal{V}^2_{3+1/^4He}/h^2 + \gamma_{tunnel}^2}}
-\label{eq:3+1vsothers}
-$$
-Where $h\gamma_{tunnel}\approx 5.95 \, \rm MeV$ is the linewidth (corresponding to $\gamma_{tunnel}\approx 1.4 \times 10^{21} \, \rm s^{-1}$) of the tunnel decay from the (3+1) state into the standard fusion products and $\mathcal{V}_{3+1/^4He}$ it the Dicke enhanced matrix element between the (3+1) state and the $\rm ^4He$ ground state 
-$$
-\mathcal{V}_{3+1/^4He}  = |\langle \rm ^4He  | a_z | {\rm 3+1} \rangle| c \sqrt{\langle P_{\rm ^4He}^2 \rangle}\sqrt{N_{\rm ^4He}}
-$$
-We can rewrite this in terms of dissipated power as we did in Eq. $\ref{eq:g_to_Pdiss}$
-$$
-\mathcal{V}_{3+1/^4He}  = |\langle \rm ^4He  | a_z | {\rm 3+1} \rangle| \sqrt{M_{^4He}c^2 P_{diss} \tau_A}   \, \sqrt{\frac{N_{\mathrm{^4He}}}{N}}
-$$
-Where $ |\langle \rm ^4He  | a_z | {\rm 3+1} \rangle| \approx 0.000315$.
-
-
-
-Given that
-$$
-\sqrt{\tau_A} =  10^{-6}\left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4} 10^{-7\times -3/4} \approx 0.178\left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4}
-$$
-and
-$$
-\sqrt{M_{^4He}c^2} = \sqrt{4 \times 1.67\times 10^{-27} \times (3\times 10^8)^2} \approx \sqrt{6\times 10^{-10}} \approx 2.45 \times 10^{-5}
-$$
-then
-$$
-\mathcal{V}_{3+1/^4He}  = 1.37\times 10^{-9} \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4} \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  }  \, \sqrt{\frac{N_{\mathrm{^4He}}}{N}} \, \rm J
-$$
-And 
-$$
-\frac{\mathcal{V}_{3+1/^4He}}{h} \approx 2 \times 10^{24} \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4} \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  }  \, \sqrt{\frac{N_{\mathrm{^4He}}}{N}} \, \rm s^{-1}
-$$
-In the limit that $\mathcal{V}_{3+1/^4He} \gg \gamma_{tunnel}$ then using indirect transfer rate we have
-$$
-\frac{\Gamma_{3+1}}{\Gamma_{transfer}} = \frac{1}{2}\frac{\Gamma_{transfer}\gamma_{tunnel}}{\mathcal{V}^2_{3+1/^4He}/h^2} = \frac{1}{2}\frac{245 \sqrt{\frac{N_{D_2}}{N}} \sqrt{N_{^4 He}} F(g)^4 \rho \,\delta \epsilon \times 1.4\times 10^{21}}{4 \times 10^{48} \left( \frac{1\,\mathrm{MHz}}{f_A} \right)^{3/4} \sqrt{ \frac{P_{diss}}{1\,\mathrm{W}}  }  \, \frac{N_{\mathrm{^4He}}}{N} }
-$$
-
-$$
-\approx 8.6\times 10^{-26} \rho \,\delta \epsilon\sqrt{N_{D_2}}\sqrt{\frac{N}{N_{\mathrm{^4He}}}}\left( \frac{f_A}{1\,\mathrm{MHz}} \right)^{3/4} \sqrt{ \frac{1\,\mathrm{W}}{P_{diss}}  }F(g)^4
-$$
-
-For SI parameters we have
-$$
-\frac{\Gamma_{3+1}}{\Gamma_{transfer}} \sim 0.02 F(g)^4
-$$
-Where I multipled and divided by $\sqrt{N}$ and then using $N\sim 10^{18}$ and assumed $N_{\mathrm{^4He}} \sim 1$.
