@@ -80,6 +80,7 @@ jobs:
               echo "Converting $currentFilePath to PDF..."
               pandoc -f markdown -s "$currentFilePath" -o "pdf/$currentFileName.pdf" \
                 --template="pandoc/default.latex" \
+                --lua-filter="pandoc/latex-fixes.lua" \
                 --bibliography="pandoc/refs.bib" \
                 --citeproc \
                 --csl="pandoc/ieee.csl" \
@@ -93,6 +94,7 @@ jobs:
               echo "Converting $currentFilePath to LaTeX..."
               pandoc -f markdown -s "$currentFilePath" -o "latex/$currentFileName.tex" \
                 --template="pandoc/default.latex" \
+                --lua-filter="pandoc/latex-fixes.lua" \
                 --bibliography="refs.bib" \
                 --biblatex \
                 --variable numbersections=true \
