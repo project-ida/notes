@@ -378,9 +378,4 @@ $$
 Note that if we don't use the large $g$ approximation and instead use the actual value for $F(g)$ for these parameters then we end up with a rate more like $2,800 \, \rm s^{-1}$.
 
 
-$$
-\frac{\Gamma_{incoherent}}{\Gamma_{M2}} = \frac{\Gamma_{coherent}^2}{(4\Gamma_{M2})^2}
-$$
-
-
 
