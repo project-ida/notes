@@ -20,19 +20,13 @@ local function is_math(el, kind)
 end
 
 function Para(para)
-  -- 1) If a display-math paragraph contains an equation environment, output raw TeX
-  --    so LaTeX doesn't see nested math delimiters.
+  -- If a display-math paragraph contains an equation environment, output raw TeX
+  --  so LaTeX doesn't see nested math delimiters.
   if #para.content == 1 and is_math(para.content[1], "DisplayMath") then
     local text = para.content[1].text or ""
     if text:match("\\begin%{equation%*?%}") then
       return pandoc.RawBlock("tex", text)
     end
-  end
-
-  -- 2) Fix a very specific inline math delimiter issue: "$ | ... $"
-  local fixed, changed = fix_spaced_dollar_pipe_math(para.content)
-  if changed then
-    return pandoc.Para(fixed)
   end
 
   return nil
