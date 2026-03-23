@@ -451,6 +451,157 @@ $$
 
 This is the time-independent, quantised-field version of the magnetic transition. The pions have been integrated out, but the magnetic coupling between the resulting dressed nuclear states is still present explicitly through $\mu_{12}$.
 
+## 8) Special case: a degenerate two-nucleon doublet
+
+It is useful to see how the general formulas simplify in the smallest explicit two-nucleon model.
+
+Take the retained basis states to be
+
+$$
+|g\rangle
+\equiv
+|S=1,M_S=0\rangle
+=
+\frac{1}{\sqrt{2}}
+\Big(
+|p\uparrow\,n\downarrow\rangle
++
+|p\downarrow\,n\uparrow\rangle
+\Big),
+\label{eq:g2N}
+$$
+
+$$
+|e\rangle
+\equiv
+|S=0,M_S=0\rangle
+=
+\frac{1}{\sqrt{2}}
+\Big(
+|p\uparrow\,n\downarrow\rangle
+-
+|p\downarrow\,n\uparrow\rangle
+\Big).
+\label{eq:e2N}
+$$
+
+Now, in the case of no external magnetic field, both states have the same energy
+
+$$
+E_g = E_e \equiv E_0.
+\label{eq:degenerate2N}
+$$
+
+Here $E_0$ is the energy of the nucleons in their "free" state when there is no interactions - one might call this an "unbound" state. In this degenerate case the $E$-dependence in Eq. $\ref{eq:BHtoy}$ simplifies. Instead of carrying separate denominators $\Delta_g$ and $\Delta_e$, we expand about the common retained-space energy $E_0$ and define
+$$
+\Delta \equiv E_\chi + \omega_\pi - E_0.
+\label{eq:commonGap2N}
+$$
+
+Then Eq. $\ref{eq:HeffNuclear}$ simplifies to
+
+$$
+H_{\rm nuc}^{\rm eff}
+=
+E_0
+\begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}
+-
+\frac{1}{\Delta}
+\begin{pmatrix}
+W_g^2 & W_gW_e \\
+W_gW_e & W_e^2
+\end{pmatrix}.
+\label{eq:Heff2Ndeg}
+$$
+
+So the pionful sector still does two things:
+
+- it shifts the diagonal energies,
+- it mixes the two spin states.
+
+Define
+
+$$
+\Omega \equiv \sqrt{W_g^2 + W_e^2}.
+\label{eq:Omega2N}
+$$
+
+Then the dressed eigenstates are
+
+$$
+|1\rangle
+=
+\frac{W_g|g\rangle + W_e|e\rangle}{\Omega},
+\qquad
+|2\rangle
+=
+\frac{-W_e|g\rangle + W_g|e\rangle}{\Omega},
+\label{eq:dressed2Nstates}
+$$
+
+with energies
+
+$$
+E_1 = E_0 - \frac{\Omega^2}{\Delta},
+\qquad
+E_2 = E_0.
+\label{eq:dressed2Nenergies}
+$$
+
+One linear combination is pulled down in energy by the virtual pionful sector, while the orthogonal combination is untouched. We can interpret this as the two nucleon system having only a single bound state associated with $|1\rangle$ (because it has negative energy compared to the free state). The $|2\rangle$ state has the same energy as the free state so it is unbound.  
+
+In this same two-nucleon basis, the magnetic moment operator is explicit:
+
+$$
+\hat{\mu}_z
+=
+\mu_N(\mu_p\sigma_{pz}+\mu_n\sigma_{nz})
+=
+M
+\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}_{\{|g\rangle,|e\rangle\}},
+\label{eq:mu2N}
+$$
+
+where
+
+$$
+M \equiv \mu_N(\mu_p-\mu_n).
+\label{eq:M2N}
+$$
+
+Transforming Eq. $\ref{eq:mu2N}$ into the dressed basis gives
+
+$$
+\mu_{12}
+\equiv
+\langle 1|\hat{\mu}_z|2\rangle
+=
+M\,\frac{W_g^2-W_e^2}{W_g^2+W_e^2}.
+\label{eq:mu12twoN}
+$$
+
+So the quantised photon still couples the dressed states, unless the model becomes too symmetric. In particular, if
+
+$$
+W_g = W_e,
+\label{eq:symmetric2N}
+$$
+
+then
+
+$$
+\mu_{12}=0.
+\label{eq:mu12twoNzero}
+$$
+
+That vanishing is not a contradiction. It simply means that in the perfectly symmetric limit the same combinations that diagonalise the pion-dressed Hamiltonian also diagonalise the bare magnetic operator.
+
 ## 9) What this toy model does and does not say
 
 What the toy model captures:
