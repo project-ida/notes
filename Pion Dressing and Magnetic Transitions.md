@@ -451,51 +451,38 @@ $$
 
 This is the time-independent, quantised-field version of the magnetic transition. The pions have been integrated out, but the magnetic coupling between the resulting dressed nuclear states is still present explicitly through $\mu_{12}$.
 
-## 8) Special case: a degenerate two-nucleon doublet
+## 8) Special case: a degenerate spin-up / spin-down doublet
 
-It is useful to see how the general formulas simplify in the smallest explicit two-nucleon model.
-
-Take the retained basis states to be
+For the cleanest version of the toy model, let the retained states be the same bare nuclear configuration with opposite spin projection:
 
 $$
-|g\rangle
-\equiv
-|S=1,M_S=0\rangle
-=
-\frac{1}{\sqrt{2}}
-\Big(
-|p\uparrow\,n\downarrow\rangle
-+
-|p\downarrow\,n\uparrow\rangle
-\Big),
-\label{eq:g2N}
+|g\rangle = |\phi,\downarrow;0_\pi\rangle,
+\qquad
+|e\rangle = |\phi,\uparrow;0_\pi\rangle.
+\label{eq:spinflipstates}
 $$
 
-$$
-|e\rangle
-\equiv
-|S=0,M_S=0\rangle
-=
-\frac{1}{\sqrt{2}}
-\Big(
-|p\uparrow\,n\downarrow\rangle
--
-|p\downarrow\,n\uparrow\rangle
-\Big).
-\label{eq:e2N}
-$$
-
-Now, in the case of no external magnetic field, both states have the same energy
+This is the case where it is most natural to take the bare energies equal:
 
 $$
 E_g = E_e \equiv E_0.
-\label{eq:degenerate2N}
+\label{eq:spinflipdeg}
 $$
 
-Here $E_0$ is the energy of the nucleons in their "free" state when there is no interactions - one might call this an "unbound" state. In this degenerate case the $E$-dependence in Eq. $\ref{eq:BHtoy}$ simplifies. Instead of carrying separate denominators $\Delta_g$ and $\Delta_e$, we expand about the common retained-space energy $E_0$ and define
+The doorway state is still the higher-energy pionful configuration
+
+$$
+|\chi,1_\pi\rangle,
+\label{eq:spinflipdoorway}
+$$
+
+so $\chi$ labels the nuclear part of the virtual intermediate state, while the explicit pion sits in the $1_\pi$ factor.
+
+Because the retained states are degenerate, the denominator in Eq. $\ref{eq:BHtoy}$ can be expanded about the common retained-space energy $E_0$. Define
+
 $$
 \Delta \equiv E_\chi + \omega_\pi - E_0.
-\label{eq:commonGap2N}
+\label{eq:spinflipgap}
 $$
 
 Then Eq. $\ref{eq:HeffNuclear}$ simplifies to
@@ -514,7 +501,7 @@ E_0
 W_g^2 & W_gW_e \\
 W_gW_e & W_e^2
 \end{pmatrix}.
-\label{eq:Heff2Ndeg}
+\label{eq:spinflipHeff}
 $$
 
 So the pionful sector still does two things:
@@ -526,7 +513,7 @@ Define
 
 $$
 \Omega \equiv \sqrt{W_g^2 + W_e^2}.
-\label{eq:Omega2N}
+\label{eq:spinflipOmega}
 $$
 
 Then the dressed eigenstates are
@@ -539,7 +526,7 @@ $$
 |2\rangle
 =
 \frac{-W_e|g\rangle + W_g|e\rangle}{\Omega},
-\label{eq:dressed2Nstates}
+\label{eq:spinflipdressed}
 $$
 
 with energies
@@ -548,59 +535,37 @@ $$
 E_1 = E_0 - \frac{\Omega^2}{\Delta},
 \qquad
 E_2 = E_0.
-\label{eq:dressed2Nenergies}
+\label{eq:spinflipenergies}
 $$
 
-One linear combination is pulled down in energy by the virtual pionful sector, while the orthogonal combination is untouched. We can interpret this as the two nucleon system having only a single bound state associated with $|1\rangle$ (because it has negative energy compared to the free state). The $|2\rangle$ state has the same energy as the free state so it is unbound.  
+So one linear combination is pulled down by the virtual pionful sector, while the orthogonal combination is untouched at this order. If $E_0$ is interpreted as the free or threshold energy, this gives the simple toy picture of one bound combination and one state still sitting at threshold.
 
-In this same two-nucleon basis, the magnetic moment operator is explicit:
+Now choose the magnetic operator to be diagonal in the bare spin basis:
 
 $$
-\hat{\mu}_z
+\hat{\mu}
 =
-\mu_N(\mu_p\sigma_{pz}+\mu_n\sigma_{nz})
-=
-M
 \begin{pmatrix}
-0 & 1 \\
-1 & 0
-\end{pmatrix}_{\{|g\rangle,|e\rangle\}},
-\label{eq:mu2N}
+-\mu_0 & 0 \\
+0 & \mu_0
+\end{pmatrix}_{\{|g\rangle,|e\rangle\}}.
+\label{eq:spinflipmu}
 $$
 
-where
+This is the practical advantage of the spin-up / spin-down basis: the two bare states are energy-degenerate, but the magnetic operator still distinguishes them cleanly.
 
-$$
-M \equiv \mu_N(\mu_p-\mu_n).
-\label{eq:M2N}
-$$
-
-Transforming Eq. $\ref{eq:mu2N}$ into the dressed basis gives
+Transforming Eq. $\ref{eq:spinflipmu}$ into the dressed basis gives
 
 $$
 \mu_{12}
 \equiv
-\langle 1|\hat{\mu}_z|2\rangle
+\langle 1|\hat{\mu}|2\rangle
 =
-M\,\frac{W_g^2-W_e^2}{W_g^2+W_e^2}.
-\label{eq:mu12twoN}
+\mu_0\,\frac{2W_gW_e}{W_g^2+W_e^2}.
+\label{eq:spinflipmu12}
 $$
 
-So the quantised photon still couples the dressed states, unless the model becomes too symmetric. In particular, if
-
-$$
-W_g = W_e,
-\label{eq:symmetric2N}
-$$
-
-then
-
-$$
-\mu_{12}=0.
-\label{eq:mu12twoNzero}
-$$
-
-That vanishing is not a contradiction. It simply means that in the perfectly symmetric limit the same combinations that diagonalise the pion-dressed Hamiltonian also diagonalise the bare magnetic operator.
+So the quantised photon still couples the dressed states as long as both doorway couplings are nonzero.
 
 ## 9) What this toy model does and does not say
 
