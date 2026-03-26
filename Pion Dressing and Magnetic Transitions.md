@@ -567,33 +567,604 @@ $$
 
 So the quantised photon still couples the dressed states as long as both doorway couplings are nonzero.
 
-## 9) What this toy model does and does not say
+## 9) Two model nuclei and the excitation-transfer sector
 
-What the toy model captures:
+We now take **two copies** of the toy system, labelled $A$ and $B$, and ask what the pion-eliminated Hamiltonian looks like when both subsystems are present.
 
-- virtual pionful intermediate states can be eliminated,
-- their effects survive as level shifts and induced mixing inside a no-pion low-energy Hamiltonian,
-- the resulting dressed nuclear states can still couple magnetically to a quantised photon mode.
-
-What the toy model does **not** yet attempt:
-
-- a realistic two-nucleon spin-isospin structure,
-- tensor mixing such as $^3S_1$-$^3D_1$,
-- exchange-current corrections derived consistently with a realistic nuclear force.
-
-Those are natural next extensions, but they are not needed to understand the basic mechanism shown here.
-
-## 10) One-line summary
-
-The full toy theory contains explicit pion and photon modes, but after integrating out the pionful doorway state one is left with a $2\times 2$ pion-dressed nuclear Hamiltonian and a photon coupling whose off-diagonal matrix element
+For this section it is convenient to work in a local spin basis
 
 $$
-\mu_{12}
+|-\rangle_i,\qquad |+\rangle_i,\qquad i=A,B,
+$$
+
+and to postpone the photon quantisation until the end, exactly as we did for the single-system model.
+
+### 9.1 Retained and pion states
+
+The retained no-pion sector is the four-dimensional space
+
+$$
+P = \{|--\rangle,\ |-+\rangle,\ |+-\rangle,\ |++\rangle\},
+\label{eq:ABPspace}
+$$
+
+where, for example,
+
+$$
+|-+\rangle \equiv |-\rangle_A\otimes |+\rangle_B.
+$$
+
+We take all four retained states to have the same bare energy $2E_0$.
+
+The simplest local doorway model keeps four one-pion intermediate states:
+
+$$
+Q = \{|\chi_A,-\rangle,\ |\chi_A,+\rangle,\ |-,\chi_B\rangle,\ |+,\chi_B\rangle\}.
+\label{eq:ABQspace}
+$$
+
+Here
+
+- $|\chi_A,\pm\rangle$ means subsystem $A$ is in its doorway/pion configuration while $B$ is a spectator with spin $\pm$,
+- $|\pm,\chi_B\rangle$ means subsystem $B$ is in its doorway/pion configuration while $A$ is a spectator with spin $\pm$.
+
+This is the minimal eight-state extension of the single-system model: four retained states and four pionful states.
+
+### 9.2 Full block Hamiltonian
+
+In the ordered retained basis
+
+$$
+\{|--\rangle,\ |-+\rangle,\ |+-\rangle,\ |++\rangle\},
+\label{eq:ABbasisOrder}
+$$
+
+the full Hamiltonian has the block form
+
+$$
+H=
+\begin{pmatrix}
+2E_0 I_4 + g_\gamma(a+a^\dagger)\,\mu_x & V_{PQ} \\
+V_{PQ}^\dagger & H_Q
+\end{pmatrix}.
+\label{eq:ABfullH}
+$$
+
+The pion-space (Q) Hamiltonian is diagonal:
+
+$$
+H_Q=
+\mathrm{diag}
+\Big(
+E_{Q_A},E_{Q_A},E_{Q_B},E_{Q_B}
+\Big),
+\label{eq:HQAB}
+$$
+
+with
+
+$$
+E_{Q_A}=E_0+E_{\chi_A}+\omega_\pi,
+\qquad
+E_{Q_B}=E_0+E_{\chi_B}+\omega_\pi.
+\label{eq:EQAB}
+$$
+
+The pion coupling block is
+
+$$
+V_{PQ}=
+\begin{pmatrix}
+W_{A-} & 0 & W_{B-} & 0 \\
+0 & W_{A-} & W_{B+} & 0 \\
+W_{A+} & 0 & 0 & W_{B-} \\
+0 & W_{A+} & 0 & W_{B+}
+\end{pmatrix}.
+\label{eq:VPQAB}
+$$
+
+This matrix is easiest to read row by row:
+
+- the first two columns correspond to creating a pion excitation on $A$,
+- the last two columns correspond to creating a pion excitation on $B$,
+- $W_{A\pm}$ and $W_{B\pm}$ are the local pion matrix elements for the $\pm$ retained states on each subsystem.
+
+The bare magnetic operator is chosen to couple to a transverse field, so in the retained sector we take
+
+$$
+\mu_x
 =
-\frac{\mu_e-\mu_g}{2}\sin 2\theta
+\mu_A\,\sigma_x^{(A)}\otimes I_B
 +
-m_0\cos 2\theta
-\label{eq:finalSummaryFormula}
+\mu_B\,I_A\otimes \sigma_x^{(B)}.
+\label{eq:muXABcompact}
 $$
 
-still drives transitions between the dressed nuclear states.
+Explicitly, in the basis of Eq. $\ref{eq:ABbasisOrder}$,
+
+$$
+\mu_x=
+\begin{pmatrix}
+0 & \mu_B & \mu_A & 0 \\
+\mu_B & 0 & 0 & \mu_A \\
+\mu_A & 0 & 0 & \mu_B \\
+0 & \mu_A & \mu_B & 0
+\end{pmatrix}.
+\label{eq:muXABmatrix}
+$$
+
+So at the bare level the photon field flips the local $A$ or $B$ spin.
+
+### 9.3 Bloch-Horowitz elimination of the pion sector
+
+Using the exact projection formula from Eq. $\ref{eq:BHtoy}$, the retained-space Hamiltonian is
+
+$$
+H_{\rm eff}(E)=PHP+PHQ\,\frac{1}{E-QHQ}\,QHP.
+\label{eq:HABeffDef}
+$$
+
+For this model it is useful to keep the energy dependence explicit. Define the energy-dependent gaps
+
+$$
+\Delta_A(E)=E_{Q_A}-E=E_0+E_{\chi_A}+\omega_\pi-E,
+\label{eq:DeltaAE}
+$$
+
+$$
+\Delta_B(E)=E_{Q_B}-E=E_0+E_{\chi_B}+\omega_\pi-E.
+\label{eq:DeltaBE}
+$$
+
+Then
+
+$$
+H_{\rm eff}(E)
+=
+2E_0 I_4
+-
+V_{PQ}
+\begin{pmatrix}
+\Delta_A(E)^{-1} & 0 & 0 & 0 \\
+0 & \Delta_A(E)^{-1} & 0 & 0 \\
+0 & 0 & \Delta_B(E)^{-1} & 0 \\
+0 & 0 & 0 & \Delta_B(E)^{-1}
+\end{pmatrix}
+V_{PQ}^\dagger .
+\label{eq:HABeffRaw}
+$$
+
+Multiplying out Eq. $\ref{eq:HABeffRaw}$ gives the explicit retained-space matrix $H_{\text{eff}}$
+
+$$
+\begin{pmatrix}
+2E_0-\dfrac{W_{A-}^2}{\Delta_A(E)}-\dfrac{W_{B-}^2}{\Delta_B(E)} &
+-\dfrac{W_{B-}W_{B+}}{\Delta_B(E)} &
+-\dfrac{W_{A-}W_{A+}}{\Delta_A(E)} &
+0
+\\[1.0em]
+-\dfrac{W_{B-}W_{B+}}{\Delta_B(E)} &
+2E_0-\dfrac{W_{A-}^2}{\Delta_A(E)}-\dfrac{W_{B+}^2}{\Delta_B(E)} &
+0 &
+-\dfrac{W_{A-}W_{A+}}{\Delta_A(E)}
+\\[1.0em]
+-\dfrac{W_{A-}W_{A+}}{\Delta_A(E)} &
+0 &
+2E_0-\dfrac{W_{A+}^2}{\Delta_A(E)}-\dfrac{W_{B-}^2}{\Delta_B(E)} &
+-\dfrac{W_{B-}W_{B+}}{\Delta_B(E)}
+\\[1.0em]
+0 &
+-\dfrac{W_{A-}W_{A+}}{\Delta_A(E)} &
+-\dfrac{W_{B-}W_{B+}}{\Delta_B(E)} &
+2E_0-\dfrac{W_{A+}^2}{\Delta_A(E)}-\dfrac{W_{B+}^2}{\Delta_B(E)}
+\end{pmatrix}.
+\label{eq:HABeffMatrix}
+$$
+
+This is the $4\times4$ matrix that replaces the single-system $2\times2$ Hamiltonian.
+
+A more revealing way to write it is
+
+$$
+H_{\rm eff}(E)
+=
+2E_0 I_4
+-
+\frac{1}{\Delta_A(E)}\,M_A\otimes I_B
+-
+\frac{1}{\Delta_B(E)}\,I_A\otimes M_B,
+\label{eq:HABfactorised}
+$$
+
+where
+
+$$
+M_A=
+\begin{pmatrix}
+W_{A-}^2 & W_{A-}W_{A+} \\
+W_{A-}W_{A+} & W_{A+}^2
+\end{pmatrix},
+\qquad
+M_B=
+\begin{pmatrix}
+W_{B-}^2 & W_{B-}W_{B+} \\
+W_{B-}W_{B+} & W_{B+}^2
+\end{pmatrix}.
+\label{eq:MAMB}
+$$
+
+So the local-doorway model factorises into "pion dressing on $A$" plus "pion dressing on $B$".
+
+If one only wants the second-order energy-independent approximation used earlier in the note, one simply evaluates
+
+$$
+\Delta_A(E)\to \Delta_A(2E_0),
+\qquad
+\Delta_B(E)\to \Delta_B(2E_0).
+\label{eq:ABfixedGapApprox}
+$$
+
+### 9.4 Diagonalisation: bright and dark states on each subsystem
+
+Define the local norms
+
+$$
+\Omega_A=\sqrt{W_{A-}^2+W_{A+}^2},
+\qquad
+\Omega_B=\sqrt{W_{B-}^2+W_{B+}^2}.
+\label{eq:OmegaAB}
+$$
+
+The local pion matrices $M_A$ and $M_B$ are rank-one, so each has one nonzero-eigenvalue "bright" state and one zero-eigenvalue "dark" state:
+
+$$
+|b_A\rangle=
+\frac{W_{A-}|-\rangle_A+W_{A+}|+\rangle_A}{\Omega_A},
+\qquad
+|d_A\rangle=
+\frac{-W_{A+}|-\rangle_A+W_{A-}|+\rangle_A}{\Omega_A},
+\label{eq:brightdarkA}
+$$
+
+$$
+|b_B\rangle=
+\frac{W_{B-}|-\rangle_B+W_{B+}|+\rangle_B}{\Omega_B},
+\qquad
+|d_B\rangle=
+\frac{-W_{B+}|-\rangle_B+W_{B-}|+\rangle_B}{\Omega_B}.
+\label{eq:brightdarkB}
+$$
+
+These satisfy
+
+$$
+M_A|b_A\rangle=\Omega_A^2|b_A\rangle,
+\qquad
+M_A|d_A\rangle=0,
+\label{eq:MAeig}
+$$
+
+$$
+M_B|b_B\rangle=\Omega_B^2|b_B\rangle,
+\qquad
+M_B|d_B\rangle=0.
+\label{eq:MBeig}
+$$
+
+Because Eq. $\ref{eq:HABfactorised}$ is a sum of an $A$-only piece and a $B$-only piece, the full eigenvectors are just products:
+
+$$
+|bb\rangle,\qquad |bd\rangle,\qquad |db\rangle,\qquad |dd\rangle.
+\label{eq:ABproductStates}
+$$
+
+The important point is that the eigenvectors do **not** depend on the Bloch-Horowitz energy parameter $E$; only the eigenvalues do.
+
+The corresponding self-consistency equations are
+
+$$
+E_{bb}
+=
+2E_0
+-
+\frac{\Omega_A^2}{\Delta_A(E_{bb})}
+-
+\frac{\Omega_B^2}{\Delta_B(E_{bb})},
+\label{eq:EbbSelf}
+$$
+
+$$
+E_{bd}
+=
+2E_0
+-
+\frac{\Omega_A^2}{\Delta_A(E_{bd})},
+\qquad
+E_{db}
+=
+2E_0
+-
+\frac{\Omega_B^2}{\Delta_B(E_{db})},
+\label{eq:EbdEdbSelf}
+$$
+
+$$
+E_{dd}=2E_0.
+\label{eq:EddSelf}
+$$
+
+So this model gives one doubly-lowered state, two singly-lowered states, and one untouched threshold state.
+
+The states
+
+$$
+|bd\rangle=|b_A\rangle\otimes|d_B\rangle,
+\qquad
+|db\rangle=|d_A\rangle\otimes|b_B\rangle
+\label{eq:oneExcitationSector}
+$$
+
+are the natural one-excitation sector: one subsystem is locally dressed into its lowered state while the other remains in its dark partner.
+
+### 9.5 Symmetric limit
+
+If the local couplings are symmetric,
+
+$$
+W_{A+}=W_{A-}\equiv W_A,
+\qquad
+W_{B+}=W_{B-}\equiv W_B,
+\label{eq:symmetricAB}
+$$
+
+then
+
+$$
+|b_A\rangle=\frac{|+\rangle_A+|-\rangle_A}{\sqrt2},
+\qquad
+|d_A\rangle=\frac{|+\rangle_A-|-\rangle_A}{\sqrt2},
+\label{eq:symmetricABstatesA}
+$$
+
+and similarly for $B$.
+
+So in this limit the  product-like combination are
+
+$$
+|bd\rangle
+=
+\frac{(|+\rangle_A+|-\rangle_A)(|+\rangle_B-|-\rangle_B)}{2}.
+\label{eq:bdExample}
+$$
+
+The corresponding fixed-gap second-order energies are
+
+$$
+E_{bb}= 2E_0-\frac{2W_A^2}{\Delta_A(E_{bb})}-\frac{2W_B^2}{\Delta_B(E_{bb})},
+\label{eq:EbbSym}
+$$
+
+$$
+E_{bd}= 2E_0-\frac{2W_A^2}{\Delta_A(E_{bd})},
+\qquad
+E_{db}= 2E_0-\frac{2W_B^2}{\Delta_B(E_{bd})},
+\label{eq:EbdEdbSym}
+$$
+
+$$
+E_{dd}=2E_0.
+\label{eq:EddSym}
+$$
+
+### 9.6 Rotating the magnetic operator
+
+Now apply the same local bright/dark rotation to the magnetic operator.
+
+Let
+
+$$
+U=U_A\otimes U_B,
+\label{eq:UAB}
+$$
+
+where $U_A$ maps $(|-\rangle_A,|+\rangle_A)$ to $(|b_A\rangle,|d_A\rangle)$, and similarly for $B$.
+
+For each subsystem one finds
+
+$$
+U_i^\dagger \sigma_x U_i
+=
+\alpha_i\,\Sigma_z^{(i)}+\beta_i\,\Sigma_x^{(i)},
+\qquad i=A,B,
+\label{eq:localRotSigmaX}
+$$
+
+with
+
+$$
+\alpha_i=\frac{2W_{i-}W_{i+}}{W_{i-}^2+W_{i+}^2},
+\qquad
+\beta_i=\frac{W_{i-}^2-W_{i+}^2}{W_{i-}^2+W_{i+}^2}.
+\label{eq:alphabeta}
+$$
+
+So the dressed magnetic operator is
+
+$$
+\mu_x^{\rm dressed}
+=
+\mu_A\big(\alpha_A\Sigma_z^{(A)}+\beta_A\Sigma_x^{(A)}\big)\otimes I_B
++
+\mu_B I_A\otimes\big(\alpha_B\Sigma_z^{(B)}+\beta_B\Sigma_x^{(B)}\big).
+\label{eq:muXdressedCompact}
+$$
+
+In the ordered product basis
+
+$$
+\{|bb\rangle,\ |bd\rangle,\ |db\rangle,\ |dd\rangle\},
+\label{eq:ABdressedBasisOrder}
+$$
+
+this becomes
+
+$$
+\mu_x^{\rm dressed}
+=
+\begin{pmatrix}
+\mu_A\alpha_A+\mu_B\alpha_B & \mu_B\beta_B & \mu_A\beta_A & 0 \\
+\mu_B\beta_B & \mu_A\alpha_A-\mu_B\alpha_B & 0 & \mu_A\beta_A \\
+\mu_A\beta_A & 0 & -\mu_A\alpha_A+\mu_B\alpha_B & \mu_B\beta_B \\
+0 & \mu_A\beta_A & \mu_B\beta_B & -\mu_A\alpha_A-\mu_B\alpha_B
+\end{pmatrix}.
+\label{eq:muXdressedMatrix}
+$$
+
+The most relevant off-diagonal elements are therefore
+
+$$
+\langle bb|\mu_x|bd\rangle=\mu_B\beta_B,
+\qquad
+\langle bb|\mu_x|db\rangle=\mu_A\beta_A,
+\label{eq:bbcouplings}
+$$
+
+$$
+\langle bd|\mu_x|dd\rangle=\mu_A\beta_A,
+\qquad
+\langle db|\mu_x|dd\rangle=\mu_B\beta_B.
+\label{eq:ddcouplings}
+$$
+
+### 9.7 Symmetric-coupling limit of the magnetic operator
+
+In the symmetric limit of Eq. $\ref{eq:symmetricAB}$ one has
+
+$$
+\beta_A=\beta_B=0,
+\qquad
+\alpha_A=\alpha_B=1.
+\label{eq:symmetricAlphaBeta}
+$$
+
+Then Eq. $\ref{eq:muXdressedMatrix}$ collapses to a diagonal matrix:
+
+$$
+\mu_x^{\rm dressed}
+=
+\mathrm{diag}
+\Big(
+\mu_A+\mu_B,\ \mu_A-\mu_B,\ -\mu_A+\mu_B,\ -\mu_A-\mu_B
+\Big).
+\label{eq:muXdressedSym}
+$$
+
+So in the perfectly symmetric case the dressed eigenstates are exactly the product states built from $(|+\rangle\pm|-\rangle)/\sqrt2$, but the $B_x$ coupling becomes purely longitudinal in that same basis. This is why the off-diagonal transition matrix elements disappear in the fully symmetric limit.
+
+In practice, the most informative case is often the **near-symmetric** one: the eigenstates still look very close to the simple product combinations, but the coefficients $\beta_A$ and $\beta_B$ remain small and nonzero, so the photon operator still has off-diagonal pieces.
+
+### 9.8 Symmetric limit for identical subsystems
+
+Now take the symmetric limit of Eq. $\ref{eq:symmetricAB}$ and also assume that the two subsystems are identical:
+
+$$
+W_A = W_B \equiv W,
+\qquad
+E_{\chi_A}=E_{\chi_B}\equiv E_\chi.
+\label{eq:identicalAB}
+$$
+
+Then the two energy-dependent gaps become the same function,
+
+$$
+\Delta_A(E)=\Delta_B(E)\equiv \Delta(E),
+\label{eq:commonDeltaE}
+$$
+
+with
+
+$$
+\Delta(E)=E_0+E_\chi+\omega_\pi-E.
+\label{eq:commonDeltaEdef}
+$$
+
+In the dressed product basis
+
+$$
+\{|bb\rangle,\ |bd\rangle,\ |db\rangle,\ |dd\rangle\},
+$$
+
+the effective Hamiltonian of Eq. $\ref{eq:HABfactorised}$ is then diagonal:
+
+$$
+H_{\rm eff}(E)
+=
+\mathrm{diag}
+\left(
+2E_0-\frac{4W^2}{\Delta(E)},
+\;
+2E_0-\frac{2W^2}{\Delta(E)},
+\;
+2E_0-\frac{2W^2}{\Delta(E)},
+\;
+2E_0
+\right).
+\label{eq:HABdiagIdentical}
+$$
+
+It is useful to name these diagonal entries as functions of the common energy variable $E$:
+
+$$
+\lambda_{bb}(E)=2E_0-\frac{4W^2}{\Delta(E)},
+\label{eq:lambdabb}
+$$
+
+$$
+\lambda_{bd}(E)=\lambda_{db}(E)=2E_0-\frac{2W^2}{\Delta(E)},
+\label{eq:lambdabd}
+$$
+
+$$
+\lambda_{dd}(E)=2E_0.
+\label{eq:lambdadd}
+$$
+
+So the pion-dressed energies depend on the Bloch-Horowitz energy parameter through the same function $\Delta(E)$. At fixed $E$, the doubly-bright state $|bb\rangle$ is shifted down twice as much as the singly-bright states $|bd\rangle$ and $|db\rangle$, while the doubly-dark state $|dd\rangle$ is unshifted.
+
+The key symmetry is that the $|bd\rangle,|db\rangle$ pair sits exactly halfway between $|bb\rangle$ and $|dd\rangle$.
+
+To see this, subtract the $bd/db$ entry from the $bb$ and $dd$ entries:
+
+$$
+\lambda_{bb}(E)-\lambda_{bd}(E)
+=
+-\frac{2W^2}{\Delta(E)},
+\label{eq:bbMinusbd}
+$$
+
+$$
+\lambda_{dd}(E)-\lambda_{bd}(E)
+=
+\frac{2W^2}{\Delta(E)}.
+\label{eq:ddMinusbd}
+$$
+
+Therefore
+
+$$
+\lambda_{bb}(E)-\lambda_{bd}(E)
+=
+-\Big(\lambda_{dd}(E)-\lambda_{bd}(E)\Big),
+\label{eq:symmetricSpacing}
+$$
+
+or equivalently
+
+$$
+\lambda_{bd}(E)=\lambda_{db}(E)=\frac{\lambda_{bb}(E)+\lambda_{dd}(E)}{2}.
+\label{eq:midpointRelation}
+$$
+
+So at the level of the energy-dependent effective Hamiltonian, the singly-bright pair is exactly the midpoint between the doubly-bright and doubly-dark states.
+
+This is exactly the structure that matters in a second-order excitation-transfer calculation from $|bd\rangle$ to $|db\rangle$. In that calculation the intermediate $|bb\rangle$ and $|dd\rangle$ pathways are both evaluated at the common external energy of the $|bd\rangle/|db\rangle$ sector. The two intermediate paths therefore sit symmetrically above and below that energy, so their energy denominators come with equal magnitude and opposite sign. In this symmetric identical-system limit, that is precisely the condition for destructive interference between the $bb$ and $dd$ virtual pathways.
