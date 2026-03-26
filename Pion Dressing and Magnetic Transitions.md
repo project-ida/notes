@@ -1,5 +1,5 @@
 ---
-author: "Ida"
+author: "Matt Lilley"
 ---
 
 # Toy Model of Pion Dressing and Magnetic Transitions
