@@ -1168,3 +1168,330 @@ $$
 So at the level of the energy-dependent effective Hamiltonian, the singly-bright pair is exactly the midpoint between the doubly-bright and doubly-dark states.
 
 This is exactly the structure that matters in a second-order excitation-transfer calculation from $|bd\rangle$ to $|db\rangle$. In that calculation the intermediate $|bb\rangle$ and $|dd\rangle$ pathways are both evaluated at the common external energy of the $|bd\rangle/|db\rangle$ sector. The two intermediate paths therefore sit symmetrically above and below that energy, so their energy denominators come with equal magnitude and opposite sign. In this symmetric identical-system limit, that is precisely the condition for destructive interference between the $bb$ and $dd$ virtual pathways.
+
+### 9.9 Solving for the actual low-energy roots
+
+We now keep the symmetric identical-system assumptions of Section 9.8 and go one step further: instead of treating $E$ as a common external parameter, we solve the Bloch-Horowitz self-consistency equations for the actual low-energy roots.
+
+For this subsection, take
+
+$$
+E_0=0,
+\qquad
+E_\chi=E_0=0,
+\label{eq:E0andEchiZero}
+$$
+
+and define
+
+$$
+E_\pi \equiv \omega_\pi.
+\label{eq:EpiDef}
+$$
+
+Then Eq. $\ref{eq:commonDeltaEdef}$ reduces to
+
+$$
+\Delta(E)=E_\pi-E.
+\label{eq:DeltaSimple}
+$$
+
+It is also convenient to absorb the symmetric coupling into
+
+$$
+\Omega^2 \equiv 2W^2.
+\label{eq:OmegaDefLast}
+$$
+
+With this notation, the diagonal entries of Eq. $\ref{eq:HABdiagIdentical}$ become
+
+$$
+\lambda_{bb}(E)=-\frac{2\Omega^2}{E_\pi-E},
+\label{eq:lambdabbSimple}
+$$
+
+$$
+\lambda_{bd}(E)=\lambda_{db}(E)=-\frac{\Omega^2}{E_\pi-E},
+\label{eq:lambdabdSimple}
+$$
+
+$$
+\lambda_{dd}(E)=0.
+\label{eq:lambdaddSimple}
+$$
+
+The physical dressed energies are found from the self-consistency conditions
+
+$$
+E_{bb}=\lambda_{bb}(E_{bb}),
+\qquad
+E_{bd}=E_{db}=\lambda_{bd}(E_{bd}),
+\qquad
+E_{dd}=0.
+\label{eq:selfConsLast}
+$$
+
+#### Exact quadratic equations
+
+For the singly-bright states $bd$ and $db$,
+
+$$
+E_{bd}=-\frac{\Omega^2}{E_\pi-E_{bd}},
+\label{eq:EbdImplicit}
+$$
+
+so
+
+$$
+E_{bd}(E_\pi-E_{bd})=-\Omega^2,
+\label{eq:EbdQuadraticStep}
+$$
+
+and therefore
+
+$$
+E_{bd}^2-E_\pi E_{bd}-\Omega^2=0.
+\label{eq:EbdQuadratic}
+$$
+
+Thus
+
+$$
+E_{bd}^{(\pm)}=E_{db}^{(\pm)}=\frac{E_\pi\pm\sqrt{E_\pi^2+4\Omega^2}}{2}.
+\label{eq:EbdRoots}
+$$
+
+For the doubly-bright state $bb$,
+
+$$
+E_{bb}=-\frac{2\Omega^2}{E_\pi-E_{bb}},
+\label{eq:EbbImplicit}
+$$
+
+so
+
+$$
+E_{bb}(E_\pi-E_{bb})=-2\Omega^2,
+\label{eq:EbbQuadraticStep}
+$$
+
+and hence
+
+$$
+E_{bb}^2-E_\pi E_{bb}-2\Omega^2=0.
+\label{eq:EbbQuadratic}
+$$
+
+Therefore
+
+$$
+E_{bb}^{(\pm)}=\frac{E_\pi\pm\sqrt{E_\pi^2+8\Omega^2}}{2}.
+\label{eq:EbbRoots}
+$$
+
+Finally,
+
+$$
+E_{dd}=0.
+\label{eq:EddExactLast}
+$$
+
+The plus roots in Eqs. $\ref{eq:EbdRoots}$ and $\ref{eq:EbbRoots}$ sit near the pion scale and are not the low-energy branches we want. The relevant low-energy solutions are therefore
+
+$$
+E_{bd}^{\rm low}=E_{db}^{\rm low}=\frac{E_\pi-\sqrt{E_\pi^2+4\Omega^2}}{2},
+\label{eq:EbdLow}
+$$
+
+$$
+E_{bb}^{\rm low}=\frac{E_\pi-\sqrt{E_\pi^2+8\Omega^2}}{2},
+\label{eq:EbbLow}
+$$
+
+$$
+E_{dd}=0.
+\label{eq:EddLow}
+$$
+
+#### Small-parameter expansion
+
+Define the small parameter
+
+$$
+x\equiv \frac{\Omega^2}{E_\pi^2}\ll 1.
+\label{eq:xSmall}
+$$
+
+Using
+
+$$
+\sqrt{1+u}=1+\frac{u}{2}-\frac{u^2}{8}+O(u^3),
+\label{eq:sqrtExpand}
+$$
+
+we expand Eq. $\ref{eq:EbdLow}$ as
+
+$$
+E_{bd}^{\rm low}
+=
+\frac{E_\pi-E_\pi\sqrt{1+4x}}{2}
+=
+-E_\pi x+E_\pi x^2+O(E_\pi x^3),
+\label{eq:EbdExpandStep}
+$$
+
+so
+
+$$
+E_{bd}^{\rm low}=E_{db}^{\rm low}
+=
+-\frac{\Omega^2}{E_\pi}
++
+\frac{\Omega^4}{E_\pi^3}
++
+O\!\left(\frac{\Omega^6}{E_\pi^5}\right).
+\label{eq:EbdExpand}
+$$
+
+Similarly, Eq. $\ref{eq:EbbLow}$ gives
+
+$$
+E_{bb}^{\rm low}
+=
+\frac{E_\pi-E_\pi\sqrt{1+8x}}{2}
+=
+-2E_\pi x+4E_\pi x^2+O(E_\pi x^3),
+\label{eq:EbbExpandStep}
+$$
+
+so
+
+$$
+E_{bb}^{\rm low}
+=
+-\frac{2\Omega^2}{E_\pi}
++
+\frac{4\Omega^4}{E_\pi^3}
++
+O\!\left(\frac{\Omega^6}{E_\pi^5}\right).
+\label{eq:EbbExpand}
+$$
+
+And of course
+
+$$
+E_{dd}=0.
+\label{eq:EddExpand}
+$$
+
+#### Energy differences
+
+Now compare the singly-bright state to its neighbours above and below.
+
+The exact spacings are
+
+$$
+E_{dd}-E_{bd}^{\rm low}
+=
+\frac{\sqrt{E_\pi^2+4\Omega^2}-E_\pi}{2},
+\label{eq:ddMinusBdExact}
+$$
+
+and
+
+$$
+E_{bd}^{\rm low}-E_{bb}^{\rm low}
+=
+\frac{\sqrt{E_\pi^2+8\Omega^2}-\sqrt{E_\pi^2+4\Omega^2}}{2}.
+\label{eq:bdMinusBbExact}
+$$
+
+Expanding these to the same order gives
+
+$$
+E_{dd}-E_{bd}^{\rm low}
+=
+\frac{\Omega^2}{E_\pi}
+-
+\frac{\Omega^4}{E_\pi^3}
++
+O\!\left(\frac{\Omega^6}{E_\pi^5}\right),
+\label{eq:ddMinusBdExpand}
+$$
+
+$$
+E_{bd}^{\rm low}-E_{bb}^{\rm low}
+=
+\frac{\Omega^2}{E_\pi}
+-
+3\frac{\Omega^4}{E_\pi^3}
++
+O\!\left(\frac{\Omega^6}{E_\pi^5}\right).
+\label{eq:bdMinusBbExpand}
+$$
+
+So the two spacings are equal at leading order but differ at the next order:
+
+$$
+\big(E_{dd}-E_{bd}^{\rm low}\big)-\big(E_{bd}^{\rm low}-E_{bb}^{\rm low}\big)
+=
+\frac{2\Omega^4}{E_\pi^3}
++
+O\!\left(\frac{\Omega^6}{E_\pi^5}\right).
+\label{eq:asymmetryExpand}
+$$
+
+Equivalently, the midpoint shift is
+
+$$
+E_{bd}^{\rm low}-\frac{E_{bb}^{\rm low}+E_{dd}}{2}
+=
+-\frac{\Omega^4}{E_\pi^3}
++
+O\!\left(\frac{\Omega^6}{E_\pi^5}\right).
+\label{eq:midpointShift}
+$$
+
+So the $bd/db$ pair lies slightly **below** the exact midpoint between $bb$ and $dd$ once the self-consistent $E$-dependence is kept.
+
+#### Writing the asymmetry in terms of $E_{bd}$
+
+Introduce the leading-order singly-bright energy
+
+$$
+E_{bd}^{(0)}\equiv -\frac{\Omega^2}{E_\pi}.
+\label{eq:Ebd0}
+$$
+
+Then
+
+$$
+\frac{\Omega^2}{E_\pi}\frac{E_{bd}^{(0)}}{E_\pi}
+=
+-\frac{\Omega^4}{E_\pi^3}.
+\label{eq:Ebd0Identity}
+$$
+
+So Eq. $\ref{eq:midpointShift}$ can be written as
+
+$$
+E_{bd}^{\rm low}-\frac{E_{bb}^{\rm low}+E_{dd}}{2}
+=
+\frac{\Omega^2}{E_\pi}\frac{E_{bd}^{(0)}}{E_\pi}
++
+O\!\left(\frac{\Omega^6}{E_\pi^5}\right)
+\label{eq:midpointShiftEbd0}
+$$
+
+Likewise Eq. $\ref{eq:asymmetryExpand}$ becomes
+
+$$
+\big(E_{dd}-E_{bd}^{\rm low}\big)-\big(E_{bd}^{\rm low}-E_{bb}^{\rm low}\big)
+=
+-2\,\frac{\Omega^2}{E_\pi}\frac{E_{bd}^{(0)}}{E_\pi}
++
+O\!\left(\frac{\Omega^6}{E_\pi^5}\right).
+\label{eq:asymmetryEbd0}
+$$
+
+To the order kept here, one may replace $E_{bd}^{(0)}$ on the right-hand sides by the full low-energy $E_{bd}^{\rm low}$, because the difference between them only feeds in at $O(\Omega^6/E_\pi^5)$.
