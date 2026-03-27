@@ -2,20 +2,24 @@
 author: "Matt Lilley"
 ---
 
-# Toy Model of Pion Dressing and Magnetic Transitions
+# Introduction
 
-These notes isolate one specific piece of physics:
+These notes build a toy nuclear model from explicit pion exchange to magnetic coupling between pion-dressed nuclear states. In particular, we:
 
 1. start from a toy Hamiltonian with explicit pion and photon modes,
-2. integrate out the pionful sector,
-3. diagonalise the resulting low-energy nuclear Hamiltonian,
-4. show that the quantised photon still couples the resulting pion-dressed nuclear states.
+2. integrate out the pionful doorway sector to obtain low-energy effective nuclear Hamiltonians,
+3. diagonalise those effective Hamiltonians to identify the pion-dressed nuclear states,
+4. track how the magnetic operator couples those dressed states rather than the original bare states,
+5. work through a concrete single-nucleus spin-based instantiation of the general model,
+6. extend the construction to two coupled model nuclei and derive the corresponding $4\times4$ effective Hamiltonian,
+7. keep the Bloch-Horowitz energy dependence explicit where needed, so that the dressed two-nucleus energies are not simply given by naive sums of single-nucleus energies,
+8. use those dressed energies as preparation for later excitation-transfer questions, since it is the pion-generated levels that are subsequently coupled by the magnetic interaction.
 
-The goal is pedagogical rather than realistic. We keep the strong dynamics schematic, but we keep the logic of the reduction explicit. In particular, we do **not** yet try to identify the states with realistic deuteron channels. That can be added later once the toy mechanism is clear.
+The goal is pedagogical rather than realistic. We keep the strong dynamics schematic, but the logic of the reduction is made as explicit as possible. In particular, we do **not** yet try to identify the states with realistic deuteron channels. The aim is first to understand how pion exchange can generate nuclear levels and how magnetic couplings act between those generated levels, before moving on to more realistic models.
 
 Throughout, we set $\hbar = 1$.
 
-## 1) Degrees of freedom and physical picture
+# Degrees of freedom and physical picture
 
 We introduce three nuclear basis states:
 
@@ -46,7 +50,7 @@ $$
 
 The important point is that $|g\rangle$ and $|e\rangle$ are **not yet** the physical ground and excited states. They are only basis states in the retained low-energy sector. The physical low-energy states will appear only after the pionful sector has been removed and the effective $2\times 2$ Hamiltonian has been diagonalised.
 
-## 2) Full toy Hamiltonian
+# Full toy Hamiltonian
 
 We split the Hamiltonian into a diagonal part plus pion and photon couplings:
 
@@ -122,7 +126,7 @@ Two special cases are worth keeping in mind:
 
 The first case is the cleanest one for seeing how pion-induced mixing alone can generate a transition between the dressed states.
 
-## 3) Retained and eliminated sectors
+# Retained and eliminated sectors
 
 We keep the no-pion sector and eliminate the one-pion doorway sector.
 
@@ -168,7 +172,7 @@ $$
 
 Eq. $\ref{eq:BHtoy}$ is exact. The approximation will enter only when we expand it to low order in the pion coupling.
 
-## 4) Second-order elimination of the pionful sector
+# Second-order elimination of the pionful sector
 
 We now keep terms through second order in $W_g$ and $W_e$.
 
@@ -269,7 +273,7 @@ $$
 
 This is the central structural result. After the pion has been integrated out, there is no explicit pion basis vector left, but there is now a direct low-energy coupling $V_\pi$ between the retained states.
 
-## 5) Pion-dressed nuclear eigenstates
+# Pion-dressed nuclear eigenstates
 
 The physical low-energy nuclear states are obtained by diagonalising Eq. $\ref{eq:HeffCompact}$.
 
@@ -321,7 +325,7 @@ At this point the interpretation changes:
 
 This is the toy version of the statement that the explicit pionful dynamics has been absorbed into an effective no-pion Hamiltonian.
 
-## 6) Magnetic operator in the dressed basis
+# Magnetic operator in the dressed basis
 
 We now ask how the photon couples the dressed states.
 
@@ -382,7 +386,7 @@ The main pedagogical point is therefore:
 
 That is why a magnetic transition can remain between the pion-dressed nuclear states.
 
-## 7) Final post-pion Hamiltonian with the photon still explicit
+# Final post-pion Hamiltonian with the photon still explicit
 
 We now keep the photon mode explicit and rewrite the full post-pion theory in the dressed basis:
 
@@ -451,7 +455,7 @@ $$
 
 This is the time-independent, quantised-field version of the magnetic transition. The pions have been integrated out, but the magnetic coupling between the resulting dressed nuclear states is still present explicitly through $\mu_{12}$.
 
-## 8) Special case: a degenerate spin-up / spin-down doublet
+# Special case: a degenerate spin-up / spin-down doublet
 
 For the cleanest version of the toy model, let the retained states be the same bare nuclear configuration with opposite spin projection:
 
@@ -567,7 +571,7 @@ $$
 
 So the quantised photon still couples the dressed states as long as both doorway couplings are nonzero.
 
-## 9) Two model nuclei and the excitation-transfer sector
+# Two model nuclei and the excitation-transfer sector
 
 We now take **two copies** of the toy system, labelled $A$ and $B$, and ask what the pion-eliminated Hamiltonian looks like when both subsystems are present.
 
@@ -579,7 +583,7 @@ $$
 
 and to postpone the photon quantisation until the end, exactly as we did for the single-system model.
 
-### 9.1 Retained and pion states
+## Retained and pion states
 
 The retained no-pion sector is the four-dimensional space
 
@@ -610,7 +614,7 @@ Here
 
 This is the minimal eight-state extension of the single-system model: four retained states and four pionful states.
 
-### 9.2 Full block Hamiltonian
+## Full block Hamiltonian
 
 In the ordered retained basis
 
@@ -695,7 +699,7 @@ $$
 
 So at the bare level the photon field flips the local $A$ or $B$ spin.
 
-### 9.3 Bloch-Horowitz elimination of the pion sector
+## Bloch-Horowitz elimination of the pion sector
 
 Using the exact projection formula from Eq. $\ref{eq:BHtoy}$, the retained-space Hamiltonian is
 
@@ -804,7 +808,7 @@ $$
 \label{eq:ABfixedGapApprox}
 $$
 
-### 9.4 Diagonalisation: bright and dark states on each subsystem
+## Diagonalisation: bright and dark states on each subsystem
 
 Define the local norms
 
@@ -906,7 +910,7 @@ $$
 
 are the natural one-excitation sector: one subsystem is locally dressed into its lowered state while the other remains in its dark partner.
 
-### 9.5 Symmetric limit
+## Symmetric limit
 
 If the local couplings are symmetric,
 
@@ -956,7 +960,7 @@ E_{dd}=2E_0.
 \label{eq:EddSym}
 $$
 
-### 9.6 Rotating the magnetic operator
+## Rotating the magnetic operator
 
 Now apply the same local bright/dark rotation to the magnetic operator.
 
@@ -1036,7 +1040,7 @@ $$
 \label{eq:ddcouplings}
 $$
 
-### 9.7 Symmetric-coupling limit of the magnetic operator
+## Symmetric-coupling limit of the magnetic operator
 
 In the symmetric limit of Eq. $\ref{eq:symmetricAB}$ one has
 
@@ -1063,7 +1067,7 @@ So in the perfectly symmetric case the dressed eigenstates are exactly the produ
 
 In practice, the most informative case is often the **near-symmetric** one: the eigenstates still look very close to the simple product combinations, but the coefficients $\beta_A$ and $\beta_B$ remain small and nonzero, so the photon operator still has off-diagonal pieces.
 
-### 9.8 Symmetric limit for identical subsystems
+## Symmetric limit for identical subsystems
 
 Now take the symmetric limit of Eq. $\ref{eq:symmetricAB}$ and also assume that the two subsystems are identical:
 
@@ -1169,7 +1173,7 @@ So at the level of the energy-dependent effective Hamiltonian, the singly-bright
 
 This is exactly the structure that matters in a second-order excitation-transfer calculation from $|bd\rangle$ to $|db\rangle$. In that calculation the intermediate $|bb\rangle$ and $|dd\rangle$ pathways are both evaluated at the common external energy of the $|bd\rangle/|db\rangle$ sector. The two intermediate paths therefore sit symmetrically above and below that energy, so their energy denominators come with equal magnitude and opposite sign. In this symmetric identical-system limit, that is precisely the condition for destructive interference between the $bb$ and $dd$ virtual pathways.
 
-### 9.9 Solving for the actual low-energy roots
+## Solving for the actual low-energy roots
 
 We now keep the symmetric identical-system assumptions of Section 9.8 and go one step further: instead of treating $E$ as a common external parameter, we solve the Bloch-Horowitz self-consistency equations for the actual low-energy roots.
 
@@ -1231,7 +1235,7 @@ E_{dd}=0.
 \label{eq:selfConsLast}
 $$
 
-#### Exact quadratic equations
+### Exact quadratic equations
 
 For the singly-bright states $bd$ and $db$,
 
@@ -1313,7 +1317,7 @@ E_{dd}=0.
 \label{eq:EddLow}
 $$
 
-#### Small-parameter expansion
+### Small-parameter expansion
 
 Define the small parameter
 
@@ -1384,7 +1388,7 @@ E_{dd}=0.
 \label{eq:EddExpand}
 $$
 
-#### Energy differences
+### Energy differences
 
 Now compare the singly-bright state to its neighbours above and below.
 
@@ -1454,7 +1458,7 @@ $$
 
 So the $bd/db$ pair lies slightly **below** the exact midpoint between $bb$ and $dd$ once the self-consistent $E$-dependence is kept.
 
-#### Writing the asymmetry in terms of $E_{bd}$
+### Writing the asymmetry in terms of $E_{bd}$
 
 Introduce the leading-order singly-bright energy
 
