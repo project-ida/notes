@@ -271,8 +271,7 @@ Write
 
 $$
 |1\rangle =
-\cos\theta\,|g\rangle
--
+\cos\theta\,|g\rangle -
 \sin\theta\,|e\rangle,
 \qquad
 |2\rangle =
@@ -479,8 +478,7 @@ E_0
 \begin{pmatrix}
 1 & 0 \\
 0 & 1
-\end{pmatrix}
--
+\end{pmatrix} -
 \frac{1}{\Delta}
 \begin{pmatrix}
 W_g^2 & W_gW_e \\
@@ -700,8 +698,7 @@ Then
 
 $$
 H_{\rm eff}(E) =
-2E_0 I_4
--
+2E_0 I_4 -
 V_{PQ}
 \begin{pmatrix}
 \Delta_A(E)^{-1} & 0 & 0 & 0 \\
@@ -746,10 +743,8 @@ A more revealing way to write it is
 
 $$
 H_{\rm eff}(E) =
-2E_0 I_4
--
-\frac{1}{\Delta_A(E)}\,M_A\otimes I_B
--
+2E_0 I_4 -
+\frac{1}{\Delta_A(E)}\,M_A\otimes I_B -
 \frac{1}{\Delta_B(E)}\,I_A\otimes M_B,
 \label{eq:HABfactorised}
 $$
@@ -842,23 +837,19 @@ The corresponding self-consistency equations are
 
 $$
 E_{bb} =
-2E_0
--
-\frac{\Omega_A^2}{\Delta_A(E_{bb})}
--
+2E_0 -
+\frac{\Omega_A^2}{\Delta_A(E_{bb})} -
 \frac{\Omega_B^2}{\Delta_B(E_{bb})},
 \label{eq:EbbSelf}
 $$
 
 $$
 E_{bd} =
-2E_0
--
+2E_0 -
 \frac{\Omega_A^2}{\Delta_A(E_{bd})},
 \qquad
 E_{db} =
-2E_0
--
+2E_0 -
 \frac{\Omega_B^2}{\Delta_B(E_{db})},
 \label{eq:EbdEdbSelf}
 $$
@@ -1368,8 +1359,7 @@ Expanding these to the same order gives
 
 $$
 E_{dd}-E_{bd}^{\rm low} =
-\frac{\Omega^2}{E_\pi}
--
+\frac{\Omega^2}{E_\pi} -
 \frac{\Omega^4}{E_\pi^3}
 +
 O\!\left(\frac{\Omega^6}{E_\pi^5}\right),
@@ -1378,8 +1368,7 @@ $$
 
 $$
 E_{bd}^{\rm low}-E_{bb}^{\rm low} =
-\frac{\Omega^2}{E_\pi}
--
+\frac{\Omega^2}{E_\pi} -
 3\frac{\Omega^4}{E_\pi^3}
 +
 O\!\left(\frac{\Omega^6}{E_\pi^5}\right).
