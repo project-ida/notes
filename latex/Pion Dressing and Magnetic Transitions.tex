@@ -75,10 +75,11 @@
 \begin{document}
 \maketitle
 
-\section{Toy Model of Pion Dressing and Magnetic
-Transitions}\label{toy-model-of-pion-dressing-and-magnetic-transitions}
+\section{Introduction}\label{introduction}
 
-These notes isolate one specific piece of physics:
+These notes build a toy nuclear model from explicit pion exchange to
+magnetic coupling between pion-dressed nuclear states. In particular,
+we:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -86,23 +87,41 @@ These notes isolate one specific piece of physics:
 \item
   start from a toy Hamiltonian with explicit pion and photon modes,
 \item
-  integrate out the pionful sector,
+  integrate out the pionful doorway sector to obtain low-energy
+  effective nuclear Hamiltonians,
 \item
-  diagonalise the resulting low-energy nuclear Hamiltonian,
+  diagonalise those effective Hamiltonians to identify the pion-dressed
+  nuclear states,
 \item
-  show that the quantised photon still couples the resulting
-  pion-dressed nuclear states.
+  track how the magnetic operator couples those dressed states rather
+  than the original bare states,
+\item
+  work through a concrete single-nucleus spin-based instantiation of the
+  general model,
+\item
+  extend the construction to two coupled model nuclei and derive the
+  corresponding \(4\times4\) effective Hamiltonian,
+\item
+  keep the Bloch-Horowitz energy dependence explicit where needed, so
+  that the dressed two-nucleus energies are not simply given by naive
+  sums of single-nucleus energies,
+\item
+  use those dressed energies as preparation for later
+  excitation-transfer questions, since it is the pion-generated levels
+  that are subsequently coupled by the magnetic interaction.
 \end{enumerate}
 
 The goal is pedagogical rather than realistic. We keep the strong
-dynamics schematic, but we keep the logic of the reduction explicit. In
-particular, we do \textbf{not} yet try to identify the states with
-realistic deuteron channels. That can be added later once the toy
-mechanism is clear.
+dynamics schematic, but the logic of the reduction is made as explicit
+as possible. In particular, we do \textbf{not} yet try to identify the
+states with realistic deuteron channels. The aim is first to understand
+how pion exchange can generate nuclear levels and how magnetic couplings
+act between those generated levels, before moving on to more realistic
+models.
 
 Throughout, we set \(\hbar = 1\).
 
-\subsection{1) Degrees of freedom and physical
+\section{Degrees of freedom and physical
 picture}\label{degrees-of-freedom-and-physical-picture}
 
 We introduce three nuclear basis states:
@@ -145,7 +164,7 @@ basis states in the retained low-energy sector. The physical low-energy
 states will appear only after the pionful sector has been removed and
 the effective \(2\times 2\) Hamiltonian has been diagonalised.
 
-\subsection{2) Full toy Hamiltonian}\label{full-toy-hamiltonian}
+\section{Full toy Hamiltonian}\label{full-toy-hamiltonian}
 
 We split the Hamiltonian into a diagonal part plus pion and photon
 couplings:
@@ -233,7 +252,7 @@ Two special cases are worth keeping in mind:
 The first case is the cleanest one for seeing how pion-induced mixing
 alone can generate a transition between the dressed states.
 
-\subsection{3) Retained and eliminated
+\section{Retained and eliminated
 sectors}\label{retained-and-eliminated-sectors}
 
 We keep the no-pion sector and eliminate the one-pion doorway sector.
@@ -281,7 +300,7 @@ PHP + PHQ\,\frac{1}{E-QHQ}\,QHP.
 Eq. \(\ref{eq:BHtoy}\) is exact. The approximation will enter only when
 we expand it to low order in the pion coupling.
 
-\subsection{4) Second-order elimination of the pionful
+\section{Second-order elimination of the pionful
 sector}\label{second-order-elimination-of-the-pionful-sector}
 
 We now keep terms through second order in \(W_g\) and \(W_e\).
@@ -410,7 +429,7 @@ integrated out, there is no explicit pion basis vector left, but there
 is now a direct low-energy coupling \(V_\pi\) between the retained
 states.
 
-\subsection{5) Pion-dressed nuclear
+\section{Pion-dressed nuclear
 eigenstates}\label{pion-dressed-nuclear-eigenstates}
 
 The physical low-energy nuclear states are obtained by diagonalising Eq.
@@ -472,7 +491,7 @@ At this point the interpretation changes:
 This is the toy version of the statement that the explicit pionful
 dynamics has been absorbed into an effective no-pion Hamiltonian.
 
-\subsection{6) Magnetic operator in the dressed
+\section{Magnetic operator in the dressed
 basis}\label{magnetic-operator-in-the-dressed-basis}
 
 We now ask how the photon couples the dressed states.
@@ -555,7 +574,7 @@ diagonalise the magnetic \textbf{operator}.
 That is why a magnetic transition can remain between the pion-dressed
 nuclear states.
 
-\subsection{7) Final post-pion Hamiltonian with the photon still
+\section{Final post-pion Hamiltonian with the photon still
 explicit}\label{final-post-pion-hamiltonian-with-the-photon-still-explicit}
 
 We now keep the photon mode explicit and rewrite the full post-pion
@@ -629,7 +648,7 @@ transition. The pions have been integrated out, but the magnetic
 coupling between the resulting dressed nuclear states is still present
 explicitly through \(\mu_{12}\).
 
-\subsection{8) Special case: a degenerate spin-up / spin-down
+\section{Special case: a degenerate spin-up / spin-down
 doublet}\label{special-case-a-degenerate-spin-up-spin-down-doublet}
 
 For the cleanest version of the toy model, let the retained states be
@@ -763,7 +782,7 @@ Transforming Eq. \(\ref{eq:spinflipmu}\) into the dressed basis gives
 So the quantised photon still couples the dressed states as long as both
 doorway couplings are nonzero.
 
-\subsection{9) Two model nuclei and the excitation-transfer
+\section{Two model nuclei and the excitation-transfer
 sector}\label{two-model-nuclei-and-the-excitation-transfer-sector}
 
 We now take \textbf{two copies} of the toy system, labelled \(A\) and
@@ -779,8 +798,7 @@ For this section it is convenient to work in a local spin basis
 and to postpone the photon quantisation until the end, exactly as we did
 for the single-system model.
 
-\subsubsection{9.1 Retained and pion
-states}\label{retained-and-pion-states}
+\subsection{Retained and pion states}\label{retained-and-pion-states}
 
 The retained no-pion sector is the four-dimensional space
 
@@ -820,7 +838,7 @@ Here
 This is the minimal eight-state extension of the single-system model:
 four retained states and four pionful states.
 
-\subsubsection{9.2 Full block Hamiltonian}\label{full-block-hamiltonian}
+\subsection{Full block Hamiltonian}\label{full-block-hamiltonian}
 
 In the ordered retained basis
 
@@ -916,7 +934,7 @@ Explicitly, in the basis of Eq. \(\ref{eq:ABbasisOrder}\),
 So at the bare level the photon field flips the local \(A\) or \(B\)
 spin.
 
-\subsubsection{9.3 Bloch-Horowitz elimination of the pion
+\subsection{Bloch-Horowitz elimination of the pion
 sector}\label{bloch-horowitz-elimination-of-the-pion-sector}
 
 Using the exact projection formula from Eq. \(\ref{eq:BHtoy}\), the
@@ -1032,7 +1050,7 @@ earlier in the note, one simply evaluates
 \label{eq:ABfixedGapApprox}
 \]
 
-\subsubsection{9.4 Diagonalisation: bright and dark states on each
+\subsection{Diagonalisation: bright and dark states on each
 subsystem}\label{diagonalisation-bright-and-dark-states-on-each-subsystem}
 
 Define the local norms
@@ -1141,7 +1159,7 @@ The states
 are the natural one-excitation sector: one subsystem is locally dressed
 into its lowered state while the other remains in its dark partner.
 
-\subsubsection{9.5 Symmetric limit}\label{symmetric-limit}
+\subsection{Symmetric limit}\label{symmetric-limit}
 
 If the local couplings are symmetric,
 
@@ -1191,7 +1209,7 @@ E_{dd}=2E_0.
 \label{eq:EddSym}
 \]
 
-\subsubsection{9.6 Rotating the magnetic
+\subsection{Rotating the magnetic
 operator}\label{rotating-the-magnetic-operator}
 
 Now apply the same local bright/dark rotation to the magnetic operator.
@@ -1273,7 +1291,7 @@ The most relevant off-diagonal elements are therefore
 \label{eq:ddcouplings}
 \]
 
-\subsubsection{9.7 Symmetric-coupling limit of the magnetic
+\subsection{Symmetric-coupling limit of the magnetic
 operator}\label{symmetric-coupling-limit-of-the-magnetic-operator}
 
 In the symmetric limit of Eq. \(\ref{eq:symmetricAB}\) one has
@@ -1309,7 +1327,7 @@ the simple product combinations, but the coefficients \(\beta_A\) and
 \(\beta_B\) remain small and nonzero, so the photon operator still has
 off-diagonal pieces.
 
-\subsubsection{9.8 Symmetric limit for identical
+\subsection{Symmetric limit for identical
 subsystems}\label{symmetric-limit-for-identical-subsystems}
 
 Now take the symmetric limit of Eq. \(\ref{eq:symmetricAB}\) and also
@@ -1435,7 +1453,7 @@ denominators come with equal magnitude and opposite sign. In this
 symmetric identical-system limit, that is precisely the condition for
 destructive interference between the \(bb\) and \(dd\) virtual pathways.
 
-\subsubsection{9.9 Solving for the actual low-energy
+\subsection{Solving for the actual low-energy
 roots}\label{solving-for-the-actual-low-energy-roots}
 
 We now keep the symmetric identical-system assumptions of Section 9.8
@@ -1503,7 +1521,8 @@ E_{dd}=0.
 \label{eq:selfConsLast}
 \]
 
-\paragraph{Exact quadratic equations}\label{exact-quadratic-equations}
+\subsubsection{Exact quadratic
+equations}\label{exact-quadratic-equations}
 
 For the singly-bright states \(bd\) and \(db\),
 
@@ -1587,7 +1606,8 @@ E_{dd}=0.
 \label{eq:EddLow}
 \]
 
-\paragraph{Small-parameter expansion}\label{small-parameter-expansion}
+\subsubsection{Small-parameter
+expansion}\label{small-parameter-expansion}
 
 Define the small parameter
 
@@ -1658,7 +1678,7 @@ E_{dd}=0.
 \label{eq:EddExpand}
 \]
 
-\paragraph{Energy differences}\label{energy-differences}
+\subsubsection{Energy differences}\label{energy-differences}
 
 Now compare the singly-bright state to its neighbours above and below.
 
@@ -1731,7 +1751,7 @@ So the \(bd/db\) pair lies slightly \textbf{below} the exact midpoint
 between \(bb\) and \(dd\) once the self-consistent \(E\)-dependence is
 kept.
 
-\paragraph{\texorpdfstring{Writing the asymmetry in terms of
+\subsubsection{\texorpdfstring{Writing the asymmetry in terms of
 \(E_{bd}\)}{Writing the asymmetry in terms of E\_\{bd\}}}\label{writing-the-asymmetry-in-terms-of-e_bd}
 
 Introduce the leading-order singly-bright energy
