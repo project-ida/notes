@@ -24,6 +24,8 @@ $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
 \usepackage{amsmath,amssymb}
+\usepackage{braket}
+\usepackage{mathtools}
 
 \usepackage{hyperref}
 \usepackage{ulem}  % For underlining links
